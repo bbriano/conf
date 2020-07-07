@@ -24,4 +24,5 @@ bindkey -v
 # Aliases
 alias matlab='/Applications/MATLAB_R2020a.app/bin/matlab'
 alias gG='cd ~/Google\ Drive\ File\ Stream/My\ Drive'
+alias v='nvim'
 

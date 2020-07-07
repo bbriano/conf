@@ -14,6 +14,7 @@ set noswapfile
 "set undodir=~/.vim/undodir
 "set undofile
 set incsearch
+set laststatus=0
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
