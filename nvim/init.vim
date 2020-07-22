@@ -6,9 +6,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 call plug#end()
 
-noremap <C-l> :nohl<CR><C-l>
-map CommandP :Files<CR>
 map CommandS :w<CR>
+map CommandL :nohl<CR><C-l>
+map CommandP :Files<CR>
 map CommandSlash <plug>NERDCommenterToggle
 
 filetype plugin on
