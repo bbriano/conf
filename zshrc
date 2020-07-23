@@ -22,14 +22,16 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 
 # Aliases
+alias v='/usr/local/bin/nvim'
 alias matlab='/Applications/MATLAB_R2020a.app/bin/matlab'
-alias gG='cd ~/Google\ Drive\ File\ Stream/My\ Drive'
-alias v='nvim'
-alias cra='npx create-react-app'
 alias py='/usr/local/bin/python3'
 alias pip='/usr/local/bin/pip3'
+alias cra='npx create-react-app'
 alias npmls='npm -g list --depth 0'
 alias bat='bat --theme base16'
+alias cdc='cd ~/code'
+alias cdd='cd ~/Downloads'
+alias cdg='cd ~/Google\ Drive\ File\ Stream/My\ Drive'
 
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
