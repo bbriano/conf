@@ -17,7 +17,6 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 
 syntax on
-colorscheme ThemerVim
 
 set tabstop=4
 set softtabstop=4
