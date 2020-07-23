@@ -3,13 +3,13 @@
   
   if &background == 'dark'
     
-  let s:guishade0 = "#1b1f27"
-  let s:guishade1 = "#353940"
-  let s:guishade2 = "#505358"
-  let s:guishade3 = "#6a6d71"
-  let s:guishade4 = "#85868a"
-  let s:guishade5 = "#9fa0a3"
-  let s:guishade6 = "#bababb"
+  let s:guishade0 = "#272c36"
+  let s:guishade1 = "#313846"
+  let s:guishade2 = "#475164"
+  let s:guishade3 = "#475164"
+  let s:guishade4 = "#535e74"
+  let s:guishade5 = "#535e74"
+  let s:guishade6 = "#d4d4d4"
   let s:guishade7 = "#d4d4d4"
   let s:guiaccent0 = "#ec5e66"
   let s:guiaccent1 = "#ff8a47"
@@ -19,13 +19,13 @@
   let s:guiaccent5 = "#6699cb"
   let s:guiaccent6 = "#c593c4"
   let s:guiaccent7 = "#c593c4"
-  let s:ctermshade0 = 234
+  let s:ctermshade0 = 236
   let s:ctermshade1 = 237
   let s:ctermshade2 = 240
-  let s:ctermshade3 = 242
-  let s:ctermshade4 = 245
-  let s:ctermshade5 = 247
-  let s:ctermshade6 = 250
+  let s:ctermshade3 = 240
+  let s:ctermshade4 = 241
+  let s:ctermshade5 = 241
+  let s:ctermshade6 = 252
   let s:ctermshade7 = 252
   let s:ctermaccent0 = 210
   let s:ctermaccent1 = 215
@@ -39,6 +39,43 @@
   endif
   
 
+  
+  if &background == 'light'
+    
+  let s:guishade0 = "#d4d4d4"
+  let s:guishade1 = "#272c36"
+  let s:guishade2 = "#272c36"
+  let s:guishade3 = "#272c36"
+  let s:guishade4 = "#272c36"
+  let s:guishade5 = "#272c36"
+  let s:guishade6 = "#272c36"
+  let s:guishade7 = "#272c36"
+  let s:guiaccent0 = "#ea4850"
+  let s:guiaccent1 = "#ff7b2e"
+  let s:guiaccent2 = "#f9be48"
+  let s:guiaccent3 = "#8abf82"
+  let s:guiaccent4 = "#50aaa8"
+  let s:guiaccent5 = "#548cc4"
+  let s:guiaccent6 = "#bb81ba"
+  let s:guiaccent7 = "#bb81ba"
+  let s:ctermshade0 = 252
+  let s:ctermshade1 = 236
+  let s:ctermshade2 = 236
+  let s:ctermshade3 = 236
+  let s:ctermshade4 = 236
+  let s:ctermshade5 = 236
+  let s:ctermshade6 = 236
+  let s:ctermshade7 = 236
+  let s:ctermaccent0 = 204
+  let s:ctermaccent1 = 209
+  let s:ctermaccent2 = 221
+  let s:ctermaccent3 = 151
+  let s:ctermaccent4 = 109
+  let s:ctermaccent5 = 110
+  let s:ctermaccent6 = 182
+  let s:ctermaccent7 = 182
+  
+  endif
   
 
   highlight clear

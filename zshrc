@@ -28,6 +28,8 @@ alias v='nvim'
 alias cra='npx create-react-app'
 alias py='/usr/local/bin/python3'
 alias pip='/usr/local/bin/pip3'
+alias npmls='npm -g list --depth 0'
+alias bat='bat --theme base16'
 
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
