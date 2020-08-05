@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/briano/Google Drive File Stream/My Drive/University/FIT1048/week-1'
+let g:netrw_dirhist_0='/Users/briano/Google Drive File Stream/My Drive/University/FIT1048'
+let g:netrw_dirhist_9='/Users/briano/Google Drive File Stream/My Drive/University'
+let g:netrw_dirhist_8='/Users/briano/Google Drive File Stream/My Drive'
+let g:netrw_dirhist_7='/Users/briano/Google Drive File Stream'
+let g:netrw_dirhist_6='/Users/briano'
+let g:netrw_dirhist_5='/Users/briano/Google Drive File Stream/My Drive/University/FIT1048/week-1'
+let g:netrw_dirhist_4='/Users/briano/Google Drive File Stream/My Drive/University/FIT1048'
+let g:netrw_dirhist_3='/Users/briano/Google Drive File Stream/My Drive/University'
+let g:netrw_dirhist_2='/Users/briano/Google Drive File Stream/My Drive'

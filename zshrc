@@ -18,6 +18,9 @@ plugins=(
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 
+# Set default text editor to neovim
+export EDITOR=/usr/local/bin/nvim
+
 # Enable Vim key bindings
 bindkey -v
 
@@ -32,6 +35,7 @@ alias bat='bat --theme base16'
 alias cdc='cd ~/code'
 alias cdd='cd ~/Downloads'
 alias cdg='cd ~/Google\ Drive\ File\ Stream/My\ Drive'
+alias cdu='cd ~/Google\ Drive\ File\ Stream/My\ Drive/University'
 
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
