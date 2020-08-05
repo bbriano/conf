@@ -20,17 +20,20 @@ export EDITOR=/usr/local/bin/nvim
 bindkey -v
 
 # Aliases
-alias v='/usr/local/bin/nvim'
-alias py='/usr/local/bin/python3'
-alias pip='/usr/local/bin/pip3'
-alias matlab='/Applications/MATLAB_R2020a.app/bin/matlab'
-alias cra='npx create-react-app'
-alias npmls='npm -g list --depth 0'
-alias bat='bat --theme base16'
+alias v="/usr/local/bin/nvim"
+alias py="/usr/local/bin/python3"
+alias pip="/usr/local/bin/pip3"
+alias matlab="/Applications/MATLAB_R2020a.app/bin/matlab"
+alias cra="npx create-react-app"
+alias npmls="npm -g list --depth 0"
+alias bat="bat --theme base16"
 
 # Common paths
 export c=~/code
 export d=~/Downloads
 export g=~/Google\ Drive\ File\ Stream/My\ Drive
 export u=~/Google\ Drive\ File\ Stream/My\ Drive/University
+export v=~/.config/nvim/init.vim
+
+fortune | cowsay -f "$(cowsay -l | sed '1d' | tr ' ' '\n' | sort -R | head -1)"
 
