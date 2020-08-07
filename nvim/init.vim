@@ -9,12 +9,15 @@ call plug#end()
 
 let mapleader=" "
 nnoremap <Esc> :nohl<CR><C-l>
-nnoremap <Leader><Leader> <C-^>
-nnoremap <Leader>vimrc :e $MYVIMRC<CR>
 noremap CommandP :Files<CR>
 map CommandSlash <plug>NERDCommenterToggle
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+nnoremap <Leader><Leader> <C-^>
+nnoremap <Leader>vimrc :e $MYVIMRC<CR>
+nnoremap <Leader>zshrc :e ~/.zshrc<CR>
+nnoremap <Leader>notes :e ~/n/notes/<CR>
 
 " NERDCommenter
 filetype plugin on
