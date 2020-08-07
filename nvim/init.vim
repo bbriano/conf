@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 let mapleader=" "
@@ -17,6 +18,22 @@ filetype plugin on
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
+
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\   'python': ['mypy'],
+\}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'c': ['clang-format'],
+\   'cpp': ['clang-format'],
+\   'html': ['prettier'],
+\   'css': ['prettier'],
+\   'scss': ['prettier'],
+\   'javascript': ['prettier'],
+\   'markdown': ['prettier'],
+\   'python': ['black'],
+\}
 
 syntax on
 colorscheme dim
