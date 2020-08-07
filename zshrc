@@ -28,12 +28,5 @@ alias cra="npx create-react-app"
 alias npmls="npm -g list --depth 0"
 alias bat="bat --theme base16"
 
-# Common paths
-export c=~/code
-export d=~/Downloads
-export g=~/Google\ Drive\ File\ Stream/My\ Drive
-export u=~/Google\ Drive\ File\ Stream/My\ Drive/University
-export v=~/.config/nvim/init.vim
-
-fortune | cowsay -f "$(cowsay -l | sed '1d' | tr ' ' '\n' | sort -R | head -1)"
-
+# Random forturne cowfile
+alias rfc="fortune | cowsay -f \"\$(cowsay -l | sed '1d' | tr ' ' '\n' | sort -R | head -1)\""
