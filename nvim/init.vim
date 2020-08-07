@@ -3,6 +3,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let mapleader=" "
@@ -13,7 +15,6 @@ map CommandSlash <plug>NERDCommenterToggle
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Nerd commenter shit
 filetype plugin on
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
@@ -35,8 +36,13 @@ let g:ale_fixers = {
 \   'python': ['black'],
 \}
 
+" vim-gitgutter
+set updatetime=100
+
 syntax on
 colorscheme dim
+highlight clear SignColumn
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -54,4 +60,3 @@ set relativenumber
 set ignorecase
 
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
-
