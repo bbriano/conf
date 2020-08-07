@@ -5,9 +5,12 @@ Plug 'preservim/nerdcommenter'
 call plug#end()
 
 let mapleader=" "
-nmap <Esc> :nohl<CR><C-l>
-nmap CommandP :Files<CR>
+nnoremap <Esc> :nohl<CR><C-l>
+nnoremap <Leader><Leader> <C-^>
+noremap CommandP :Files<CR>
 map CommandSlash <plug>NERDCommenterToggle
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Nerd commenter shit
 filetype plugin on
