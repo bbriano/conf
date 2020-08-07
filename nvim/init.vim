@@ -15,11 +15,13 @@ map CommandSlash <plug>NERDCommenterToggle
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" NERDCommenter
 filetype plugin on
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 
+" ALE
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
 \   'python': ['mypy'],
@@ -36,7 +38,7 @@ let g:ale_fixers = {
 \   'python': ['black'],
 \}
 
-" vim-gitgutter
+" Vim Gutter
 set updatetime=100
 
 syntax on
