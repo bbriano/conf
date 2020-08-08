@@ -6,6 +6,8 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 let mapleader=" "
