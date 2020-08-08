@@ -72,3 +72,7 @@ set mouse=a
 set hidden
 
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
+
+" Automatically save and load view
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
