@@ -69,5 +69,6 @@ set laststatus=0
 set relativenumber
 set ignorecase
 set mouse=a
+set hidden
 
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
