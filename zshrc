@@ -16,6 +16,9 @@ source $ZSH/oh-my-zsh.sh
 # Set default editor
 export EDITOR=/usr/local/bin/nvim
 
+# Set ripgrep as default source for fzf
+export FZF_DEFAULT_COMMAND='rg --files'
+
 # Use Vim key bindings
 bindkey -v
 
