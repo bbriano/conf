@@ -5,6 +5,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 call plug#end()
 
 let mapleader=" "
