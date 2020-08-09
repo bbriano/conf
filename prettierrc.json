@@ -1,6 +1,7 @@
 {
     "proseWrap": "always",
     "tabWidth": 4,
+    "singleQuote": true,
     "overrides": [
         {
             "files": "*.md",
