@@ -8,6 +8,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 let mapleader=" "
