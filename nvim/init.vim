@@ -22,6 +22,11 @@ nnoremap <Leader>vimrc :e $MYVIMRC<CR>
 nnoremap <Leader>zshrc :e ~/.zshrc<CR>
 nnoremap <Leader>notes :e ~/n/notes/<CR>
 
+" NERDCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+
 " ALE
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
