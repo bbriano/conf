@@ -19,9 +19,6 @@ export EDITOR=/usr/local/bin/nvim
 # Set ripgrep as default source for fzf
 export FZF_DEFAULT_COMMAND='rg --files'
 
-# Use Vim key bindings
-bindkey -v
-
 # Aliases
 alias v="/usr/local/bin/nvim"
 alias py="/usr/local/bin/python3"
