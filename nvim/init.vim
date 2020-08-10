@@ -22,6 +22,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Commands
 command! Vimrc :e $MYVIMRC
 command! Zshrc :e ~/.zshrc
+command! TmuxConf :e ~/.tmux.conf
 command! Notes :e ~/n/notes/
 
 " NERDCommenter
