@@ -28,6 +28,7 @@ alias cra="npx create-react-app"
 alias npmls="npm -g list --depth 0"
 alias bat="bat --theme base16"
 alias tree="tree -I node_modules"
+alias mars="java -jar /Users/briano/n/uni/FIT1008/Mars4_5.jar"
 
 # Random forturne cowfile
 alias rfc="fortune | cowsay -f \"\$(cowsay -l | sed '1d' | tr ' ' '\n' | sort -R | head -1)\""
