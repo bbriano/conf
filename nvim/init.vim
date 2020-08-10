@@ -11,16 +11,18 @@ Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
+" Key mappings
 let mapleader=" "
 nnoremap <Esc> :nohl<CR><C-l>
+nnoremap <Leader><Leader> <C-^>
 noremap <Leader>p :Files<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-nnoremap <Leader><Leader> <C-^>
-nnoremap <Leader>vimrc :e $MYVIMRC<CR>
-nnoremap <Leader>zshrc :e ~/.zshrc<CR>
-nnoremap <Leader>notes :e ~/n/notes/<CR>
+" Commands
+command! Vimrc :e $MYVIMRC
+command! Zshrc :e ~/.zshrc
+command! Notes :e ~/n/notes/
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1
@@ -49,10 +51,12 @@ let g:ale_fixers = {
 " Vim Gutter
 set updatetime=100
 
+" UI
 syntax on
 colorscheme dim
 highlight clear SignColumn
 
+" Basics
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -71,4 +75,5 @@ set ignorecase
 set mouse=a
 set hidden
 
+" Overwrites
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
