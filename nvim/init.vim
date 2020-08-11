@@ -11,24 +11,14 @@ Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
-" Key mappings
-let mapleader=" "
-nnoremap <Esc> :nohl<CR><C-l>
-nnoremap <Leader><Leader> <C-^>
-noremap <C-p> :Files<CR>
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-" Commands
-command! Vimrc :e $MYVIMRC
-command! Zshrc :e ~/.zshrc
-command! TmuxConf :e ~/.tmux.conf
-command! Notes :e ~/n/notes/
+" fzf
+nnoremap <C-p> :Files<CR>
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
+nmap <Leader>/ <plug>NERDCommenterToggle
 
 " ALE
 let g:ale_fix_on_save = 1
@@ -48,16 +38,27 @@ let g:ale_fixers = {
 \   'markdown': ['prettier'],
 \   'python': ['black'],
 \}
+nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
+nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Vim Gutter
 set updatetime=100
 
-" UI
+" Mappings
+let mapleader=" "
+nnoremap <C-l> :nohl<CR><C-l>
+nnoremap <Leader><Leader> <C-^>
+
+" Commands
+command! Vimrc :e $MYVIMRC
+command! Zshrc :e ~/.zshrc
+command! TmuxConf :e ~/.tmux.conf
+command! Notes :e ~/n/notes/
+
+" Basics
 syntax on
 colorscheme dim
 highlight clear SignColumn
-
-" Basics
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
