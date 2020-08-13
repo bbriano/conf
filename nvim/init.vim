@@ -48,6 +48,7 @@ set updatetime=100
 let mapleader=" "
 nnoremap <C-l> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
+tnoremap <Esc> <C-\><C-n>
 
 " Commands
 command! Vimrc :e $MYVIMRC
