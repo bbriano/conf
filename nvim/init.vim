@@ -48,6 +48,7 @@ set updatetime=100
 let mapleader=" "
 nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
+nnoremap <Leader>r :%s///g<Left><Left>
 tnoremap <Esc> <C-\><C-n>
 
 " Commands
