@@ -33,12 +33,6 @@ nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <C-p> :Files<CR>
 
-" Commands
-command! Vimrc :e $MYVIMRC
-command! Zshrc :e ~/.zshrc
-command! TmuxConf :e ~/.tmux.conf
-command! Notes :e ~/n/notes/
-
 " Basics
 syntax on
 colorscheme dim
