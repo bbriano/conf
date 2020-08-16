@@ -14,11 +14,7 @@ call plug#end()
 
 " ALE
 let g:ale_fix_on_save = 1
-let g:ale_linters = {
-\   'python': ['mypy'],
-\   'markdown': [],
-\   'asm': [],
-\}
+let g:ale_linters = { '*': [] }
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'c': ['clang-format'],
@@ -37,8 +33,6 @@ nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <C-p> :Files<CR>
-nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
-nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Commands
 command! Vimrc :e $MYVIMRC
