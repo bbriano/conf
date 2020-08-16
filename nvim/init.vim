@@ -12,7 +12,10 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 " ALE
-let g:ale_enabled = 0
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\   'python': ['mypy'],
+\}
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -36,6 +39,7 @@ nnoremap <C-p> :Files<CR>
 " Basics
 syntax on
 colorscheme dim
+highlight clear SignColumn
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
