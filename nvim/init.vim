@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'jiangmiao/auto-pairs'
@@ -43,7 +42,6 @@ command! Notes :e ~/n/notes/
 " Basics
 syntax on
 colorscheme dim
-highlight clear SignColumn
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
