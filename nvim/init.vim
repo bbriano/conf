@@ -46,7 +46,7 @@ set updatetime=100
 
 " Mappings
 let mapleader=" "
-nnoremap <C-l> :nohl<CR><C-l>
+nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
 tnoremap <Esc> <C-\><C-n>
 
