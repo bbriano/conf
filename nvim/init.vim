@@ -40,19 +40,18 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set number
-set relativenumber
-set nowrap
-set laststatus=0
-set hidden
-set noswapfile
-set nobackup
-set nowritebackup
 set incsearch
 set ignorecase
 set smartcase
+set number
+set relativenumber
+set nowrap
+set hidden
+set laststatus=0
 set mouse=a
-set updatetime=100
+set noswapfile
+set nobackup
+set nowritebackup
 
 " Overwrites
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
