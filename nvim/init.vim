@@ -73,7 +73,7 @@ set nobackup
 set nowritebackup
 set incsearch
 set laststatus=0
-" set relativenumber
+set relativenumber
 set ignorecase
 set mouse=a
 set hidden
