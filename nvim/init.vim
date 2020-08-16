@@ -36,6 +36,7 @@ nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <C-p> :Files<CR>
 nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
 nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
+tnoremap <Esc> <C-\><C-n>
 
 syntax on
 colorscheme dim
