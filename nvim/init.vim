@@ -12,8 +12,8 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 " ALE
+let g:ale_enabled = 0
 let g:ale_fix_on_save = 1
-let g:ale_linters = { '*': [] }
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'c': ['clang-format'],
