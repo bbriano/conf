@@ -1,24 +1,16 @@
 call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
-Plug 'dense-analysis/ale'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
-Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 call plug#end()
-
-" fzf
-nnoremap <C-p> :Files<CR>
-
-" NERDCommenter
-let g:NERDSpaceDelims = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDCommentEmptyLines = 1
 
 " ALE
 let g:ale_fix_on_save = 1
@@ -38,18 +30,20 @@ let g:ale_fixers = {
 \   'markdown': ['prettier'],
 \   'python': ['black'],
 \}
-nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
-nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Vim Gutter
-set updatetime=100
+" NERDCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
 
 " Mappings
 let mapleader=" "
 nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>r :%s///g<Left><Left>
-tnoremap <Esc> <C-\><C-n>
+nnoremap <C-p> :Files<CR>
+nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
+nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Commands
 command! Vimrc :e $MYVIMRC
@@ -65,18 +59,19 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set nu
+set number
+set relativenumber
 set nowrap
-set smartcase
+set laststatus=0
+set hidden
 set noswapfile
 set nobackup
 set nowritebackup
 set incsearch
-set laststatus=0
-set relativenumber
 set ignorecase
+set smartcase
 set mouse=a
-set hidden
+set updatetime=100
 
 " Overwrites
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
