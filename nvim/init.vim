@@ -11,7 +11,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 call plug#end()
 
-" ALE
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \   'python': ['mypy'],
@@ -29,14 +28,12 @@ let g:ale_fixers = {
 \   'python': ['black'],
 \}
 
-" Mappings
 let mapleader=" "
 nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <C-p> :Files<CR>
 
-" Basics
 syntax on
 colorscheme dim
 highlight clear SignColumn
@@ -57,5 +54,4 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-" Overwrites
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
