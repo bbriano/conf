@@ -18,7 +18,6 @@ nnoremap <C-p> :Files<CR>
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
-nmap <Leader>/ <plug>NERDCommenterToggle
 
 " ALE
 let g:ale_fix_on_save = 1
