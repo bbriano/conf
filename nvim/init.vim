@@ -5,6 +5,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'machakann/vim-highlightedyank'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -31,6 +32,8 @@ let g:ale_fixers = {
 \   'json': ['prettier'],
 \}
 
+let g:highlightedyank_highlight_duration = 150
+
 let mapleader=" "
 nnoremap Y y$
 nnoremap <Esc> :nohl<CR><C-l>
@@ -56,6 +59,7 @@ set relativenumber
 set nowrap
 set hidden
 set laststatus=0
+highlight HighlightedyankRegion ctermbg=Yellow
 set mouse=a
 set noswapfile
 set nobackup
