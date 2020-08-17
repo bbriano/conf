@@ -22,13 +22,13 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'c': ['clang-format'],
 \   'cpp': ['clang-format'],
+\   'python': ['black'],
+\   'markdown': ['prettier'],
 \   'html': ['prettier'],
 \   'css': ['prettier'],
 \   'scss': ['prettier'],
 \   'javascript': ['prettier'],
 \   'json': ['prettier'],
-\   'markdown': ['prettier'],
-\   'python': ['black'],
 \}
 
 let mapleader=" "
