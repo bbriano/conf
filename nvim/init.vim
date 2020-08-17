@@ -57,7 +57,6 @@ set nowrap
 set hidden
 set laststatus=0
 set mouse=a
-set clipboard=unnamedplus
 set noswapfile
 set nobackup
 set nowritebackup
