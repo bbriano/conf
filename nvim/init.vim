@@ -30,6 +30,7 @@ let g:ale_fixers = {
 \}
 
 let mapleader=" "
+nnoremap Y y$
 nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>r :%s///g<Left><Left>
