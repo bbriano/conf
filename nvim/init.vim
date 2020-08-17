@@ -12,9 +12,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 call plug#end()
 
-let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \   'python': ['mypy'],
+\   'markdown': [],
+\   'asm': [],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
@@ -25,6 +26,7 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'scss': ['prettier'],
 \   'javascript': ['prettier'],
+\   'json': ['prettier'],
 \   'markdown': ['prettier'],
 \   'python': ['black'],
 \}
@@ -35,8 +37,8 @@ nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <C-p> :Files<CR>
-nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
-nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-{> <Plug>(ale_previous_wrap)
+nmap <silent> <C-}> <Plug>(ale_next_wrap)
 tnoremap <Esc> <C-\><C-n>
 
 syntax on
