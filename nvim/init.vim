@@ -47,24 +47,13 @@ tnoremap <Esc> <C-\><C-n>
 syntax on
 colorscheme dim
 highlight clear SignColumn
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set incsearch
-set ignorecase
-set smartcase
-set number
-set relativenumber
-set nowrap
-set hidden
-set laststatus=0
 highlight HighlightedyankRegion ctermbg=Yellow
+set noswapfile nobackup nowritebackup updatetime=0
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set incsearch ignorecase smartcase
+set nowrap hidden laststatus=0
+set number relativenumber
 set mouse=a
-set noswapfile
-set nobackup
-set nowritebackup
-set updatetime=0
 
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2 commentstring=<!--\ %s\ -->
 autocmd FileType asm setlocal commentstring=#\ %s
