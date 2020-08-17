@@ -37,8 +37,6 @@ nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <C-p> :Files<CR>
 nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
 nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
-nnoremap <Leader>c :Commentary<CR>
-vnoremap <Leader>c :Commentary<CR>
 tnoremap <Esc> <C-\><C-n>
 
 syntax on
