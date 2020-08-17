@@ -62,5 +62,5 @@ set nobackup
 set nowritebackup
 set updatetime=0
 
-autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
+autocmd Filetype markdown setlocal ts=2 sts=2 sw=2 commentstring=<!--\ %s\ -->
 autocmd FileType asm setlocal commentstring=#\ %s
