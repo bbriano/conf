@@ -39,6 +39,7 @@ nnoremap Y y$
 nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>r :%s///g<Left><Left>
+vnoremap <Leader>r :s///g<Left><Left>
 nnoremap <C-p> :Files<CR>
 nmap <silent> <C-{> <Plug>(ale_previous_wrap)
 nmap <silent> <C-}> <Plug>(ale_next_wrap)
