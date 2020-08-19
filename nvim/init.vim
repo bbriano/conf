@@ -36,6 +36,8 @@ let g:highlightedyank_highlight_duration = 150
 
 let mapleader=" "
 nnoremap Y y$
+nnoremap cw dwi
+nnoremap cW dWi
 nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>r :%s///g<Left><Left>
