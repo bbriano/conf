@@ -49,6 +49,7 @@ nmap <silent> <C-{> <Plug>(ale_previous_wrap)
 nmap <silent> <C-}> <Plug>(ale_next_wrap)
 tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
+nnoremap - :Explore<CR>
 
 syntax on
 colorscheme dim
