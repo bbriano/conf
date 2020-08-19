@@ -33,6 +33,7 @@ let g:ale_fixers = {
 \}
 
 let g:highlightedyank_highlight_duration = 150
+let g:vim_markdown_new_list_item_indent = 0
 
 let mapleader=" "
 nnoremap Y y$
