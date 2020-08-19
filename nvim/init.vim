@@ -59,7 +59,6 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set incsearch ignorecase smartcase
 set hidden laststatus=0 nowrap number
 set clipboard+=unnamedplus
-set mouse=a
 
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2 commentstring=<!--\ %s\ -->
 autocmd FileType asm setlocal commentstring=#\ %s
