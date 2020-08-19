@@ -57,6 +57,8 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
 nnoremap - :Explore<CR>
 
+" TODO Make this automatic on save (after prettier)
+command! -nargs=0 W :%s/\(^\#\+.*\)\n\n/\1\r/g | :noa w | :nohl
 
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2 commentstring=<!--\ %s\ -->
 autocmd FileType asm setlocal commentstring=#\ %s
