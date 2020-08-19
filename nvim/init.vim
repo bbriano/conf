@@ -36,6 +36,12 @@ let g:ale_fixers = {
 let g:highlightedyank_highlight_duration = 150
 let g:vim_markdown_new_list_item_indent = 0
 
+set noswapfile nobackup nowritebackup updatetime=0
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set incsearch ignorecase smartcase
+set hidden laststatus=0 nowrap number
+set clipboard+=unnamedplus
+
 let mapleader=" "
 nnoremap Y y$
 nnoremap cw dwi
@@ -51,11 +57,6 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
 nnoremap - :Explore<CR>
 
-set noswapfile nobackup nowritebackup updatetime=0
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-set incsearch ignorecase smartcase
-set hidden laststatus=0 nowrap number
-set clipboard+=unnamedplus
 
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2 commentstring=<!--\ %s\ -->
 autocmd FileType asm setlocal commentstring=#\ %s
