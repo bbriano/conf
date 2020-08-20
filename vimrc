@@ -53,7 +53,6 @@ nmap <silent> <C-{> <Plug>(ale_previous_wrap)
 nmap <silent> <C-}> <Plug>(ale_next_wrap)
 tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
-nnoremap - :Explore<CR>
 
 " TODO Make this automatic on save (after prettier)
 command! -nargs=0 W :%s/\(^\#\+.*\)\n\n/\1\r/g | :noa w | :nohl
