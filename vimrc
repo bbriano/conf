@@ -44,8 +44,6 @@ set clipboard+=unnamedplus
 
 let mapleader=" "
 nnoremap Y y$
-nnoremap cw dwi
-nnoremap cW dWi
 nnoremap <Esc> :nohl<CR><C-l>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>s :%s///g<Left><Left>
