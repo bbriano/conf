@@ -49,8 +49,8 @@ nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>s :%s///g<Left><Left>
 vnoremap <Leader>s :s///g<Left><Left>
 nnoremap <C-p> :Files<CR>
-nmap <silent> <C-{> <Plug>(ale_previous_wrap)
-nmap <silent> <C-}> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
 
