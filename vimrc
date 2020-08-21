@@ -55,9 +55,6 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
 
-" TODO Make this automatic on save (after prettier)
-command! -nargs=0 W :%s/\(^\#\+.*\)\n\n/\1\r/g | :noa w | :nohl
-
 autocmd Filetype cpp setlocal commentstring=//\ %s
 autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
 autocmd FileType asm setlocal commentstring=#\ %s
