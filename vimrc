@@ -20,6 +20,9 @@ set nowrap
 " Show number columns
 set number
 
+" Don't abondon buffer if all window on that buffer is closed
+set hidden
+
 " Disable cursor styling
 set guicursor=
 
