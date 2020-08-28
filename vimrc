@@ -5,11 +5,24 @@
 " No swap files!
 set noswapfile nobackup nowritebackup updatetime=0
 
-" 4 space indentations. <Tab> creates spaces
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+" Indentation
+set expandtab
+set shiftwidth=4
+set softtabstop=-1
+autocmd Filetype markdown setlocal shiftwidth=2
+autocmd Filetype html setlocal shiftwidth=2
+autocmd Filetype css setlocal shiftwidth=2
+autocmd Filetype scss setlocal shiftwidth=2
+autocmd Filetype json setlocal shiftwidth=2
+autocmd Filetype javascript setlocal shiftwidth=2
+autocmd Filetype javascriptreact setlocal shiftwidth=2
+autocmd Filetype typescript setlocal shiftwidth=2
+autocmd Filetype typescriptreact setlocal shiftwidth=2
 
-" Search settings
-set incsearch ignorecase smartcase
+" Search
+set incsearch
+set ignorecase
+set smartcase
 
 " Hide status bar when only 1 window is opened
 set laststatus=1
@@ -103,8 +116,11 @@ let g:ale_fixers = {
 \   'html': ['prettier'],
 \   'css': ['prettier'],
 \   'scss': ['prettier'],
-\   'javascript': ['prettier'],
 \   'json': ['prettier'],
+\   'javascript': ['prettier'],
+\   'javascriptreact': ['prettier'],
+\   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
 \}
 let g:highlightedyank_highlight_duration = 150
 
