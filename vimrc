@@ -3,7 +3,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " No swap files!
-set noswapfile nobackup nowritebackup updatetime=0
+set noswapfile
+set nobackup
+set nowritebackup
+set updatetime=0
 
 " Indentation
 set expandtab
