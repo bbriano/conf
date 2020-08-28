@@ -34,16 +34,16 @@ let g:vim_markdown_new_list_item_indent = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader=" "
-nnoremap Y y$
-nnoremap <Esc> :nohl<CR><C-l>
-nnoremap <Leader><Leader> <C-^>
-nnoremap <Leader>s :%s///g<Left><Left>
-vnoremap <Leader>s :s///g<Left><Left>
-nnoremap <C-p> :Files<CR>
+nmap Y y$
+nmap <Esc> :nohl<CR><C-l>
+nmap <Leader><Leader> <C-^>
+nmap <Leader>s :%s///g<Left><Left>
+vmap <Leader>s :s///g<Left><Left>
+nmap <C-p> :Files<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-tnoremap <Esc> <C-\><C-n>
-nnoremap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
+tmap <Esc> <C-\><C-n>
+nmap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "       PLUGINS
