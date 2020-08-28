@@ -1,40 +1,6 @@
-call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'dense-analysis/ale'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'vim-scripts/ReplaceWithRegister'
-call plug#end()
-
-let g:ale_linters = {
-\   'python': ['mypy'],
-\   'markdown': [],
-\   'asm': [],
-\}
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'c': ['clang-format'],
-\   'cpp': ['clang-format'],
-\   'python': ['black'],
-\   'markdown': ['prettier'],
-\   'html': ['prettier'],
-\   'css': ['prettier'],
-\   'scss': ['prettier'],
-\   'javascript': ['prettier'],
-\   'json': ['prettier'],
-\}
-let g:highlightedyank_highlight_duration = 150
-let g:vim_markdown_new_list_item_indent = 0
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"       BASICS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " No swap files!
 set noswapfile nobackup nowritebackup updatetime=0
@@ -57,8 +23,12 @@ set number
 " Disable cursor styling
 set guicursor=
 
-" Hide cursor coordinate and display position in status line
-set noruler
+" Don't indent when inserting new line in markdown lists
+let g:vim_markdown_new_list_item_indent = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"       MAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader=" "
 nnoremap Y y$
@@ -72,9 +42,56 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"       PLUGINS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/ReplaceWithRegister'
+call plug#end()
+
+" ALE
+let g:ale_linters = {
+\   'python': ['mypy'],
+\   'markdown': [],
+\   'asm': [],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'c': ['clang-format'],
+\   'cpp': ['clang-format'],
+\   'python': ['black'],
+\   'markdown': ['prettier'],
+\   'html': ['prettier'],
+\   'css': ['prettier'],
+\   'scss': ['prettier'],
+\   'javascript': ['prettier'],
+\   'json': ['prettier'],
+\}
+let g:highlightedyank_highlight_duration = 150
+
+" vim-commentary
 autocmd Filetype cpp setlocal commentstring=//\ %s
 autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
 autocmd FileType asm setlocal commentstring=#\ %s
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"       HIGHLIGHTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 highlight SpecialKey    ctermfg=4
 highlight TermCursor    cterm=reverse
