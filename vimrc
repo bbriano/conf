@@ -20,7 +20,7 @@ set nowrap
 " Show number columns
 set number
 
-" Don't abondon buffer if all window on that buffer is closed
+" Allow hidden buffers
 set hidden
 
 " Disable cursor styling
@@ -33,17 +33,38 @@ let g:vim_markdown_new_list_item_indent = 0
 "       MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Space map leader
 let mapleader=" "
+
+" Make Y more consistent with C and D
 nmap Y y$
+
+" Clear highlights
 nmap <Esc> :nohl<CR><C-l>
+
+" Jump to last opened buffer
 nmap <Leader><Leader> <C-^>
+
+" Substitute highlighted words
 nmap <Leader>s :%s///g<Left><Left>
 vmap <Leader>s :s///g<Left><Left>
+
+" Fuzzy find files in current working directory
 nmap <C-p> :Files<CR>
+
+" Jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" <Esc> to exit insert mode in terminal mode
 tmap <Esc> <C-\><C-n>
+
+" Toggle gutter
 nmap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
+
+" Cycle through buffers
+nmap <Tab> :bnext<CR>
+nmap <S-Tab> :bprevious<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "       PLUGINS
