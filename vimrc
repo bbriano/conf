@@ -36,11 +36,29 @@ let g:ale_fixers = {
 let g:highlightedyank_highlight_duration = 150
 let g:vim_markdown_new_list_item_indent = 0
 
+" No swap files!
 set noswapfile nobackup nowritebackup updatetime=0
+
+" 4 space indentations. <Tab> creates spaces
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
+" Search settings
 set incsearch ignorecase smartcase
-set hidden laststatus=0 nowrap number
-set clipboard+=unnamedplus
+
+" Hide status bar when only 1 window is opened
+set laststatus=1
+
+" Disable text wrapping
+set nowrap
+
+" Show number columns
+set number
+
+" Disable cursor styling
+set guicursor=
+
+" Hide cursor coordinate and display position in status line
+set noruler
 
 let mapleader=" "
 nnoremap Y y$
