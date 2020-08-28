@@ -149,4 +149,4 @@ highlight StatusLine    ctermfg=15      ctermbg=8       cterm=bold
 highlight StatusLineNC  ctermfg=7       ctermbg=8       cterm=NONE
 highlight VertSplit     ctermfg=7       ctermbg=8       cterm=NONE
 highlight SignColumn    ctermfg=7       ctermbg=NONE
-highlight HighlightedyankRegion         ctermbg=3
+highlight HighlightedyankRegion ctermfg=0 ctermbg=11
