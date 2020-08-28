@@ -100,7 +100,7 @@ highlight DiffText      ctermfg=0       ctermbg=11      cterm=bold
 highlight Visual        ctermfg=NONE    ctermbg=NONE    cterm=inverse
 highlight Search        ctermfg=0       ctermbg=11
 highlight LineNr        ctermfg=8
-highlight Comment       ctermfg=8
+highlight Comment       ctermfg=4
 highlight ColorColumn   ctermfg=7       ctermbg=8
 highlight Folded        ctermfg=7       ctermbg=8
 highlight FoldColumn    ctermfg=7       ctermbg=8
