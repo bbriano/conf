@@ -69,6 +69,9 @@ vmap <Leader>s :s///g<Left><Left>
 " Fuzzy find files in current working directory
 nmap <C-p> :Files<CR>
 
+" Fuzzy find files 'home' directory
+nmap <C-n> :Files ~/n<CR>
+
 " Jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
