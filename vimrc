@@ -33,8 +33,9 @@ set laststatus=1
 " Disable text wrapping
 set nowrap
 
-" Show number columns
+" Show number columns (except in terminal mode)
 set number
+autocmd TermOpen * set nonumber
 
 " Allow hidden buffers
 set hidden
