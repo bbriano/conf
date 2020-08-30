@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""BASICS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" BASICS
 
 " No swap files!
 set noswapfile
@@ -44,7 +44,7 @@ set guicursor=
 let g:vim_markdown_new_list_item_indent = 0
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""MAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" MAPPINGS
 
 " Space map leader
 let mapleader=" "
@@ -86,7 +86,7 @@ nmap <silent> <Leader>d :bdelete<CR>
 nmap <Leader>mp <Plug>MarkdownPreview
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""PLUGINS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" PLUGINS
 
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
@@ -147,7 +147,7 @@ autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
 autocmd FileType asm setlocal commentstring=#\ %s
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""HIGHLIGHTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" HIGHLIGHTS
 
 highlight SpecialKey    ctermfg=4
 highlight TermCursor    cterm=reverse
