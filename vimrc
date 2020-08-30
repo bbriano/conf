@@ -126,6 +126,9 @@ let g:ale_fixers = {
 \   'typescriptreact': ['prettier'],
 \}
 
+" Don't close the preview the markdown window is closed
+let g:mkdp_auto_close = 0
+
 " vim-highlightedyank
 let g:highlightedyank_highlight_duration = 150
 
