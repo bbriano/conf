@@ -176,7 +176,7 @@ highlight Type          ctermfg=2
 highlight Underlined    cterm=underline ctermfg=5
 highlight Ignore        ctermfg=15
 highlight Error         ctermfg=15      ctermbg=9
-highlight Todo          ctermfg=0       ctermbg=11
+highlight Todo          ctermfg=0       ctermbg=12
 highlight DiffAdd       ctermfg=0       ctermbg=2
 highlight DiffChange    ctermfg=0       ctermbg=3
 highlight DiffDelete    ctermfg=0       ctermbg=1
