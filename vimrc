@@ -82,6 +82,9 @@ tmap <Esc> <C-\><C-n>
 nmap <silent> <Tab> :bnext"<CR>
 nmap <silent> <S-Tab> :bprevious<CR>
 
+" Close buffer
+nmap <silent> <Leader>d :bdelete<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "       PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
