@@ -6,7 +6,7 @@
 set noswapfile
 set nobackup
 set nowritebackup
-set updatetime=0
+set updatetime=10
 
 " Indentation
 set expandtab
