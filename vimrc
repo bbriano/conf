@@ -82,6 +82,9 @@ nmap <silent> <S-Tab> :bprevious<CR>
 " Close buffer
 nmap <silent> <Leader>d :bdelete<CR>
 
+" Preview markdown in browser
+nmap <Leader>mp <Plug>MarkdownPreview
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""PLUGINS
 
