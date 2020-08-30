@@ -80,7 +80,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 tmap <Esc> <C-\><C-n>
 
 " Toggle gutter
-nmap <Leader>g :GitGutterToggle<CR>:ALEToggle<CR>
+nmap <Leader>g :GitGutterToggle<CR>
 
 " Cycle through buffers
 nmap <Tab> :bnext<CR>
@@ -107,7 +107,8 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ReplaceWithRegister'
 call plug#end()
 
-" ALE
+" ale
+let g:ale_set_signs = 0
 let g:ale_linters = {
 \   'python': ['mypy'],
 \   'markdown': [],
