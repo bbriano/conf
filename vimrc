@@ -130,6 +130,8 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
 \}
+
+" vim-highlightedyank
 let g:highlightedyank_highlight_duration = 150
 
 " vim-polyglot
