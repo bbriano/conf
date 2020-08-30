@@ -1,6 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"       BASICS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""BASICS
 
 " No swap files!
 set noswapfile
@@ -45,9 +43,8 @@ set guicursor=
 " Don't indent when inserting new line in markdown lists
 let g:vim_markdown_new_list_item_indent = 0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"       MAPPINGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""MAPPINGS
 
 " Space map leader
 let mapleader=" "
@@ -85,9 +82,8 @@ nmap <silent> <S-Tab> :bprevious<CR>
 " Close buffer
 nmap <silent> <Leader>d :bdelete<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"       PLUGINS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""PLUGINS
 
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
@@ -142,9 +138,8 @@ autocmd Filetype cpp setlocal commentstring=//\ %s
 autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
 autocmd FileType asm setlocal commentstring=#\ %s
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"       HIGHLIGHTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""HIGHLIGHTS
 
 highlight SpecialKey    ctermfg=4
 highlight TermCursor    cterm=reverse
