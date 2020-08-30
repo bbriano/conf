@@ -32,3 +32,5 @@ alias mars="java -jar /Users/briano/n/uni/FIT1008/Mars4_5.jar"
 
 # Random forturne cowfile
 alias rfc="fortune | cowsay -f \"\$(cowsay -l | sed '1d' | tr ' ' '\n' | sort -R | head -1)\""
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
