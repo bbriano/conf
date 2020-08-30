@@ -33,9 +33,8 @@ set laststatus=1
 " Disable text wrapping
 set nowrap
 
-" Show number columns (except in terminal mode)
-set number
-autocmd TermOpen * set nonumber
+" Always show sign column
+set signcolumn=yes
 
 " Allow hidden buffers
 set hidden
@@ -78,9 +77,6 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " <Esc> to exit insert mode in terminal mode
 tmap <Esc> <C-\><C-n>
-
-" Toggle gutter
-nmap <Leader>g :GitGutterToggle<CR>
 
 " Cycle through buffers
 nmap <Tab> :bnext<CR>
