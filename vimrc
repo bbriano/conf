@@ -104,6 +104,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'wookayin/imagepaste.vim'
 call plug#end()
 
 " ale
