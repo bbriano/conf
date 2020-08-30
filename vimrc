@@ -102,6 +102,9 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ReplaceWithRegister'
 call plug#end()
 
+" fzf
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+
 " ale
 let g:ale_set_signs = 0
 let g:ale_linters = {
