@@ -132,6 +132,9 @@ let g:ale_fixers = {
 \}
 let g:highlightedyank_highlight_duration = 150
 
+" vim-polyglot
+let g:python_highlight_space_errors = 0
+
 " vim-commentary
 autocmd Filetype cpp setlocal commentstring=//\ %s
 autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
