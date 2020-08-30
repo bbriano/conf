@@ -56,7 +56,7 @@ let mapleader=" "
 nmap Y y$
 
 " Clear highlights
-nmap <Esc> :nohl<CR><C-l>
+nmap <silent> <Esc> :nohl<CR><C-l>
 
 " Jump to last opened buffer
 nmap <Leader><Leader> <C-^>
@@ -79,8 +79,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 tmap <Esc> <C-\><C-n>
 
 " Cycle through buffers
-nmap <Tab> :bnext<CR>
-nmap <S-Tab> :bprevious<CR>
+nmap <silent> <Tab> :bnext"<CR>
+nmap <silent> <S-Tab> :bprevious<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "       PLUGINS
