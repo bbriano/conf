@@ -1,205 +1,58 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" BASICS
-
-" No swap files!
-set noswapfile
-set nobackup
-set nowritebackup
-set updatetime=10
-
-" Indentation
-set expandtab
-set shiftwidth=4
-set softtabstop=-1
-autocmd Filetype markdown setlocal shiftwidth=2
-autocmd Filetype html setlocal shiftwidth=2
-autocmd Filetype css setlocal shiftwidth=2
-autocmd Filetype scss setlocal shiftwidth=2
-autocmd Filetype json setlocal shiftwidth=2
-autocmd Filetype javascript setlocal shiftwidth=2
-autocmd Filetype javascriptreact setlocal shiftwidth=2
-autocmd Filetype typescript setlocal shiftwidth=2
-autocmd Filetype typescriptreact setlocal shiftwidth=2
-
-" Search
-set incsearch
-set ignorecase
-set smartcase
-
-" Hide status bar when only 1 window is opened
-set laststatus=1
-
-" Disable text wrapping
-set nowrap
-
-" Always show sign column
-set signcolumn=yes
-
-" Allow hidden buffers
-set hidden
-
-" Disable cursor styling
-set guicursor=
-
-" Don't indent when inserting new line in markdown lists
-let g:vim_markdown_new_list_item_indent = 0
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" MAPPINGS
-
-" Space map leader
-let mapleader=" "
-
-" Make Y more consistent with C and D
-nmap Y y$
-
-" Clear highlights
-nmap <silent> <Esc> :nohl<CR><C-l>
-
-" Jump to last opened buffer
-nmap <Leader><Leader> <C-^>
-
-" Substitute highlighted words
-nmap <Leader>s :%s///g<Left><Left>
-vmap <Leader>s :s///g<Left><Left>
-
-" Fuzzy find files in current working directory
-nmap <C-p> :Files<CR>
-
-" Fuzzy find files 'home' directory
-nmap <C-n> :Files ~/n<CR>
-
-" Jump to errors
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-" <Esc> to exit insert mode in terminal mode
-tmap <Esc> <C-\><C-n>
-
-" Cycle through buffers
-nmap <silent> <Tab> :bnext"<CR>
-nmap <silent> <S-Tab> :bprevious<CR>
-
-" Close buffer
-nmap <silent> <Leader>d :bdelete<CR>
-
-" Preview markdown in browser
-nmap <Leader>mp <Plug>MarkdownPreview
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" PLUGINS
-
 call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'dense-analysis/ale'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-" Plug 'jiangmiao/auto-pairs'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim'
 Plug 'sheerun/vim-polyglot'
+Plug 'theprimeagen/vim-be-good'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/ReplaceWithRegister'
 call plug#end()
-
-" fzf
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-
-" ale
-let g:ale_set_signs = 0
-let g:ale_linters = {
-\   'python': ['mypy'],
-\   'markdown': [],
-\   'asm': [],
-\}
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'c': ['clang-format'],
-\   'cpp': ['clang-format'],
-\   'python': ['black'],
-\   'markdown': ['prettier'],
-\   'html': ['prettier'],
-\   'css': ['prettier'],
-\   'scss': ['prettier'],
-\   'json': ['prettier'],
-\   'javascript': ['prettier'],
-\   'javascriptreact': ['prettier'],
-\   'typescript': ['prettier'],
-\   'typescriptreact': ['prettier'],
-\}
-
-" Don't close the preview the markdown window is closed
-let g:mkdp_auto_close = 0
-
-" vim-highlightedyank
-let g:highlightedyank_highlight_duration = 150
-
-" vim-polyglot
+let g:netrw_banner = 0
+let g:netrw_list_hide = '^\.\.\?\/$'
 let g:python_highlight_space_errors = 0
+let g:vim_markdown_new_list_item_indent = 0
+let g:mkdp_auto_close = 0
+let g:mkdp_preview_options = { 'disable_sync_scroll': 1 }
+let g:highlightedyank_highlight_duration = 150
+let g:gruvbox_invert_selection = 0
 
-" vim-commentary
+set number relativenumber signcolumn=number
+set hidden laststatus=1 nowrap guicursor= 
+set noswapfile updatetime=10
+set expandtab softtabstop=-1 shiftwidth=4
+set incsearch ignorecase smartcase
+set mouse=a
+set termguicolors
+colorscheme gruvbox
+highlight Normal guibg=NONE
+autocmd FileType asm setlocal commentstring=#\ %s
 autocmd Filetype cpp setlocal commentstring=//\ %s
 autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
-autocmd FileType asm setlocal commentstring=#\ %s
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" HIGHLIGHTS
-
-highlight SpecialKey    ctermfg=4
-highlight TermCursor    cterm=reverse
-highlight NonText       ctermfg=12
-highlight Directory     ctermfg=4
-highlight ErrorMsg      ctermfg=15      ctermbg=1
-highlight IncSearch     cterm=reverse
-highlight MoreMsg       ctermfg=2
-highlight ModeMsg       cterm=bold
-highlight CursorLineNr  ctermfg=3
-highlight Question      ctermfg=2
-highlight Title         ctermfg=5
-highlight WarningMsg    ctermfg=1
-highlight WildMenu      ctermfg=0       ctermbg=11
-highlight Conceal       ctermfg=7       ctermbg=7
-highlight SpellBad      ctermbg=2
-highlight SpellRare     ctermbg=5
-highlight SpellLocal    ctermbg=14
-highlight PmenuSbar     ctermbg=8
-highlight PmenuThumb    ctermbg=0
-highlight TabLine       cterm=underline ctermfg=0       ctermbg=7
-highlight TabLineSel    cterm=bold
-highlight TabLineFill   cterm=reverse
-highlight CursorColumn  ctermbg=7
-highlight CursorLine    cterm=underline
-highlight MatchParen    ctermbg=14
-highlight Constant      ctermfg=1
-highlight Special       ctermfg=5
-highlight Identifier    cterm=NONE      ctermfg=6
-highlight Statement     ctermfg=3
-highlight PreProc       ctermfg=5
-highlight Type          ctermfg=2
-highlight Underlined    cterm=underline ctermfg=5
-highlight Ignore        ctermfg=15
-highlight Error         ctermfg=15      ctermbg=9
-highlight Todo          ctermfg=0       ctermbg=12
-highlight DiffAdd       ctermfg=0       ctermbg=2
-highlight DiffChange    ctermfg=0       ctermbg=3
-highlight DiffDelete    ctermfg=0       ctermbg=1
-highlight DiffText      ctermfg=0       ctermbg=11      cterm=bold
-highlight Visual        ctermfg=NONE    ctermbg=NONE    cterm=inverse
-highlight Search        ctermfg=0       ctermbg=11
-highlight LineNr        ctermfg=8
-highlight Comment       ctermfg=4
-highlight ColorColumn   ctermfg=7       ctermbg=8
-highlight Folded        ctermfg=7       ctermbg=8
-highlight FoldColumn    ctermfg=7       ctermbg=8
-highlight Pmenu         ctermfg=15      ctermbg=8
-highlight PmenuSel      ctermfg=8       ctermbg=15
-highlight SpellCap      ctermfg=7       ctermbg=8
-highlight StatusLine    ctermfg=15      ctermbg=8       cterm=bold
-highlight StatusLineNC  ctermfg=7       ctermbg=8       cterm=NONE
-highlight VertSplit     ctermfg=7       ctermbg=8       cterm=NONE
-highlight SignColumn    ctermfg=7       ctermbg=NONE
-highlight HighlightedyankRegion ctermfg=0 ctermbg=11
+let mapleader=" "
+nmap Y y$
+nmap <silent> <Esc> :nohl<CR><C-L>
+tmap <Esc> <C-\><C-N>
+nmap <Leader>s :%s///g<Left><Left>
+vmap <Leader>s :s///g<Left><Left>
+nmap <Leader><Leader> <C-^>
+nmap <Tab> :bnext<CR>:echo expand('%')<CR>
+nmap <S-Tab> :bprevious<CR>:echo expand('%')<CR>
+nmap <silent> <Leader>d :bnext<CR>:bdelete#<CR>
+vmap <silent> <C-j> :move '>+1<CR>gv=gv
+vmap <silent> <C-k> :move '<-2<CR>gv=gv
+nmap <C-p> :Files<CR>
+nmap <C-n> :Files ~/n<CR>
+nmap <Leader>/ :Rg<CR>
+nmap <leader>h :Helptags<CR>
+nmap <Leader>cr :CocRestart<CR>
+nmap <silent> <C-j> :call CocAction('diagnosticNext')<CR>
+nmap <silent> <C-k> :call CocAction('diagnosticPrevious')<CR>
+nmap <silent> gd <Plug>(coc-definition)

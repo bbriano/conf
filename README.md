@@ -1,6 +1,6 @@
 # My configuration files
 
-![img/vim-aug-2020.png](img/vim-aug-2020.png)
+![](img/vim-sept-2020-2.png)
 
 ## Setup
 
