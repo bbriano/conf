@@ -25,7 +25,7 @@ let g:gruvbox_invert_selection = 0
 
 set number relativenumber signcolumn=number
 set hidden laststatus=1 nowrap guicursor= 
-set noswapfile updatetime=10
+set noswapfile
 set expandtab softtabstop=-1 shiftwidth=4
 set incsearch ignorecase smartcase
 set mouse=a
