@@ -41,10 +41,10 @@ nmap <silent> <Esc> :nohl<CR><C-L>
 tmap <Esc> <C-\><C-N>
 nmap <Leader>s :%s///g<Left><Left>
 vmap <Leader>s :s///g<Left><Left>
-nmap <Leader><Leader> <C-^>
+nmap <Leader><Leader> :buffer #<CR>
 nmap <Tab> :bnext<CR>:echo expand('%')<CR>
 nmap <S-Tab> :bprevious<CR>:echo expand('%')<CR>
-nmap <silent> <Leader>d :bnext<CR>:bdelete#<CR>
+nmap <silent> <Leader>d :bdelete<CR>
 vmap <silent> <C-j> :move '>+1<CR>gv=gv
 vmap <silent> <C-k> :move '<-2<CR>gv=gv
 nmap <C-p> :Files<CR>
