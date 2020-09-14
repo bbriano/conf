@@ -31,6 +31,8 @@ set mouse=a
 set termguicolors
 colorscheme gruvbox
 highlight Normal guibg=NONE
+highlight VertSplit guibg=NONE
+highlight SignColumn guibg=NONE
 autocmd FileType asm setlocal commentstring=#\ %s
 autocmd Filetype cpp setlocal commentstring=//\ %s
 autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
