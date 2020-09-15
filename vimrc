@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
@@ -17,8 +16,6 @@ let g:netrw_banner = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
-let g:mkdp_auto_close = 0
-let g:mkdp_preview_options = { 'disable_sync_scroll': 1 }
 let g:highlightedyank_highlight_duration = 150
 let g:gruvbox_invert_selection = 0
 
