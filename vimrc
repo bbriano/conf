@@ -1,19 +1,8 @@
-set noswapfile
-set expandtab softtabstop=-1 shiftwidth=4
-set incsearch ignorecase smartcase
-set hidden
-set nowrap
-set signcolumn=yes
-set laststatus=1
-set guicursor=
-set mouse=a
-
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
@@ -26,7 +15,6 @@ let g:netrw_list_hide = '^\.\.\?\/$'
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:highlightedyank_highlight_duration = 150
-let g:gruvbox_invert_selection = 0
 
 let mapleader=" "
 nmap Y y$
@@ -51,11 +39,28 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <Leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
 
+set noswapfile
+set expandtab softtabstop=-1 shiftwidth=4
+set incsearch ignorecase smartcase
+set hidden
+set nowrap
+set signcolumn=yes
+set laststatus=1
+set guicursor=
+set mouse=a
+
 autocmd FileType asm setlocal commentstring=#\ %s
 autocmd Filetype cpp setlocal commentstring=//\ %s
 autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 
-colorscheme gruvbox
-highlight Normal ctermbg=NONE
-highlight VertSplit ctermbg=NONE
-highlight SignColumn ctermbg=NONE
+colorscheme peachpuff
+hi SignColumn ctermbg=NONE ctermfg=7
+hi StatusLine ctermbg=7 ctermfg=8
+hi StatusLineNC ctermbg=7 ctermfg=0
+hi VertSplit ctermbg=0 ctermfg=0
+hi Pmenu ctermbg=0 ctermfg=7
+hi PmenuSel ctermbg=8 ctermfg=7
+hi Visual ctermbg=0 cterm=NONE
+hi Search ctermbg=11 ctermfg=0
+hi IncSearch ctermbg=9 ctermfg=0 cterm=NONE
+hi Todo ctermbg=NONE ctermfg=7 cterm=bold
