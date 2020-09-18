@@ -1,3 +1,13 @@
+set noswapfile
+set expandtab softtabstop=-1 shiftwidth=4
+set incsearch ignorecase smartcase
+set hidden
+set nowrap
+set signcolumn=yes
+set laststatus=1
+set guicursor=
+set mouse=a
+
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -6,7 +16,6 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim'
 Plug 'sheerun/vim-polyglot'
-Plug 'theprimeagen/vim-be-good'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -18,21 +27,6 @@ let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:highlightedyank_highlight_duration = 150
 let g:gruvbox_invert_selection = 0
-
-set number relativenumber signcolumn=number
-set hidden laststatus=1 nowrap guicursor= 
-set noswapfile
-set expandtab softtabstop=-1 shiftwidth=4
-set incsearch ignorecase smartcase
-set mouse=a
-set termguicolors
-colorscheme gruvbox
-highlight Normal guibg=NONE
-highlight VertSplit guibg=NONE
-highlight SignColumn guibg=NONE
-autocmd FileType asm setlocal commentstring=#\ %s
-autocmd Filetype cpp setlocal commentstring=//\ %s
-autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
 
 let mapleader=" "
 nmap Y y$
@@ -49,8 +43,19 @@ vmap <silent> <C-k> :move '<-2<CR>gv=gv
 nmap <C-p> :Files<CR>
 nmap <C-n> :Files ~/n<CR>
 nmap <Leader>/ :Rg<CR>
-nmap <leader>h :Helptags<CR>
+nmap <Leader>h :Helptags<CR>
 nmap <Leader>cr :CocRestart<CR>
 nmap <silent> <C-j> :call CocAction('diagnosticNext')<CR>
 nmap <silent> <C-k> :call CocAction('diagnosticPrevious')<CR>
 nmap <silent> gd <Plug>(coc-definition)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <Leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
+
+autocmd FileType asm setlocal commentstring=#\ %s
+autocmd Filetype cpp setlocal commentstring=//\ %s
+autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
+
+colorscheme gruvbox
+highlight Normal ctermbg=NONE
+highlight VertSplit ctermbg=NONE
+highlight SignColumn ctermbg=NONE
