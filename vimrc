@@ -11,7 +11,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 call plug#end()
 let g:netrw_banner = 0
-let g:netrw_list_hide = '^\.\.\?\/$'
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:highlightedyank_highlight_duration = 150
