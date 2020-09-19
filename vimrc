@@ -58,7 +58,10 @@ hi StatusLineNC ctermbg=7 ctermfg=0
 hi VertSplit ctermbg=0 ctermfg=0
 hi Pmenu ctermbg=0 ctermfg=7
 hi PmenuSel ctermbg=8 ctermfg=7
-hi Visual ctermbg=0 cterm=NONE
+hi PmenuSbar ctermbg=0
+hi PmenuThumb ctermbg=8
+hi CursorLine ctermbg=0 cterm=NONE
+hi Visual ctermbg=8 cterm=NONE
 hi Search ctermbg=11 ctermfg=0
 hi IncSearch ctermbg=9 ctermfg=0 cterm=NONE
 hi Todo ctermbg=NONE ctermfg=7 cterm=bold
