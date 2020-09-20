@@ -67,3 +67,4 @@ hi Visual ctermbg=8 cterm=NONE
 hi Search ctermbg=11 ctermfg=0
 hi IncSearch ctermbg=9 ctermfg=0 cterm=NONE
 hi Todo ctermbg=NONE ctermfg=7 cterm=bold
+hi LineNr ctermfg=8
