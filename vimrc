@@ -37,6 +37,7 @@ nmap <silent> <C-k> :call CocAction('diagnosticPrevious')<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <Leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
+nmap <leader>pp :!pngpaste img/
 
 set noswapfile
 set expandtab softtabstop=-1 shiftwidth=4
