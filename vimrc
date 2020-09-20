@@ -49,8 +49,9 @@ set laststatus=1
 set guicursor=
 set mouse=a
 
-autocmd FileType asm setlocal commentstring=#\ %s
-autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
+autocmd! BufWritePre * :%s/\s\+$//e
+autocmd! FileType asm setlocal commentstring=#\ %s
+autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 
 colorscheme peachpuff
 hi SignColumn ctermbg=NONE ctermfg=7
