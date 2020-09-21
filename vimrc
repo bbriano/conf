@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-ipmotion'
 Plug 'machakann/vim-highlightedyank'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neoclide/coc.nvim'
@@ -13,6 +14,7 @@ call plug#end()
 let g:netrw_banner = 0
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
+let g:ip_skipfold = 1
 let g:highlightedyank_highlight_duration = 150
 
 let mapleader=" "
@@ -48,10 +50,11 @@ set signcolumn=yes
 set laststatus=1
 set guicursor=
 set mouse=a
+set foldmethod=indent
 
 autocmd! BufWritePre * :%s/\s\+$//e
 autocmd! FileType asm setlocal commentstring=#\ %s
-autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
+autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2 fdm=manual
 
 colorscheme peachpuff
 hi SignColumn ctermbg=NONE ctermfg=7
@@ -68,3 +71,4 @@ hi Search ctermbg=11 ctermfg=0
 hi IncSearch ctermbg=9 ctermfg=0 cterm=NONE
 hi Todo ctermbg=NONE ctermfg=7 cterm=bold
 hi LineNr ctermfg=8
+hi Folded ctermbg=0
