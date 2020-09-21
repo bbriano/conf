@@ -46,12 +46,13 @@ set expandtab softtabstop=-1 shiftwidth=4
 set incsearch ignorecase smartcase
 set hidden
 set nowrap
-set signcolumn=yes
+set number signcolumn=number
 set laststatus=1
 set guicursor=
 set mouse=a
 set foldmethod=indent
 
+autocmd! TermOpen * setlocal nonumber
 autocmd! BufWritePre * :%s/\s\+$//e
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2 fdm=manual
@@ -71,4 +72,5 @@ hi Search ctermbg=11 ctermfg=0
 hi IncSearch ctermbg=9 ctermfg=0 cterm=NONE
 hi Todo ctermbg=NONE ctermfg=7 cterm=bold
 hi LineNr ctermfg=8
+hi CursorLineNr ctermfg=7
 hi Folded ctermbg=0
