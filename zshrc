@@ -20,7 +20,7 @@ export EDITOR=/usr/local/bin/nvim
 export FZF_DEFAULT_COMMAND='rg --files'
 
 # Aliases
-alias v="/usr/local/bin/nvim"
+alias vi="/usr/local/bin/nvim"
 alias py="/usr/local/bin/python3"
 alias pip="/usr/local/bin/pip3"
 alias matlab="/Applications/MATLAB_R2020a.app/bin/matlab"
