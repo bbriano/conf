@@ -73,4 +73,4 @@ hi IncSearch ctermbg=9 ctermfg=0 cterm=NONE
 hi Todo ctermbg=NONE ctermfg=7 cterm=bold
 hi LineNr ctermfg=8
 hi CursorLineNr ctermfg=7
-hi Folded ctermbg=NONE
+hi Folded ctermbg=NONE ctermfg=8
