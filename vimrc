@@ -3,6 +3,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'machakann/vim-highlightedyank'
+Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neoclide/coc.nvim'
 Plug 'sheerun/vim-polyglot'
@@ -55,7 +56,7 @@ set foldmethod=indent
 autocmd! TermOpen * setlocal nonumber
 autocmd! BufWritePre * :%s/\s\+$//e
 autocmd! FileType asm setlocal commentstring=#\ %s
-autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2 fdm=manual
+autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 
 colorscheme peachpuff
 hi SignColumn ctermbg=NONE ctermfg=7
