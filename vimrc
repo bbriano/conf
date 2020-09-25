@@ -58,19 +58,19 @@ autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 autocmd! TextYankPost * lua vim.highlight.on_yank()
 
 colorscheme peachpuff
-hi SignColumn ctermbg=NONE ctermfg=7
-hi StatusLine ctermbg=7 ctermfg=8
-hi StatusLineNC ctermbg=7 ctermfg=0
-hi VertSplit ctermbg=0 ctermfg=0
-hi Pmenu ctermbg=0 ctermfg=7
-hi PmenuSel ctermbg=8 ctermfg=7
-hi PmenuSbar ctermbg=0
-hi PmenuThumb ctermbg=8
-hi CursorLine ctermbg=0 cterm=NONE
-hi Visual ctermbg=8 cterm=NONE
-hi Search ctermbg=11 ctermfg=0
-hi IncSearch ctermbg=9 ctermfg=0 cterm=NONE
-hi Todo ctermbg=NONE ctermfg=7 cterm=bold
-hi LineNr ctermfg=8
-hi CursorLineNr ctermfg=7
-hi Folded ctermbg=NONE ctermfg=8
+highlight SignColumn ctermbg=NONE ctermfg=7
+highlight StatusLine ctermbg=7 ctermfg=8
+highlight StatusLineNC ctermbg=7 ctermfg=0
+highlight VertSplit ctermbg=0 ctermfg=0
+highlight Pmenu ctermbg=0 ctermfg=7
+highlight PmenuSel ctermbg=8 ctermfg=7
+highlight PmenuSbar ctermbg=0
+highlight PmenuThumb ctermbg=8
+highlight CursorLine ctermbg=0 cterm=NONE
+highlight Visual ctermbg=8 cterm=NONE
+highlight Search ctermbg=11 ctermfg=0
+highlight IncSearch ctermbg=9 ctermfg=0 cterm=NONE
+highlight Todo ctermbg=NONE ctermfg=7 cterm=bold
+highlight LineNr ctermfg=8
+highlight CursorLineNr ctermfg=7
+highlight Folded ctermbg=NONE ctermfg=8
