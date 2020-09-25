@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
-Plug 'machakann/vim-highlightedyank'
 Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neoclide/coc.nvim'
@@ -16,7 +15,6 @@ let g:netrw_banner = 0
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:ip_skipfold = 1
-let g:highlightedyank_highlight_duration = 150
 
 let mapleader=" "
 nmap Y y$
@@ -57,6 +55,7 @@ autocmd! TermOpen * setlocal nonumber
 autocmd! BufWritePre * :%s/\s\+$//e
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
+autocmd! TextYankPost * lua vim.highlight.on_yank()
 
 colorscheme peachpuff
 hi SignColumn ctermbg=NONE ctermfg=7
