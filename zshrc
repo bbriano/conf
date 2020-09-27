@@ -19,6 +19,9 @@ export EDITOR=/usr/local/bin/nvim
 # Set ripgrep as default source for fzf
 export FZF_DEFAULT_COMMAND='rg --files'
 
+# Set bat theme
+export BAT_THEME=base16
+
 # Aliases
 alias vi="/usr/local/bin/nvim"
 alias py="/usr/local/bin/python3"
@@ -26,7 +29,6 @@ alias pip="/usr/local/bin/pip3"
 alias matlab="/Applications/MATLAB_R2020a.app/bin/matlab"
 alias cra="npx create-react-app"
 alias npmls="npm -g list --depth 0"
-alias bat="bat --theme base16"
 alias tree="tree -I node_modules"
 alias mars="java -jar /Users/briano/n/uni/FIT1008/Mars4_5.jar"
 
