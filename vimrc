@@ -18,6 +18,7 @@ let g:ip_skipfold = 1
 
 let mapleader=" "
 nmap Y y$
+vmap p "_dP
 nmap <silent> <Esc> :nohl<CR><C-L>
 tmap <Esc> <C-\><C-N>
 nmap <Leader>s :%s///g<Left><Left>
