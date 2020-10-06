@@ -47,13 +47,12 @@ set expandtab softtabstop=-1 shiftwidth=4
 set incsearch ignorecase smartcase
 set hidden
 set nowrap
-set number signcolumn=number
+set signcolumn=no
 set laststatus=1
 set guicursor=
 set mouse=a
 set foldmethod=indent
 
-autocmd! TermOpen * setlocal nonumber
 autocmd! BufWritePre * :%s/\s\+$//e
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
