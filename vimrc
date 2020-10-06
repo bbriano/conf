@@ -51,7 +51,7 @@ set guicursor=
 set mouse=a
 set foldmethod=indent foldlevel=99
 
-autocmd! BufWritePre * :%s/\s\+$//e
+autocmd! BufWritePre * :%s/\s\+$//e | %s/\n\+\%$//e
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 autocmd! TextYankPost * lua vim.highlight.on_yank()
