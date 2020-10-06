@@ -26,8 +26,6 @@ nmap <Leader><Leader> :buffer #<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <Leader>d :bdelete<CR>
-vmap <silent> <C-j> :move '>+1<CR>gv=gv
-vmap <silent> <C-k> :move '<-2<CR>gv=gv
 vmap <silent> <C-j> :move '>+1<CR>gv
 vmap <silent> <C-k> :move '<-2<CR>gv
 nmap <C-p> :Files<CR>
