@@ -28,6 +28,8 @@ nmap <S-Tab> :bprevious<CR>
 nmap <Leader>d :bdelete<CR>
 vmap <silent> <C-j> :move '>+1<CR>gv=gv
 vmap <silent> <C-k> :move '<-2<CR>gv=gv
+vmap <silent> <C-j> :move '>+1<CR>gv
+vmap <silent> <C-k> :move '<-2<CR>gv
 nmap <C-p> :Files<CR>
 nmap <C-n> :Files ~/n<CR>
 nmap <Leader>/ :Rg<CR>
