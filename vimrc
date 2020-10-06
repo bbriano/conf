@@ -51,7 +51,7 @@ set signcolumn=no
 set laststatus=1
 set guicursor=
 set mouse=a
-set foldmethod=indent
+set foldmethod=indent foldlevel=99
 
 autocmd! BufWritePre * :%s/\s\+$//e
 autocmd! FileType asm setlocal commentstring=#\ %s
