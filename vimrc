@@ -41,6 +41,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <Leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
 nmap <Leader>pp :!pngpaste img/
+nmap <Leader>np :silent !prettier % --prose-wrap never --write %<CR>
 
 set noswapfile
 set expandtab softtabstop=-1 shiftwidth=4
