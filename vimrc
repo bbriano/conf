@@ -31,6 +31,7 @@ vmap <silent> <C-j> :move '>+1<CR>gv
 vmap <silent> <C-k> :move '<-2<CR>gv
 nmap <C-p> :Files<CR>
 nmap <C-n> :Files ~/n<CR>
+nmap <Leader>b :Buffers<CR>
 nmap <Leader>/ :Rg<CR>
 nmap <Leader>h :Helptags<CR>
 nmap <Leader>cr :CocRestart<CR>
