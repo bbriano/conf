@@ -54,10 +54,17 @@ set guicursor=
 set mouse=a
 set foldmethod=indent foldlevel=99
 
-autocmd! BufWritePre * :%s/\s\+$//e | %s/\n\+\%$//e
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 autocmd! TextYankPost * lua vim.highlight.on_yank()
+
+autocmd! BufWritePre * call RemoveTrailingWhitespace()
+function! RemoveTrailingWhitespace()
+    let cursor_pos = getpos(".")
+    %s/\s\+$//e    " Remove trailing whitespace per line
+    %s/\n\+\%$//e  " Remove trailing newlines in end of file
+    call setpos(".", cursor_pos)
+endfunction
 
 highlight StatusLine ctermbg=15 ctermfg=8
 highlight StatusLineNC ctermbg=15 ctermfg=0
