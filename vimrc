@@ -66,6 +66,7 @@ function! RemoveTrailingWhitespace()
     call setpos(".", cursor_pos)
 endfunction
 
+colorscheme peachpuff
 highlight StatusLine ctermbg=15 ctermfg=8
 highlight StatusLineNC ctermbg=15 ctermfg=0
 highlight VertSplit ctermfg=0 cterm=NONE
@@ -73,9 +74,9 @@ highlight Pmenu ctermbg=0 ctermfg=15
 highlight PmenuSel ctermbg=8 ctermfg=15
 highlight PmenuSbar ctermbg=0
 highlight PmenuThumb ctermbg=8
+highlight Visual ctermbg=8 cterm=NONE
 highlight CursorLine ctermbg=0 cterm=NONE
 highlight IncSearch ctermfg=9
-highlight Todo ctermbg=NONE ctermfg=15 cterm=bold
 highlight LineNr ctermfg=8
+highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
 highlight Folded ctermbg=NONE ctermfg=8
-highlight Comment ctermfg=4
