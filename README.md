@@ -1,6 +1,6 @@
 # Configuration
 
-![](img/vim-sept-2020-3.png)
+![](img/vim-oct-2020.png)
 
 ## Mac OS
 
