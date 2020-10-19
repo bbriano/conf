@@ -25,6 +25,7 @@ export BAT_THEME=base16
 # Aliases
 alias n='cd ~/n'
 alias l='ls -1'
+alias dj="vi ~/n/notes/$(date +%Y-%m-%d.md)"
 alias vi='/usr/local/bin/nvim'
 alias py='/usr/local/bin/python3'
 alias pip='/usr/local/bin/pip3'
