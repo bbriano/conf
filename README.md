@@ -22,6 +22,7 @@ defaults write -g KeyRepeat -int 1          # normal minimum is 2 (30 ms)
 brew update
 brew install fortune
 brew install cowsay
+brew install figlet
 brew install git
 brew install node
 brew install neovim
