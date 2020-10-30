@@ -23,7 +23,7 @@ export FZF_DEFAULT_COMMAND='rg --files'
 export BAT_THEME=base16
 
 # Aliases
-alias n='cd ~/n'
+alias c='cd ~/n'
 alias l='ls -1'
 alias dj="vi ~/n/notes/$(date +%Y-%m-%d.md)"
 alias vi='/usr/local/bin/nvim'
