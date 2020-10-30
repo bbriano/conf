@@ -58,7 +58,6 @@ set foldmethod=indent foldlevel=99
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 autocmd! TextYankPost * lua vim.highlight.on_yank()
-
 autocmd! BufWritePre * call RemoveTrailingWhitespace()
 function! RemoveTrailingWhitespace()
     let cursor_pos = getpos(".")
@@ -77,6 +76,7 @@ highlight PmenuSbar ctermbg=0
 highlight PmenuThumb ctermbg=8
 highlight Visual ctermbg=8 cterm=NONE
 highlight CursorLine ctermbg=0 cterm=NONE
+highlight Search ctermfg=0
 highlight IncSearch ctermfg=9
 highlight LineNr ctermfg=8
 highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
