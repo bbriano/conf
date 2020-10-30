@@ -22,7 +22,7 @@ vmap p "_dP
 nmap <silent> <Esc> :nohl<CR><C-L>
 tmap <Esc> <C-\><C-N>
 nmap <Leader>s :%s///g<Left><Left>
-vmap <Leader>s :s//
+vmap <Leader>s :s///g<Left><Left>
 nmap <Leader><Leader> :buffer #<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
