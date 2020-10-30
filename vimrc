@@ -4,7 +4,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
