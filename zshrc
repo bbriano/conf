@@ -1,16 +1,11 @@
-# Path to your oh-my-zsh installation.
+# Oh my zsh
 export ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="robbyrussell"
-
+ZSH_THEME=briano
 plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
-
-# Source Oh my zsh
-ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 
 # Set default editor
