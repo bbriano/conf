@@ -13,28 +13,19 @@ defaults write -g KeyRepeat -int 1          # normal minimum is 2 (30 ms)
 
 ### Homebrew
 
-<https://brew.sh>
-
 ```shell
-# Install homebrew
+# install homebrew
 /bin/bash -c "\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-brew update
-brew install fortune
-brew install cowsay
-brew install figlet
-brew install git
-brew install node
-brew install neovim
-brew install pngpaste
-brew install jp2a
+# install brew formulas
+for formula in $(cat brew/leaves) do
+    brew install "$formula"
+done
 
-brew cask install iterm2
-brew cask install google-chrome
-brew cask install visual-studio-code
-brew cask install zoomus
-brew cask install hyperswitch
-brew cask install mos  # Maybe not
+# install brew casks
+for cask in $(cat brew/casks) do
+    brew install "$cask"
+done
 ```
 
 ### iTerm2
