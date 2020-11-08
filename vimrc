@@ -52,7 +52,6 @@ set nowrap
 set signcolumn=no
 set laststatus=1
 set guicursor=
-set mouse=a
 set foldmethod=indent foldlevel=99
 
 autocmd! FileType asm setlocal commentstring=#\ %s
