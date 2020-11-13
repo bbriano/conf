@@ -4,11 +4,14 @@ cowsay
 figlet
 fortune
 ghc
+ghostscript
+http-server
 jp2a
 librsvg
+lolcat
 luarocks
+mingw-w64
 neovim
-node
 pandoc
 pngpaste
 python@3.8
@@ -17,4 +20,5 @@ ripgrep
 speedtest-cli
 tldr
 tmux
+tree
 wget
