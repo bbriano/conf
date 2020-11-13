@@ -58,7 +58,7 @@ set foldmethod=indent foldlevel=99
 
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
-autocmd! TextYankPost * lua vim.highlight.on_yank()
+" autocmd! TextYankPost * lua vim.highlight.on_yank()
 autocmd! BufWritePre * call RemoveTrailingWhitespace()
 function! RemoveTrailingWhitespace()
     let cursor_pos = getpos(".")
