@@ -18,6 +18,10 @@ let g:vim_markdown_new_list_item_indent = 0
 let g:ip_skipfold = 1
 
 let mapleader=" "
+map <Up> <C-y>
+map <Down> <C-e>
+map <Left> 6<C-y>
+map <Right> 6<C-e>
 nmap Y y$
 vmap p "_dP
 nmap <silent> <Esc> :nohl<CR><C-L>
