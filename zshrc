@@ -11,6 +11,9 @@ export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~ %f'
 export EDITOR=/usr/local/bin/nvim
 export FZF_DEFAULT_COMMAND='rg --files'
 export BAT_THEME=base16
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
 
 alias c='cd ~/n'
 alias l='ls -1'
