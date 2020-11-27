@@ -16,55 +16,57 @@ let g:netrw_banner = 0
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:ip_skipfold = 1
-
 let mapleader=" "
-map <Up> <C-y>
-map <Down> <C-e>
-map <Left> 6<C-y>
-map <Right> 6<C-e>
-nmap Y y$
-vmap p "_dP
-nmap <silent> <Esc> :nohl<CR><C-L>
-tmap <Esc> <C-\><C-N>
-nmap <Leader>s :%s///g<Left><Left>
-vmap <Leader>s :s///g<Left><Left>
-nmap <Leader><Leader> :buffer #<CR>
-nmap <Tab> :bnext<CR>
-nmap <S-Tab> :bprevious<CR>
-" TODO if buffer is dirty prompt user with: Are you sure (Y/n)
-nmap <Leader>d :bnext \| :bdelete #<CR>
-nmap <Leader>x :bdelete<CR>
-vmap <silent> <C-j> :move '>+1<CR>gv
-vmap <silent> <C-k> :move '<-2<CR>gv
-nmap <C-p> :Files<CR>
-nmap <C-n> :Files ~/n<CR>
-nmap <Leader>b :Buffers<CR>
-nmap <Leader>/ :Rg<CR>
-nmap <Leader>h :Helptags<CR>
-nmap <Leader>cr :CocRestart<CR>
-nmap <silent> <C-j> :call CocAction('diagnosticNext')<CR>
-nmap <silent> <C-k> :call CocAction('diagnosticPrevious')<CR>
-nmap <silent> gd <Plug>(coc-definition)
-nmap <leader>rn <Plug>(coc-rename)
-nmap <Leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
-nmap <Leader>pp :!pngpaste img/
-nmap <Leader>np :silent !prettier --prose-wrap never --write %<CR>
-command! W w
 
 set noswapfile
-set expandtab softtabstop=-1 shiftwidth=4
+set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
 set incsearch ignorecase smartcase
 set hidden
 set nowrap
+set number
 set signcolumn=no
 set laststatus=1
 set guicursor=
 set foldmethod=indent foldlevel=99
 
+nmap Y y$
+vmap p "_dP
+nmap <Tab> :bnext<CR>
+nmap <S-Tab> :bprevious<CR>
+nnoremap ctrl_i <C-i>
+nmap <Leader>s :%s///g<Left><Left>
+vmap <Leader>s :s///g<Left><Left>
+nmap <leader>q :s/\. /\.\r/g<CR>
+nmap <Leader><Leader> :buffer #<CR>
+nmap <Leader>d :bnext \| :bdelete #<CR>
+nmap <Leader>x :bdelete<CR>
+nmap <Leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
+nmap <Leader>np :silent !prettier --prose-wrap never --write %<CR>
+
+" FZF
+nmap <C-n> :Buffers<CR>
+nmap <C-p> :Files<CR>
+nmap <Leader>f :Files ~/n<CR>
+nmap <Leader>/ :Rg<CR>
+nmap <Leader>h :Helptags<CR>
+
+" CoC
+nmap <Leader>cr :CocRestart<CR>
+nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
+nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gh :call CocAction('doHover')<CR>
+nmap <silent> <leader>rn <Plug>(coc-rename)
+nmap <silent> <Esc> :nohl<CR><Plug>(coc-float-hide)
+
+command! W w
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
-" autocmd! TextYankPost * lua vim.highlight.on_yank()
+autocmd! Filetype go setlocal noexpandtab
 autocmd! BufWritePre * call RemoveTrailingWhitespace()
+autocmd! BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
 function! RemoveTrailingWhitespace()
     let cursor_pos = getpos(".")
     %s/\s\+$//e    " Remove trailing whitespace per line
