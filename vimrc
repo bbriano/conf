@@ -12,6 +12,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
+
 let g:netrw_banner = 0
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
@@ -29,50 +30,47 @@ set laststatus=1
 set guicursor=
 set foldmethod=indent foldlevel=99
 
-nmap Y y$
-vmap p "_dP
-nmap <Tab> :bnext<CR>
-nmap <S-Tab> :bprevious<CR>
-nnoremap ctrl_i <C-i>
-nmap <Leader>s :%s///g<Left><Left>
-vmap <Leader>s :s///g<Left><Left>
-nmap <leader>q :s/\. /\.\r/g<CR>
-nmap <Leader><Leader> :buffer #<CR>
-nmap <Leader>d :bnext \| :bdelete #<CR>
-nmap <Leader>x :bdelete<CR>
-nmap <Leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
-nmap <Leader>np :silent !prettier --prose-wrap never --write %<CR>
+" General
+nnoremap Y y$
+nnoremap * *N
+vnoremap p "_dP
+nnoremap <silent> <esc> :nohl<CR><C-L><plug>(coc-float-hide)
+nnoremap <leader>s :%s///g<left><left>
+vnoremap <leader>s :s///g<left><left>
+nnoremap <leader>q :s/\. /\.\r/g<CR>
+nnoremap <leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
+nnoremap <leader>w :silent !prettier --prose-wrap never --write %<CR>
+
+" Buffers
+nnoremap S :bprevious<CR>
+nnoremap s :bnext<CR>
+nnoremap <leader>p :bprevious<CR>
+nnoremap <leader>n :bnext<CR>
+nnoremap <leader>l :buffer #<CR>
+nnoremap <leader>d :bnext \| :bdelete #<CR>
+nnoremap <leader>x :bdelete<CR>
 
 " FZF
-nmap <C-n> :Buffers<CR>
-nmap <C-p> :Files<CR>
-nmap <Leader>f :Files ~/n<CR>
-nmap <Leader>/ :Rg<CR>
-nmap <Leader>h :Helptags<CR>
+nnoremap <c-p> :Files<CR>
+nnoremap <c-n> :Files ~/n<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>/ :Rg<CR>
+nnoremap <leader>h :Helptags<CR>
 
 " CoC
-nmap <Leader>cr :CocRestart<CR>
-nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
-nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gh :call CocAction('doHover')<CR>
-nmap <silent> <leader>rn <Plug>(coc-rename)
-nmap <silent> <Esc> :nohl<CR><Plug>(coc-float-hide)
+nmap <leader>cr :CocRestart<CR>
+nmap <silent> <C-k> <plug>(coc-diagnostic-prev)
+nmap <silent> <C-j> <plug>(coc-diagnostic-next)
+nmap <silent> gd <plug>(coc-definition)
+nmap <silent> gr <plug>(coc-references)
+nmap <silent> <leader>rn <plug>(coc-rename)
+nmap <silent> K :call <SID>show_documentation()<CR>
 
 command! W w
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 autocmd! Filetype go setlocal noexpandtab
 autocmd! BufWritePre * call RemoveTrailingWhitespace()
-autocmd! BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
-function! RemoveTrailingWhitespace()
-    let cursor_pos = getpos(".")
-    %s/\s\+$//e    " Remove trailing whitespace per line
-    %s/\n\+\%$//e  " Remove trailing newlines in end of file
-    call setpos(".", cursor_pos)
-endfunction
 
 colorscheme peachpuff
 highlight StatusLine ctermbg=15 ctermfg=8
@@ -89,3 +87,22 @@ highlight IncSearch ctermfg=9
 highlight LineNr ctermfg=8
 highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
 highlight Folded ctermbg=NONE ctermfg=8
+
+" Show vim doc else coc hover
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+endfunction
+
+" Remove trailing whitespace
+function! RemoveTrailingWhitespace()
+    let cursor_pos = getpos(".")
+    %s/\s\+$//e    " per line
+    %s/\n\+\%$//e  " EOF
+    call setpos(".", cursor_pos)
+endfunction
