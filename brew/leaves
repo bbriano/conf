@@ -1,3 +1,4 @@
+bat
 ccls
 cmake
 cowsay
@@ -5,15 +6,20 @@ figlet
 fortune
 ghc
 ghostscript
+go
+htop
 http-server
+hugo
 jp2a
 librsvg
 lolcat
 luarocks
 mingw-w64
 neovim
+openjdk
 pandoc
 pngpaste
+postgresql
 python@3.8
 r
 ripgrep
