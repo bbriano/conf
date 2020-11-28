@@ -29,10 +29,13 @@ set laststatus=1
 set guicursor=
 set foldmethod=indent foldlevel=99
 
-" General
 nnoremap Y y$
 nnoremap * *N
 vnoremap p "_dP
+vnoremap <c-h> hoho
+vnoremap <c-j> jojo
+vnoremap <c-k> koko
+vnoremap <c-l> lolo
 nnoremap <silent> <esc> :nohl<CR><C-L><plug>(coc-float-hide)
 nnoremap <leader>s :%s///g<left><left>
 vnoremap <leader>s :s///g<left><left>
@@ -43,16 +46,14 @@ nnoremap <leader>w :silent !prettier --prose-wrap never --write %<CR>
 " Buffers
 nnoremap S :bprevious<CR>
 nnoremap s :bnext<CR>
-nnoremap <leader>p :bprevious<CR>
-nnoremap <leader>n :bnext<CR>
 nnoremap <leader>l :buffer #<CR>
-nnoremap <leader>d :bnext \| :bdelete #<CR>
 nnoremap <leader>x :bdelete<CR>
+nnoremap <leader>d :bnext \| bdelete #<CR>
 
 " FZF
 nnoremap <c-p> :Files<CR>
 nnoremap <c-n> :Files ~/n<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <c-s> :Buffers<CR>
 nnoremap <leader>/ :Rg<CR>
 nnoremap <leader>h :Helptags<CR>
 
