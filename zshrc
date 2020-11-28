@@ -16,3 +16,5 @@ alias vi='/usr/local/bin/nvim'
 alias py='/usr/local/bin/python3'
 alias pip='/usr/local/bin/pip3'
 alias npmls='npm -g list --depth 0'
+
+bindkey -e
