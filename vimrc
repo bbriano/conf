@@ -71,6 +71,7 @@ autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 autocmd! Filetype go setlocal noexpandtab
 autocmd! BufWritePre * call RemoveTrailingWhitespace()
+autocmd! BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 colorscheme peachpuff
 highlight StatusLine ctermbg=15 ctermfg=8
