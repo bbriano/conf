@@ -1,11 +1,6 @@
-plugins=(
-    git
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
-
-source $ZSH/oh-my-zsh.sh
 source $HOME/.env
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~ %f'
 export EDITOR=/usr/local/bin/nvim
