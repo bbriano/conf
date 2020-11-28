@@ -2,6 +2,7 @@ bat
 ccls
 cmake
 cowsay
+docker
 figlet
 fortune
 ghc
@@ -11,6 +12,7 @@ htop
 http-server
 hugo
 jp2a
+lazygit
 librsvg
 lolcat
 luarocks
@@ -23,8 +25,11 @@ postgresql
 python@3.8
 r
 ripgrep
+sl
 speedtest-cli
 tldr
 tmux
 tree
 wget
+zsh-autosuggestions
+zsh-syntax-highlighting
