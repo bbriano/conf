@@ -13,7 +13,7 @@ defaults write -g KeyRepeat -int 1          # normal minimum is 2 (30 ms)
 
 ### Homebrew
 
-```shell
+```bash
 # install homebrew
 /bin/bash -c "\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
@@ -38,8 +38,9 @@ done
 
 ### Create symbolic links
 
-```shell
+```bash
 git clone git@github.com:bbriano/dotfiles.git ~/n/dotfiles
+
 mkdir ~/.config/nvim
 
 ln -sf ~/n/dotfiles/vimrc ~/.config/nvim/init.vim
