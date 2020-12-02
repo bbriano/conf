@@ -10,6 +10,7 @@ go
 htop
 http-server
 hugo
+jesseduffield/horcrux/horcrux
 jp2a
 kyleconroy/sqlc/sqlc
 lazygit
@@ -28,6 +29,7 @@ postgresql
 python@3.8
 r
 ripgrep
+rust
 sl
 solidity
 speedtest-cli
