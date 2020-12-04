@@ -1,11 +1,11 @@
 bat
+cabal-install
 ccls
 cmake
 cowsay
 docker
 figlet
 fortune
-ghc
 go
 htop
 http-server
