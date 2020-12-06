@@ -24,12 +24,13 @@ neovim
 openjdk
 pandoc
 php
+pipes-sh
 pngpaste
 postgresql
 python@3.8
 r
 ripgrep
-rust
+rustup-init
 sl
 solidity
 speedtest-cli
