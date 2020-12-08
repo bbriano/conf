@@ -2,6 +2,7 @@ source $HOME/.env
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566178'
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~ %f'
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files'
