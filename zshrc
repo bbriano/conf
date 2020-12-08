@@ -11,7 +11,7 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
-alias c='cd ~/n'
+alias ls='ls -G'
 alias l='ls -1'
 alias vi=nvim
 alias py=python3
