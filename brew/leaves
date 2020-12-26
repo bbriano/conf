@@ -3,8 +3,10 @@ bat
 cabal-install
 ccls
 cmake
+cmus
 cowsay
 docker
+eye-d3
 figlet
 fortune
 go
@@ -22,6 +24,7 @@ mingw-w64
 mysql
 neofetch
 neovim
+openblas
 openjdk
 pandoc
 php
@@ -40,5 +43,6 @@ tmux
 tree
 watch
 wget
+youtube-dl
 zsh-autosuggestions
 zsh-syntax-highlighting
