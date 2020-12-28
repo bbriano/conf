@@ -48,3 +48,11 @@ ln -sf ~/n/dotfiles/prettierrc.json ~/.prettierrc
 ln -sf ~/n/dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/n/dotfiles/zshrc ~/.zshrc
 ```
+
+### cmus macos control
+
+```bash
+# https://github.com/PhilipTrauner/cmus-osx
+pip3 install cmus-osx
+cmus-osx install
+```
