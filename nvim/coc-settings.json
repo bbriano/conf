@@ -1,0 +1,15 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "go",
+        "markdown",
+        "json",
+        "javascript",
+        "typescript",
+        "svelte"
+    ],
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.jediEnabled": false,
+    "python.linting.mypyEnabled": true,
+    "clangd.path": "/usr/local/Cellar/llvm/11.0.0/bin/clangd",
+    "python.formatting.provider": "black"
+}
