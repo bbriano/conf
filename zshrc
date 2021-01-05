@@ -25,5 +25,6 @@ alias l='ls -1'
 alias vi=nvim
 alias py=python3
 alias pip=pip3
+alias tsm=transmission-remote
 
 bindkey -e
