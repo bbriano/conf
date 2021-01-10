@@ -1,2 +1,2 @@
-noremap <buffer> s <nop>
-noremap <buffer> S <nop>
+nnoremap <buffer> S :bprevious<CR>
+nnoremap <buffer> s :bnext<CR>
