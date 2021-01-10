@@ -16,7 +16,7 @@ let g:netrw_banner = 0
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:ip_skipfold = 1
-let mapleader=" "
+let mapleader = " "
 
 set noswapfile
 set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
@@ -39,16 +39,14 @@ vnoremap <c-l> lolo
 nnoremap <silent> <esc> :nohl<CR><C-L><plug>(coc-float-hide)
 nnoremap <leader>s :%s///g<left><left>
 vnoremap <leader>s :s///g<left><left>
-nnoremap <leader>q :s/\. /\.\r/g<CR>
+nnoremap <leader>qq :s/\. /\.\r/g<CR>
 nnoremap <leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
-nnoremap <leader>w :silent !prettier --prose-wrap never --write %<CR>
 
 " Buffers
 nnoremap S :bprevious<CR>
 nnoremap s :bnext<CR>
 nnoremap <leader>l :buffer #<CR>
 nnoremap <leader>x :bdelete<CR>
-nnoremap <leader>d :bnext \| bdelete #<CR>
 
 " FZF
 nnoremap <c-p> :Files<CR>
@@ -100,7 +98,6 @@ function! s:show_documentation()
     endif
 endfunction
 
-" Remove trailing whitespace
 function! RemoveTrailingWhitespace()
     let cursor_pos = getpos(".")
     %s/\s\+$//e    " per line
