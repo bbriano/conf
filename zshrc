@@ -22,10 +22,12 @@ zstyle ':vcs_info:*' check-for-changes true
 
 alias ls='ls -G'
 alias l='ls -1'
-alias vi=nvim
-alias py=python3
-alias pip=pip3
-alias tsm=transmission-remote
-alias lg=lazygit
+alias vi='nvim'
+alias py='python3'
+alias pip='pip3'
+alias tsm='transmission-remote'
+alias lg='lazygit'
+alias nn='cd ~/n/notes'
+alias nd='cd ~/n/dotfiles'
 
 bindkey -e
