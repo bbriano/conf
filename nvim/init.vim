@@ -90,10 +90,9 @@ highlight LineNr ctermfg=8
 highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
 highlight Folded ctermbg=NONE ctermfg=8
 
-
 function! RemoveTrailingWhitespace()
-    let cursor_pos = getpos(".")
+    let l:view = winsaveview()
     %s/\s\+$//e    " per line
     %s/\n\+\%$//e  " EOF
-    call setpos(".", cursor_pos)
+    call winrestview(l:view)
 endfunction
