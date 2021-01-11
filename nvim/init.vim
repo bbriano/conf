@@ -1,10 +1,11 @@
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -49,13 +50,6 @@ nnoremap s :bnext<CR>
 nnoremap <leader>l :buffer #<CR>
 nnoremap <leader>x :bdelete<CR>
 
-" FZF
-nnoremap <c-p> :Files<CR>
-nnoremap <c-n> :Files ~/n<CR>
-nnoremap <c-s> :Buffers<CR>
-nnoremap <leader>/ :Rg<CR>
-nnoremap <leader>h :Helptags<CR>
-
 " LSP
 lua << EOF
 require'lspconfig'.gopls.setup{}
@@ -66,6 +60,13 @@ nnoremap gd :lua vim.lsp.buf.definition()<CR>
 nnoremap gr :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap K :lua vim.lsp.buf.hover()<CR>
+
+" Telescope
+nnoremap <c-p> :Telescope find_files<CR>
+nnoremap <c-n> :Telescope oldfiles<CR>
+nnoremap <c-s> :Telescope buffers<CR>
+nnoremap <leader>/ :Telescope live_grep<CR>
+nnoremap <leader>h :Telescope help_tags<CR>
 
 augroup BRIANO
     autocmd!
