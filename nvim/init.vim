@@ -66,11 +66,13 @@ nnoremap gr :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap K :lua vim.lsp.buf.hover()<CR>
 
-command! W w
-autocmd! FileType asm setlocal commentstring=#\ %s
-autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
-autocmd! Filetype go setlocal noexpandtab
-autocmd! BufWritePre * call RemoveTrailingWhitespace()
+augroup BRIANO
+    autocmd!
+    autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
+    autocmd Filetype go setlocal noexpandtab
+    autocmd BufWritePre * call RemoveTrailingWhitespace()
+    autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+augroup END
 
 colorscheme peachpuff
 highlight StatusLine ctermbg=15 ctermfg=8
