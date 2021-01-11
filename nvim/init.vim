@@ -41,6 +41,7 @@ nnoremap <leader>s :%s///g<left><left>
 vnoremap <leader>s :s///g<left><left>
 nnoremap <leader>qq :s/\. /\.\r/g<CR>
 nnoremap <leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
+command! W w
 
 " Buffers
 nnoremap S :bprevious<CR>
