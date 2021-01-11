@@ -11,6 +11,7 @@ figlet
 fortune
 go
 golang-migrate
+gopls
 htop
 http-server
 hugo
@@ -20,6 +21,7 @@ kyleconroy/sqlc/sqlc
 lazygit
 librsvg
 lolcat
+luajit
 luarocks
 mingw-w64
 mysql
@@ -32,11 +34,13 @@ php
 pipes-sh
 pngpaste
 postgresql
+prettier
 python@3.8
 r
 redis
 ripgrep
 rustup-init
+samtay/tui/tetris
 sl
 solidity
 speedtest-cli
