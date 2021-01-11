@@ -4,7 +4,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -36,7 +36,7 @@ vnoremap <c-h> hoho
 vnoremap <c-j> jojo
 vnoremap <c-k> koko
 vnoremap <c-l> lolo
-nnoremap <silent> <esc> :nohl<CR><C-L><plug>(coc-float-hide)
+nnoremap <silent> <esc> :nohl<CR><C-L>
 nnoremap <leader>s :%s///g<left><left>
 vnoremap <leader>s :s///g<left><left>
 nnoremap <leader>qq :s/\. /\.\r/g<CR>
@@ -55,21 +55,22 @@ nnoremap <c-s> :Buffers<CR>
 nnoremap <leader>/ :Rg<CR>
 nnoremap <leader>h :Helptags<CR>
 
-" CoC
-nmap <leader>cr :CocRestart<CR>
-nmap <silent> <C-k> <plug>(coc-diagnostic-prev)
-nmap <silent> <C-j> <plug>(coc-diagnostic-next)
-nmap <silent> gd <plug>(coc-definition)
-nmap <silent> gr <plug>(coc-references)
-nmap <silent> <leader>rn <plug>(coc-rename)
-nmap <silent> K :call <SID>show_documentation()<CR>
+" LSP
+lua << EOF
+require'lspconfig'.gopls.setup{}
+EOF
+nnoremap <C-k> :lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <C-j> :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
+nnoremap K :lua vim.lsp.buf.hover()<CR>
 
 command! W w
 autocmd! FileType asm setlocal commentstring=#\ %s
 autocmd! Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
 autocmd! Filetype go setlocal noexpandtab
 autocmd! BufWritePre * call RemoveTrailingWhitespace()
-autocmd! BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 colorscheme peachpuff
 highlight StatusLine ctermbg=15 ctermfg=8
@@ -87,16 +88,6 @@ highlight LineNr ctermfg=8
 highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
 highlight Folded ctermbg=NONE ctermfg=8
 
-" Show vim doc else coc hover
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    elseif (coc#rpc#ready())
-        call CocActionAsync('doHover')
-    else
-        execute '!' . &keywordprg . " " . expand('<cword>')
-    endif
-endfunction
 
 function! RemoveTrailingWhitespace()
     let cursor_pos = getpos(".")
