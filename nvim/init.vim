@@ -6,6 +6,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -72,8 +73,7 @@ augroup BRIANO
     autocmd!
     autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
     autocmd Filetype go setlocal noexpandtab
-    autocmd BufWritePre * call RemoveTrailingWhitespace()
-    autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+    autocmd BufWritePre * call FormatBuffer()
 augroup END
 
 colorscheme peachpuff
@@ -92,9 +92,10 @@ highlight LineNr ctermfg=8
 highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
 highlight Folded ctermbg=NONE ctermfg=8
 
-function! RemoveTrailingWhitespace()
+function! FormatBuffer()
     let l:view = winsaveview()
     %s/\s\+$//e    " per line
     %s/\n\+\%$//e  " EOF
     call winrestview(l:view)
+    :Neoformat
 endfunction
