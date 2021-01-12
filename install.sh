@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Create symbolic links
+mkdir -p ~/.config/karabiner
+ln -sf $(pwd)/karabiner.json ~/.config/karabiner/karabiner.json
 mkdir -p ~/.config/nvim
 ln -sf $(pwd)/nvim ~/.config/nvim
 ln -sf $(pwd)/prettierrc.json ~/.prettierrc
