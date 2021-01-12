@@ -4,6 +4,22 @@
 
 ## Mac OS
 
+### Clone this repo
+
+```bash
+git clone git@github.com:bbriano/dotfiles ~/n/dotfiles
+```
+
+### Create symbolic links
+
+```bash
+mkdir -p ~/.config/nvim
+ln -sf nvim ~/.config/nvim
+ln -sf prettierrc.json ~/.prettierrc
+ln -sf tmux.conf ~/.tmux.conf
+ln -sf zshrc ~/.zshrc
+```
+
 ### Change key repeat variable
 
 ```shell
@@ -28,31 +44,18 @@ for cask in $(cat brew/casks) do
 done
 ```
 
-### iTerm2
-
-- General > Window > Adjust window when changing font size -> Yes
-- Profiles > Colors > Color Presets -> p-ocean
-- Profiles > Text > Font -> JetBrains Mono
-- Profiles > Window > Style -> No Title Bar
-- Advanced > Windows > Terminal windows resize smoothly -> Yes
-
-### Create symbolic links
+### Moom
 
 ```bash
-git clone git@github.com:bbriano/dotfiles.git ~/n/dotfiles
-
-mkdir ~/.config/nvim
-
-ln -sf ~/n/dotfiles/vimrc ~/.config/nvim/init.vim
-ln -sf ~/n/dotfiles/prettierrc.json ~/.prettierrc
-ln -sf ~/n/dotfiles/tmux.conf ~/.tmux.conf
-ln -sf ~/n/dotfiles/zshrc ~/.zshrc
+defaults import com.manytricks.Moom Moom.plist
 ```
 
-### cmus macos control
+### iTerm2
 
-```bash
-# https://github.com/PhilipTrauner/cmus-osx
-pip3 install cmus-osx
-cmus-osx install
+```
+General > Window > Adjust window when changing font size -> Yes
+Profiles > Colors > Color Presets -> p-ocean
+Profiles > Text > Font -> JetBrains Mono
+Profiles > Window > Style -> No Title Bar
+Advanced > Windows > Terminal windows resize smoothly -> Yes
 ```
