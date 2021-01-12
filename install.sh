@@ -1,6 +1,4 @@
-git clone https://github.com/bbriano/dotfiles
-
-cd dotfiles
+#!/bin/bash
 
 # Create symbolic links
 mkdir -p ~/.config/nvim
@@ -14,11 +12,11 @@ defaults write -g InitialKeyRepeat -int 15  # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1          # normal minimum is 2 (30 ms)
 
 # Homebrew
-bash -c "\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-for formula in $(cat brew/leaves) do
+# bash -c "\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+for formula in $(cat brew/leaves); do
     brew install "$formula"
 done
-for cask in $(cat brew/casks) do
+for cask in $(cat brew/casks); do
     brew install "$cask"
 done
 
