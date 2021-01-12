@@ -19,10 +19,11 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+let g:ip_skipfold = 1
 let g:netrw_banner = 0
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
-let g:ip_skipfold = 1
 let mapleader = " "
 
 set noswapfile
@@ -74,8 +75,20 @@ nnoremap <leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
 
 " LSP
 lua << EOF
-require'lspconfig'.gopls.setup{ on_attach=require'completion'.on_attach }
+require'lspconfig'.gopls.setup{
+    on_attach=require'completion'.on_attach
+}
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        underline = true,
+        virtual_text = true,
+        signs = false,
+        update_in_insert = false,
+    }
+)
 EOF
+
 nnoremap <C-k> :lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <C-j> :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap gd :lua vim.lsp.buf.definition()<CR>
