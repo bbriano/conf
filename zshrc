@@ -27,6 +27,7 @@ alias py='python3'
 alias pip='pip3'
 alias tsm='transmission-remote'
 alias lg='lazygit'
+alias n='cd ~/n'
 alias nn='cd ~/n/notes'
 alias nd='cd ~/n/dotfiles'
 
