@@ -6,6 +6,7 @@ Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -15,6 +16,7 @@ call plug#end()
 
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:ip_skipfold = 1
+let g:neoformat_only_msg_on_error = 1
 let g:netrw_banner = 0
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
@@ -87,11 +89,11 @@ augroup BRIANO
     autocmd!
     autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
     autocmd Filetype go setlocal noexpandtab
-    autocmd BufWritePre * call FormatBuffer()
     autocmd BufWritePre *.go lua format_go(1000)
+    autocmd BufWritePre * call TrimWhiteSpace() | undojoin | Neoformat
 augroup END
 
-function! FormatBuffer()
+function! TrimWhiteSpace()
     let l:view = winsaveview()
     %s/\s\+$//e    " per line
     %s/\n\+\%$//e  " EOF
