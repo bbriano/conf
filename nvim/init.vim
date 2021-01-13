@@ -87,7 +87,7 @@ augroup BRIANO
     autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
     autocmd Filetype go setlocal noexpandtab
     autocmd BufWritePre * call FormatBuffer()
-    autocmd BufWritePre *.go lua goimports(1000)
+    autocmd BufWritePre *.go lua format_go(1000)
 augroup END
 
 function! FormatBuffer()
