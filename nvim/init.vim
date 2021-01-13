@@ -9,14 +9,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
+" FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-
-" Telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
@@ -73,7 +72,21 @@ vnoremap <leader>s :s///g<left><left>
 nnoremap <leader>qq :s/\. /\.\r/g<CR>
 nnoremap <leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
 
+" FZF
+nnoremap <c-p> :Files<CR>
+nnoremap <c-n> :Files ~/n<CR>
+nnoremap <c-s> :Buffers<CR>
+nnoremap <leader>/ :Rg<CR>
+nnoremap <leader>h :Help<CR>
+
 " LSP
+nnoremap <C-k> :lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <C-j> :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
+nnoremap K :lua vim.lsp.buf.hover()<CR>
+
 lua << EOF
 require'lspconfig'.gopls.setup{
     on_attach=require'completion'.on_attach
@@ -88,20 +101,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 )
 EOF
-
-nnoremap <C-k> :lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <C-j> :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap gd :lua vim.lsp.buf.definition()<CR>
-nnoremap gr :lua vim.lsp.buf.references()<CR>
-nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
-nnoremap K :lua vim.lsp.buf.hover()<CR>
-
-" Telescope
-nnoremap <c-p> :Telescope find_files<CR>
-nnoremap <c-n> :Telescope oldfiles<CR>
-nnoremap <c-s> :Telescope buffers<CR>
-nnoremap <leader>/ :Telescope live_grep<CR>
-nnoremap <leader>h :Telescope help_tags<CR>
 
 augroup BRIANO
     autocmd!
