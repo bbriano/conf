@@ -1,6 +1,10 @@
-require'lspconfig'.gopls.setup{
-    on_attach = require'completion'.on_attach,
-}
+language_servers = {'gopls', 'tsserver'}
+
+for i = 1, #language_servers do
+    require'lspconfig'[language_servers[i]].setup{
+        on_attach = require'completion'.on_attach,
+    }
+end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
