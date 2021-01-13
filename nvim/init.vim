@@ -6,7 +6,6 @@ Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -96,7 +95,6 @@ function! FormatBuffer()
     %s/\s\+$//e    " per line
     %s/\n\+\%$//e  " EOF
     call winrestview(l:view)
-    :Neoformat
 endfunction
 
 lua require("lsp")
