@@ -31,6 +31,7 @@ set laststatus=1
 set guicursor=
 set foldmethod=indent foldlevel=99
 set completeopt=menuone,noinsert,noselect
+set shortmess=I
 
 colorscheme peachpuff
 highlight StatusLine ctermbg=15 ctermfg=8
