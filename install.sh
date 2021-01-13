@@ -1,26 +1,26 @@
 #!/bin/bash
 
+set -e # Exit on error
+
 # Create symbolic links
-mkdir -p ~/.config
-
-rm -rf ~/.config/karabiner
-mkdir ~/.config/karabiner
-ln -sf $(pwd)/karabiner.json ~/.config/karabiner/karabiner.json
-
-rm -rf ~/.config/nvim
-mkdir ~/.config/nvim
-ln -sf $(pwd)/nvim ~/.config/nvim
-
-ln -sf $(pwd)/prettierrc.json ~/.prettierrc
-ln -sf $(pwd)/tmux.conf ~/.tmux.conf
-ln -sf $(pwd)/zshrc ~/.zshrc
+mkdir -p $HOME/config
+rm -rf $HOME/config/karabiner
+mkdir $HOME/config/karabiner
+ln -sf $(pwd)/karabiner.json $HOME/config/karabiner/karabiner.json
+rm -rf $HOME/config/nvim
+mkdir $HOME/config/nvim
+ln -sf $(pwd)/nvim $HOME/config/nvim
+ln -sf $(pwd)/cmus $HOME/config/cmus/autosave
+ln -sf $(pwd)/prettierrc.json $HOME/prettierrc
+ln -sf $(pwd)/tmux.conf $HOME/tmux.conf
+ln -sf $(pwd)/zshrc $HOME/zshrc
 
 # Change key repeat variable
 defaults write -g InitialKeyRepeat -int 15  # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1          # normal minimum is 2 (30 ms)
 
 # Homebrew
-# bash -c "\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+bash -c "\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 for formula in $(cat brew/leaves); do
     brew install "$formula"
 done
