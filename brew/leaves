@@ -9,6 +9,7 @@ docker
 eye-d3
 figlet
 fortune
+fzf
 go
 golang-migrate
 gopls
@@ -18,6 +19,7 @@ hugo
 jesseduffield/horcrux/horcrux
 jp2a
 kyleconroy/sqlc/sqlc
+lazydocker
 lazygit
 librsvg
 lolcat
