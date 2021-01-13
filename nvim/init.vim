@@ -1,21 +1,17 @@
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-
-" FZF
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
 call plug#end()
 
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
