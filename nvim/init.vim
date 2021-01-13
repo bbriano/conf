@@ -89,8 +89,8 @@ augroup BRIANO
     autocmd!
     autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
     autocmd Filetype go setlocal noexpandtab
-    autocmd BufWritePre *.go lua format_go(1000)
     autocmd BufWritePre * call TrimWhiteSpace() | undojoin | Neoformat
+    autocmd BufWritePre *.go lua format_go(100)
 augroup END
 
 function! TrimWhiteSpace()
