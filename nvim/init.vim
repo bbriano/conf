@@ -83,26 +83,12 @@ nnoremap gr :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap K :lua vim.lsp.buf.hover()<CR>
 
-lua << EOF
-require'lspconfig'.gopls.setup{
-    on_attach=require'completion'.on_attach
-}
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = true,
-        virtual_text = true,
-        signs = false,
-        update_in_insert = false,
-    }
-)
-EOF
-
 augroup BRIANO
     autocmd!
     autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
     autocmd Filetype go setlocal noexpandtab
     autocmd BufWritePre * call FormatBuffer()
+    autocmd BufWritePre *.go lua goimports(1000)
 augroup END
 
 function! FormatBuffer()
@@ -112,3 +98,5 @@ function! FormatBuffer()
     call winrestview(l:view)
     :Neoformat
 endfunction
+
+lua require("lsp")
