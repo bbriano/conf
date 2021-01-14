@@ -6,6 +6,7 @@ cmake
 cmus
 cowsay
 docker
+doxygen
 eye-d3
 figlet
 fortune
@@ -28,10 +29,12 @@ luarocks
 mingw-w64
 mysql
 neofetch
+neomutt
 neovim
 openblas
 openjdk
 pandoc
+pass
 php
 pipes-sh
 pngpaste
@@ -49,7 +52,6 @@ speedtest-cli
 tldr
 tmux
 transmission-cli
-tree
 watch
 wget
 youtube-dl
