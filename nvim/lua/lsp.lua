@@ -1,4 +1,4 @@
-language_servers = {'gopls', 'tsserver'}
+language_servers = {'gopls', 'tsserver', 'pyls', 'svelte', 'clangd'}
 
 for i = 1, #language_servers do
     require'lspconfig'[language_servers[i]].setup{
