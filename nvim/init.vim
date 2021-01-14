@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'dstein64/vim-startuptime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
@@ -20,7 +21,6 @@ let g:neoformat_only_msg_on_error = 1
 let g:netrw_banner = 0
 let g:python_highlight_space_errors = 0
 let g:vim_markdown_new_list_item_indent = 0
-let mapleader = " "
 
 set noswapfile
 set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
@@ -55,25 +55,35 @@ command! W w
 nnoremap Y y$
 nnoremap * *N
 vnoremap p "_dP
-vnoremap <c-h> hoho
-vnoremap <c-j> jojo
-vnoremap <c-k> koko
-vnoremap <c-l> lolo
+nnoremap <silent> <esc> :nohl<CR><C-L>
 nnoremap S :bprevious<CR>
 nnoremap s :bnext<CR>
+
+vnoremap <C-h> hoho
+vnoremap <C-j> jojo
+vnoremap <C-k> koko
+vnoremap <C-l> lolo
+nnoremap <C-d> <C-d>
+nnoremap <C-u> <C-u>
+nnoremap <C-d> 18j
+nnoremap <C-u> 18k
+
+let mapleader = " "
+nnoremap <leader>V :edit ~/.config/nvim/init.vim<CR>
+nnoremap <leader>S :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>l :buffer #<CR>
 nnoremap <leader>x :bdelete<CR>
 nnoremap <leader>d :bnext \| bdelete #<CR>
-nnoremap <silent> <esc> :nohl<CR><C-L>
 nnoremap <leader>s :%s///g<left><left>
 vnoremap <leader>s :s///g<left><left>
 nnoremap <leader>qq :s/\. /\.\r/g<CR>
 nnoremap <leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
 
 " FZF
-nnoremap <c-p> :Files<CR>
-nnoremap <c-n> :Files ~/n<CR>
-nnoremap <c-s> :Buffers<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-n> :Files ~/n<CR>
+nnoremap <C-s> :Buffers<CR>
+nnoremap <leader>f :Files %:h<CR>
 nnoremap <leader>/ :Rg<CR>
 nnoremap <leader>h :Help<CR>
 
@@ -91,6 +101,7 @@ augroup BRIANO
     autocmd Filetype go setlocal noexpandtab
     autocmd BufWritePre * call TrimWhiteSpace() | undojoin | Neoformat
     autocmd BufWritePre *.go lua format_go(100)
+    autocmd BufEnter * lua require'completion'.on_attach()
 augroup END
 
 function! TrimWhiteSpace()
