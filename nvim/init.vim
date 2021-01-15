@@ -7,8 +7,8 @@ Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sbdchd/neoformat'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -19,8 +19,6 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:ip_skipfold = 1
 let g:neoformat_only_msg_on_error = 1
 let g:netrw_banner = 0
-let g:python_highlight_space_errors = 0
-let g:vim_markdown_new_list_item_indent = 0
 
 set noswapfile
 set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
@@ -31,7 +29,7 @@ set number
 set signcolumn=no
 set laststatus=1
 set guicursor=
-set foldmethod=indent foldlevel=99
+set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 set completeopt=menuone,noinsert,noselect
 set shortmess=I
 
@@ -112,3 +110,4 @@ function! TrimWhiteSpace()
 endfunction
 
 lua require("lsp")
+lua require("treesitter")
