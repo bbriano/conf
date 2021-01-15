@@ -51,6 +51,9 @@ highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
 highlight Folded ctermbg=NONE ctermfg=8
 
 command! W w
+command! Q q
+
+nnoremap Q <nop>
 nnoremap Y y$
 nnoremap * *N
 vnoremap p "_dP
