@@ -26,7 +26,6 @@ set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
 set incsearch ignorecase smartcase
 set hidden
 set nowrap
-set number
 set signcolumn=no
 set laststatus=1
 set guicursor=
