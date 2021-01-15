@@ -2,11 +2,13 @@ aria2
 bat
 cabal-install
 ccls
+cloc
 cmake
 cmus
 cowsay
 docker
 doxygen
+drunkcase
 eye-d3
 figlet
 fortune
@@ -34,7 +36,7 @@ neovim
 openblas
 openjdk
 pandoc
-pass
+pass-otp
 php
 pipes-sh
 pngpaste
@@ -55,5 +57,6 @@ transmission-cli
 watch
 wget
 youtube-dl
+zbar
 zsh-autosuggestions
 zsh-syntax-highlighting
