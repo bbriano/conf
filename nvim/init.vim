@@ -65,10 +65,6 @@ vnoremap <C-h> hoho
 vnoremap <C-j> jojo
 vnoremap <C-k> koko
 vnoremap <C-l> lolo
-nnoremap <C-d> <C-d>
-nnoremap <C-u> <C-u>
-nnoremap <C-d> 18j
-nnoremap <C-u> 18k
 
 let mapleader = " "
 nnoremap <leader>V :edit ~/.config/nvim/init.vim<CR>
