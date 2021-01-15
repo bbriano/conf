@@ -20,6 +20,7 @@ let g:ip_skipfold = 1
 let g:neoformat_only_msg_on_error = 1
 let g:netrw_banner = 0
 let g:netrw_dirhistmax = 0
+let g:netrw_list_hide = '^\.\.\?\/$'
 
 set noswapfile
 set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
