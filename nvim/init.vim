@@ -1,3 +1,4 @@
+" Plug {{{
 call plug#begin('~/.vim/plugged')
 Plug 'dstein64/vim-startuptime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -13,14 +14,22 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 call plug#end()
+" }}}
 
+" Lua {{{
+lua require("lsp")
+" }}}
+
+" Let {{{
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:ip_skipfold = 1
 let g:neoformat_only_msg_on_error = 1
 let g:netrw_banner = 0
 let g:netrw_dirhistmax = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
+" }}}
 
+" Set {{{
 set noswapfile
 set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
 set incsearch ignorecase smartcase
@@ -32,7 +41,9 @@ set guicursor=
 set foldmethod=indent
 set completeopt=menuone,noinsert,noselect
 set shortmess=I
+" }}}
 
+" Colorscheme {{{
 colorscheme peachpuff
 highlight StatusLine ctermbg=15 ctermfg=8
 highlight StatusLineNC ctermbg=15 ctermfg=0
@@ -48,10 +59,9 @@ highlight IncSearch ctermfg=9
 highlight LineNr ctermfg=8
 highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
 highlight Folded ctermbg=NONE ctermfg=8
+" }}}
 
-command! W w
-command! Q q
-
+" Mappings {{{
 nnoremap Q <nop>
 nnoremap Y y$
 nnoremap * *N
@@ -97,21 +107,30 @@ nnoremap gd         :lua vim.lsp.buf.definition()<CR>
 nnoremap gr         :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap K          :lua vim.lsp.buf.hover()<CR>
+" }}}
 
+" Commands {{{
+command! W w
+command! Q q
+" }}}
+
+" Autocommands {{{
 augroup BRIANO
     autocmd!
     autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
+    autocmd Filetype vim setlocal foldmethod=marker
     autocmd Filetype go setlocal noexpandtab
     autocmd BufWritePre * call TrimWhiteSpace() | undojoin | Neoformat
     autocmd BufWritePre *.go lua format_go(100)
     autocmd BufEnter * lua require'completion'.on_attach()
 augroup END
+" }}}
 
+" Functions {{{
 function! TrimWhiteSpace()
     let l:view = winsaveview()
     %s/\s\+$//e    " per line
     %s/\n\+\%$//e  " EOF
     call winrestview(l:view)
 endfunction
-
-lua require("lsp")
+" }}}
