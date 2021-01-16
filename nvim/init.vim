@@ -56,9 +56,14 @@ nnoremap Q <nop>
 nnoremap Y y$
 nnoremap * *N
 vnoremap p "_dP
-nnoremap <silent> <esc> :nohl<CR><C-L>
 nnoremap S :bprevious<CR>
 nnoremap s :bnext<CR>
+
+nnoremap <silent> <esc>   :nohl<CR><C-L>
+nnoremap <silent> <down>  :resize +1<CR>
+nnoremap <silent> <up>    :resize -1<CR>
+nnoremap <silent> <right> :vertical resize +1<CR>
+nnoremap <silent> <left>  :vertical resize -1<CR>
 
 vnoremap <C-h> hoho
 vnoremap <C-j> jojo
@@ -66,31 +71,32 @@ vnoremap <C-k> koko
 vnoremap <C-l> lolo
 
 let mapleader = " "
-nnoremap <leader>V :edit ~/.config/nvim/init.vim<CR>
-nnoremap <leader>S :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>l :buffer #<CR>
-nnoremap <leader>x :bdelete<CR>
-nnoremap <leader>d :bnext \| bdelete #<CR>
-nnoremap <leader>s :%s///g<left><left>
-vnoremap <leader>s :s///g<left><left>
-nnoremap <leader>qq :s/\. /\.\r/g<CR>
+nnoremap <leader>V   :edit ~/.config/nvim/init.vim<CR>
+nnoremap <leader>S   :source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>l   :buffer #<CR>
+nnoremap <leader>x   :bdelete<CR>
+nnoremap <leader>d   :bnext \| bdelete #<CR>
+nnoremap <leader>s   :%s///g<left><left>
+vnoremap <leader>s   :s///g<left><left>
+nnoremap <leader>qq  :s/\. /\.\r/g<CR>
 nnoremap <leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
+nnoremap <leader>fn  :put =expand('%:t')<CR>
 
 " FZF
-nnoremap <C-p> :Files<CR>
-nnoremap <C-n> :Files ~/n<CR>
-nnoremap <C-s> :Buffers<CR>
-nnoremap <leader>f :Files %:h<CR>
-nnoremap <leader>/ :Rg<CR>
-nnoremap <leader>h :Help<CR>
+nnoremap <C-p>      :Files<CR>
+nnoremap <C-n>      :Files ~/n<CR>
+nnoremap <C-s>      :Buffers<CR>
+nnoremap <leader>ff :Files %:h<CR>
+nnoremap <leader>/  :Rg<CR>
+nnoremap <leader>h  :Help<CR>
 
 " LSP
-nnoremap <C-k> :lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <C-j> :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap gd :lua vim.lsp.buf.definition()<CR>
-nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap <C-k>      :lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <C-j>      :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap gd         :lua vim.lsp.buf.definition()<CR>
+nnoremap gr         :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
-nnoremap K :lua vim.lsp.buf.hover()<CR>
+nnoremap K          :lua vim.lsp.buf.hover()<CR>
 
 augroup BRIANO
     autocmd!
