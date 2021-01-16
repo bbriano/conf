@@ -2,6 +2,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey -e
+bindkey -s ^z 'fg\n'
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566178'
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
@@ -24,6 +25,7 @@ alias lzd='lazydocker'
 alias n='cd ~/n'
 alias nn='cd ~/n/notes'
 alias nd='cd ~/n/dotfiles'
+alias iso='date +%Y-%m-%d'
 
 # Git info in prompt
 autoload -Uz vcs_info
