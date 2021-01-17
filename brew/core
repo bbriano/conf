@@ -13,9 +13,11 @@ eye-d3
 figlet
 fortune
 fzf
+gdb
 go
 golang-migrate
 gopls
+groff
 htop
 http-server
 hugo
@@ -33,7 +35,6 @@ mysql
 neofetch
 neomutt
 neovim
-openblas
 openjdk
 pandoc
 pass-otp
