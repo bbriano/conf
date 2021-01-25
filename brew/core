@@ -32,6 +32,7 @@ luajit
 luarocks
 mingw-w64
 mysql
+nasm
 neofetch
 neomutt
 neovim
