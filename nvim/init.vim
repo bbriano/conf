@@ -38,7 +38,7 @@ set nowrap
 set signcolumn=no
 set laststatus=1
 set guicursor=
-set foldmethod=indent
+set foldmethod=indent foldlevel=99
 set completeopt=menuone,noinsert,noselect
 set shortmess=I
 " }}}
@@ -62,6 +62,8 @@ highlight Folded ctermbg=NONE ctermfg=8
 " }}}
 
 " Mappings {{{
+let mapleader = ' '
+
 nnoremap Q <nop>
 nnoremap Y y$
 nnoremap * *N
@@ -80,7 +82,6 @@ vnoremap <C-j> jojo
 vnoremap <C-k> koko
 vnoremap <C-l> lolo
 
-let mapleader = " "
 nnoremap <leader>V   :edit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>S   :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>l   :buffer #<CR>
