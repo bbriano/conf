@@ -159,16 +159,12 @@
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
+                                        "mandatory": ["left_control"]
                                     }
                                 },
                                 "to": {
                                     "key_code": "delete_or_backspace",
-                                    "modifiers": [
-                                        "option"
-                                    ]
+                                    "modifiers": ["option"]
                                 },
                                 "conditions": [
                                     {
