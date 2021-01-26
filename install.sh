@@ -3,14 +3,14 @@
 set -e # Exit on error
 
 # Create symbolic links
-mkdir -p $HOME/config
-rm -rf $HOME/config/karabiner
-mkdir $HOME/config/karabiner
-ln -sf $(pwd)/karabiner.json $HOME/config/karabiner/karabiner.json
-rm -rf $HOME/config/nvim
-mkdir $HOME/config/nvim
-ln -sf $(pwd)/nvim $HOME/config/nvim
-ln -sf $(pwd)/cmus $HOME/config/cmus/autosave
+mkdir -p $HOME/.config
+rm -rf $HOME/.config/karabiner
+mkdir -p $HOME/.config/karabiner
+ln -sf $(pwd)/karabiner.json $HOME/.config/karabiner/karabiner.json
+rm -rf $HOME/.config/nvim
+mkdir -p $HOME/.config/nvim
+ln -sf $(pwd)/nvim $HOME/.config/nvim
+ln -sf $(pwd)/cmus $HOME/.config/cmus/autosave
 ln -sf $(pwd)/prettierrc.json $HOME/prettierrc
 ln -sf $(pwd)/tmux.conf $HOME/tmux.conf
 ln -sf $(pwd)/zshrc $HOME/zshrc
