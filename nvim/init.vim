@@ -29,6 +29,18 @@ let g:netrw_dirhistmax = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
 " }}}
 
+" Colorscheme {{{
+colorscheme peachpuff
+highlight VertSplit cterm=NONE
+highlight Visual ctermbg=NONE
+highlight CursorLine ctermbg=0 cterm=NONE
+highlight Search ctermfg=0
+highlight IncSearch ctermfg=9
+highlight LineNr ctermfg=8
+highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
+highlight Folded ctermbg=NONE ctermfg=8
+" }}}
+
 " Set {{{
 set noswapfile
 set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
@@ -41,24 +53,6 @@ set guicursor=
 set foldmethod=indent foldlevel=99
 set completeopt=menuone,noinsert,noselect
 set shortmess=I
-" }}}
-
-" Colorscheme {{{
-colorscheme peachpuff
-highlight StatusLine ctermbg=15 ctermfg=8
-highlight StatusLineNC ctermbg=15 ctermfg=0
-highlight VertSplit ctermfg=0 cterm=NONE
-highlight Pmenu ctermbg=0 ctermfg=15
-highlight PmenuSel ctermbg=8 ctermfg=15
-highlight PmenuSbar ctermbg=0
-highlight PmenuThumb ctermbg=8
-highlight Visual ctermbg=8 cterm=NONE
-highlight CursorLine ctermbg=0 cterm=NONE
-highlight Search ctermfg=0
-highlight IncSearch ctermfg=9
-highlight LineNr ctermfg=8
-highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
-highlight Folded ctermbg=NONE ctermfg=8
 " }}}
 
 " Mappings {{{
