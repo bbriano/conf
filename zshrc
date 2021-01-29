@@ -26,6 +26,7 @@ alias n='cd ~/n'
 alias nn='cd ~/n/notes'
 alias nd='cd ~/n/dotfiles'
 alias iso='date +%Y-%m-%d'
+alias ydl='youtube-dl'
 
 # Git info in prompt
 autoload -Uz vcs_info
