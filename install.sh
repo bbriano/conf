@@ -2,18 +2,33 @@
 
 set -e # Exit on error
 
+cd $(pwd)
+
 # Create symbolic links
 mkdir -p $HOME/.config
+
 rm -rf $HOME/.config/karabiner
 mkdir -p $HOME/.config/karabiner
-ln -sf $(pwd)/karabiner.json $HOME/.config/karabiner/karabiner.json
+ln -s $(pwd)/karabiner.json $HOME/.config/karabiner/karabiner.json
+
 rm -rf $HOME/.config/nvim
-mkdir -p $HOME/.config/nvim
-ln -sf $(pwd)/nvim $HOME/.config/nvim
-ln -sf $(pwd)/cmus $HOME/.config/cmus/autosave
-ln -sf $(pwd)/prettierrc.json $HOME/prettierrc
-ln -sf $(pwd)/tmux.conf $HOME/tmux.conf
-ln -sf $(pwd)/zshrc $HOME/zshrc
+ln -s $(pwd)/nvim $HOME/.config/nvim
+
+rm -rf $HOME/.vimrc
+ln -s $(pwd)/vimrc $HOME/.vimrc
+
+rm -rf $HOME/.config/cmus
+mkdir -p $HOME/.config/cmus
+ln -s $(pwd)/cmus $HOME/.config/cmus/autosave
+
+rm -rf $HOME/.prettierrc
+ln -s $(pwd)/prettierrc.json $HOME/.prettierrc
+
+rm -rf $HOME/.tmux.conf
+ln -s $(pwd)/tmux.conf $HOME/.tmux.conf
+
+rm -rf $HOME/.zshrc
+ln -s $(pwd)/zshrc $HOME/.zshrc
 
 # Change key repeat variable
 defaults write -g InitialKeyRepeat -int 15  # normal minimum is 15 (225 ms)
