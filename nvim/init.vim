@@ -35,7 +35,7 @@ highlight VertSplit cterm=NONE
 highlight Visual ctermbg=NONE
 highlight CursorLine ctermbg=0 cterm=NONE
 highlight Search ctermfg=0
-highlight IncSearch ctermfg=9
+highlight IncSearch ctermfg=5
 highlight LineNr ctermfg=8
 highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
 highlight Folded ctermbg=NONE ctermfg=8
