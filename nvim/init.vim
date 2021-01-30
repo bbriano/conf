@@ -33,7 +33,6 @@ let g:netrw_list_hide = '^\.\.\?\/$'
 colorscheme peachpuff
 highlight VertSplit cterm=NONE
 highlight Visual ctermbg=NONE
-highlight CursorLine ctermbg=0 cterm=NONE
 highlight Search ctermfg=0
 highlight IncSearch ctermfg=5
 highlight LineNr ctermfg=8
