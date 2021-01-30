@@ -34,6 +34,9 @@ ln -s $(pwd)/zshrc $HOME/.zshrc
 defaults write -g InitialKeyRepeat -int 15  # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1          # normal minimum is 2 (30 ms)
 
+# Disable annoying popup "<app> quit unexpectedly"
+defaults write com.apple.CrashReporter DialogType none
+
 # Homebrew
 bash -c "\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 for formula in $(cat brew/leaves); do
