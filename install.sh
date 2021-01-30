@@ -17,10 +17,6 @@ ln -s $(pwd)/nvim $HOME/.config/nvim
 rm -rf $HOME/.vimrc
 ln -s $(pwd)/vimrc $HOME/.vimrc
 
-rm -rf $HOME/.config/cmus
-mkdir -p $HOME/.config/cmus
-ln -s $(pwd)/cmus $HOME/.config/cmus/autosave
-
 rm -rf $HOME/.prettierrc
 ln -s $(pwd)/prettierrc.json $HOME/.prettierrc
 
