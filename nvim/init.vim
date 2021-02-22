@@ -114,6 +114,7 @@ augroup BRIANO
     autocmd Filetype markdown setlocal commentstring=<!--\ %s\ --> sw=2
     autocmd Filetype vim setlocal foldmethod=marker
     autocmd Filetype go setlocal noexpandtab
+    autocmd Filetype java setlocal shiftwidth=4
     autocmd BufWritePre * call TrimWhiteSpace() | undojoin | Neoformat
     autocmd BufWritePre *.go lua format_go(100)
     autocmd BufEnter * lua require'completion'.on_attach()
