@@ -26,6 +26,7 @@ alias n='cd ~/notes'
 alias d='cd ~/docs'
 alias u='cd ~/university'
 alias c='cd ~/code'
+alias s='cd ~/scripts'
 alias iso='date +%Y-%m-%d'
 alias ydl='youtube-dl'
 
