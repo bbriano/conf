@@ -8,7 +8,6 @@ Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -23,7 +22,6 @@ lua require("lsp")
 " Let {{{
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:ip_skipfold = 1
-let g:neoformat_only_msg_on_error = 1
 let g:netrw_banner = 0
 let g:netrw_dirhistmax = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
@@ -115,7 +113,7 @@ augroup BRIANO
     autocmd Filetype vim setlocal foldmethod=marker
     autocmd Filetype go setlocal noexpandtab
     autocmd Filetype java setlocal shiftwidth=4
-    autocmd BufWritePre * call TrimWhiteSpace() | undojoin | Neoformat
+    autocmd BufWritePre * call TrimWhiteSpace()
     autocmd BufWritePre *.go lua format_go(100)
     autocmd BufEnter * lua require'completion'.on_attach()
 augroup END
