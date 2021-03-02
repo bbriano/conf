@@ -46,6 +46,7 @@ php
 pipes-sh
 pngpaste
 postgresql
+prettier
 pyenv
 python@3.8
 qt
