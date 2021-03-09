@@ -1,5 +1,6 @@
 ansible
 aria2
+astyle
 bat
 cabal-install
 ccls
@@ -18,6 +19,7 @@ fzf
 gdb
 go
 golang-migrate
+google-java-format
 gopls
 groff
 heroku/brew/heroku
