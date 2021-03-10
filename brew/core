@@ -35,6 +35,7 @@ librsvg
 lolcat
 luajit
 luarocks
+mermaid-cli
 mingw-w64
 mysql
 nasm
