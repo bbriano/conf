@@ -1,5 +1,6 @@
 " Plug {{{
 call plug#begin('~/.vim/plugged')
+Plug 'chiel92/vim-autoformat'
 Plug 'dstein64/vim-startuptime'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -9,7 +10,6 @@ Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'sbdchd/neoformat'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -25,7 +25,6 @@ lua require("lsp")
 " Let {{{
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:ip_skipfold = 1
-let g:neoformat_only_msg_on_error = 1
 let g:netrw_banner = 0
 let g:netrw_dirhistmax = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
@@ -116,10 +115,8 @@ augroup BRIANO
     autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
     autocmd Filetype vim setlocal foldmethod=marker
     autocmd Filetype go setlocal noexpandtab
-    autocmd BufWritePre * call TrimWhiteSpace()
-    autocmd BufWritePre *.go lua format_go(100)
-    autocmd BufWritePre *.md undojoin | Neoformat
     autocmd BufEnter * lua require'completion'.on_attach()
+    autocmd BufWritePre * call TrimWhiteSpace()
 augroup END
 " }}}
 
@@ -130,6 +127,15 @@ function! TrimWhiteSpace()
     %s/\n\+\%$//e  " EOF
     call winrestview(l:view)
 endfunction
+" }}}
+
+" Autoformat {{{
+let g:formatters_md = ['prettier']
+augroup AUTOFORMAT
+    autocmd BufWrite *.go silent Autoformat
+    autocmd BufWrite *.java silent Autoformat
+    " autocmd BufWrite *.md silent Autoformat
+augroup END
 " }}}
 
 " Ultisnips {{{
