@@ -1,6 +1,7 @@
 " Plug {{{
 call plug#begin('~/.vim/plugged')
 Plug 'dstein64/vim-startuptime'
+Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
@@ -9,6 +10,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'sbdchd/neoformat'
+Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -128,4 +130,10 @@ function! TrimWhiteSpace()
     %s/\n\+\%$//e  " EOF
     call winrestview(l:view)
 endfunction
+" }}}
+
+" Ultisnips {{{
+let g:UltiSnipsExpandTrigger="<TAB>"
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 " }}}
