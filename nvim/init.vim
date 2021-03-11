@@ -89,7 +89,7 @@ nnoremap <leader>fn  :put =expand('%:t')<CR>
 
 " FZF
 nnoremap <C-p>      :Files<CR>
-nnoremap <C-n>      :Files ~/n<CR>
+nnoremap <C-n>      :Files ~<CR>
 nnoremap <C-s>      :Buffers<CR>
 nnoremap <leader>ff :Files %:h<CR>
 nnoremap <leader>/  :Rg<CR>
