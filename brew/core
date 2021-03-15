@@ -31,10 +31,10 @@ jp2a
 kyleconroy/sqlc/sqlc
 lazydocker
 lazygit
-librsvg
 lolcat
 luajit
 luarocks
+maven
 mermaid-cli
 mingw-w64
 mysql
@@ -47,6 +47,7 @@ pandoc
 pass-otp
 php
 pipes-sh
+plantuml
 pngpaste
 postgresql
 prettier
