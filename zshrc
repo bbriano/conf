@@ -12,6 +12,7 @@ export FZF_DEFAULT_COMMAND='rg --files'
 export BAT_THEME=base16
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
 export GOMAIL_USER='bgoestiawan@gmail.com'
 
 alias ls='ls -G'
