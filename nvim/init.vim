@@ -112,9 +112,6 @@ command! Q q
 " Autocommands {{{
 augroup BRIANO
     autocmd!
-    autocmd Filetype markdown setlocal commentstring=<!--\ %s\ -->
-    autocmd Filetype vim setlocal foldmethod=marker
-    autocmd Filetype go setlocal noexpandtab
     autocmd BufEnter * lua require'completion'.on_attach()
     autocmd BufWritePre * call TrimWhiteSpace()
 augroup END
