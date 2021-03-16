@@ -1,6 +1,5 @@
 " Plug {{{
 call plug#begin('~/.vim/plugged')
-Plug 'chiel92/vim-autoformat'
 Plug 'dstein64/vim-startuptime'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -10,6 +9,7 @@ Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'sbdchd/neoformat'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -129,12 +129,16 @@ function! TrimWhiteSpace()
 endfunction
 " }}}
 
-" Autoformat {{{
-let g:formatters_md = ['prettier']
-augroup AUTOFORMAT
-    autocmd BufWrite *.go silent Autoformat
-    autocmd BufWrite *.java silent Autoformat
-    " autocmd BufWrite *.md silent Autoformat
+" Neoformat {{{
+let g:neoformat_only_msg_on_error = 1
+augroup NEOFORMAT
+    autocmd BufWritePre *.go Neoformat goimports
+    autocmd BufWritePre *.java Neoformat astyle
+    autocmd BufWritePre *.md Neoformat remark
+    autocmd BufWritePre *.js Neoformat prettier
+    autocmd BufWritePre *.jsx Neoformat prettier
+    autocmd BufWritePre *.ts Neoformat prettier
+    autocmd BufWritePre *.tsx Neoformat prettier
 augroup END
 " }}}
 
