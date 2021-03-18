@@ -5,7 +5,6 @@ Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
-Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neoclide/coc.nvim'
 Plug 'sbdchd/neoformat'
@@ -19,6 +18,7 @@ call plug#end()
 
 " Let {{{
 let g:ip_skipfold = 1
+let g:markdown_folding = 1
 let g:netrw_banner = 0
 let g:netrw_dirhistmax = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
