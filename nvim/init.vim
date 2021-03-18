@@ -58,6 +58,9 @@ vnoremap <C-h> hoho
 vnoremap <C-j> jojo
 vnoremap <C-k> koko
 vnoremap <C-l> lolo
+inoremap <C-z> <esc>zza
+inoremap <C-e> <esc><C-e>`.a
+inoremap <C-y> <esc><C-y>`.a
 
 nnoremap <leader>V        :edit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>S        :source ~/.config/nvim/init.vim<CR>
