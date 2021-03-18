@@ -62,7 +62,6 @@ inoremap <C-z> <esc>zza
 inoremap <C-e> <esc><C-e>`.a
 inoremap <C-y> <esc><C-y>`.a
 
-nnoremap <leader>V        :edit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>S        :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>l        :buffer #<CR>
 nnoremap <leader>x        :bdelete<CR>
@@ -143,7 +142,7 @@ let g:neoformat_only_msg_on_error = 1
 augroup NEOFORMAT
     autocmd BufWritePre *.go Neoformat goimports
     " autocmd BufWritePre *.java Neoformat astyle
-    autocmd BufWritePre *.md Neoformat remark
+    autocmd BufWritePre *.md Neoformat prettier
     autocmd BufWritePre *.json Neoformat prettier
     autocmd BufWritePre *.js Neoformat prettier
     autocmd BufWritePre *.jsx Neoformat prettier
