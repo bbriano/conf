@@ -7,8 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'masukomi/vim-markdown-folding'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
+Plug 'neoclide/coc.nvim'
 Plug 'sbdchd/neoformat'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
@@ -18,27 +17,11 @@ Plug 'tpope/vim-surround'
 call plug#end()
 " }}}
 
-" Lua {{{
-lua require("lsp")
-" }}}
-
 " Let {{{
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:ip_skipfold = 1
 let g:netrw_banner = 0
 let g:netrw_dirhistmax = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
-" }}}
-
-" Colorscheme {{{
-colorscheme peachpuff
-highlight VertSplit cterm=NONE
-highlight Visual ctermbg=NONE
-highlight Search ctermfg=0
-highlight IncSearch ctermfg=5
-highlight LineNr ctermfg=8
-highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
-highlight Folded ctermbg=NONE ctermfg=8
 " }}}
 
 " Set {{{
@@ -55,7 +38,7 @@ set completeopt=menuone,noinsert,noselect
 set shortmess=I
 " }}}
 
-" Mappings {{{
+" Maps {{{
 let mapleader = ' '
 
 nnoremap Q <nop>
@@ -76,16 +59,16 @@ vnoremap <C-j> jojo
 vnoremap <C-k> koko
 vnoremap <C-l> lolo
 
-nnoremap <leader>V   :edit ~/.config/nvim/init.vim<CR>
-nnoremap <leader>S   :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>l   :buffer #<CR>
-nnoremap <leader>x   :bdelete<CR>
-nnoremap <leader>d   :bnext \| bdelete #<CR>
-nnoremap <leader>s   :%s///g<left><left>
-vnoremap <leader>s   :s///g<left><left>
-nnoremap <leader>qq  :s/\. /\.\r/g<CR>
-nnoremap <leader>iso :r !date -u +"\%Y-\%m-\%d"<CR>
-nnoremap <leader>fn  :put =expand('%:t')<CR>
+nnoremap <leader>V        :edit ~/.config/nvim/init.vim<CR>
+nnoremap <leader>S        :source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>l        :buffer #<CR>
+nnoremap <leader>x        :bdelete<CR>
+nnoremap <leader>d        :bnext \| bdelete #<CR>
+nnoremap <leader>s        :%s///g<left><left>
+vnoremap <leader>s        :s///g<left><left>
+nnoremap <leader>qq       :s/\. /\.\r/g<CR>
+nnoremap <leader>fn       :put =expand('%:t')<CR>
+vnoremap <leader>p        yPgv:!python3<CR>
 
 " FZF
 nnoremap <C-p>      :Files<CR>
@@ -95,24 +78,23 @@ nnoremap <leader>ff :Files %:h<CR>
 nnoremap <leader>/  :Rg<CR>
 nnoremap <leader>h  :Help<CR>
 
-" LSP
-nnoremap <C-k>      :lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <C-j>      :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap gd         :lua vim.lsp.buf.definition()<CR>
-nnoremap gr         :lua vim.lsp.buf.references()<CR>
-nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
-nnoremap K          :lua vim.lsp.buf.hover()<CR>
+" CoC
+nmap <silent> [g <plug>(coc-diagnostic-prev)
+nmap <silent> ]g <plug>(coc-diagnostic-next)
+nmap <silent> gd <plug>(coc-definition)
+nmap <silent> gy <plug>(coc-type-definition)
+nmap <silent> gi <plug>(coc-implementation)
+nmap <silent> gr <plug>(coc-references)
+nmap <leader>rn <plug>(coc-rename)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 " }}}
 
 " Commands {{{
 command! W w
 command! Q q
-" }}}
 
-" Autocommands {{{
 augroup BRIANO
     autocmd!
-    autocmd BufEnter * lua require'completion'.on_attach()
     autocmd BufWritePre * call TrimWhiteSpace()
 augroup END
 " }}}
@@ -124,14 +106,42 @@ function! TrimWhiteSpace()
     %s/\n\+\%$//e  " EOF
     call winrestview(l:view)
 endfunction
+
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+endfunction
+" }}}
+
+" Colorscheme {{{
+colorscheme peachpuff
+highlight VertSplit ctermfg=0 cterm=NONE
+highlight StatusLine ctermbg=8 cterm=NONE
+highlight StatusLineNC ctermbg=0 cterm=NONE
+highlight Visual ctermbg=NONE
+highlight Search ctermbg=NONE ctermfg=3 cterm=reverse
+highlight IncSearch ctermfg=5
+highlight LineNr ctermfg=8
+highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
+highlight Folded ctermbg=NONE ctermfg=8
+highlight Pmenu ctermbg=0 ctermfg=7
+highlight PmenuSbar ctermbg=8
+highlight PmenuSel ctermbg=8 ctermfg=7
+highlight PmenuThumb ctermbg=0
 " }}}
 
 " Neoformat {{{
 let g:neoformat_only_msg_on_error = 1
 augroup NEOFORMAT
     autocmd BufWritePre *.go Neoformat goimports
-    autocmd BufWritePre *.java Neoformat astyle
+    " autocmd BufWritePre *.java Neoformat astyle
     autocmd BufWritePre *.md Neoformat remark
+    autocmd BufWritePre *.json Neoformat prettier
     autocmd BufWritePre *.js Neoformat prettier
     autocmd BufWritePre *.jsx Neoformat prettier
     autocmd BufWritePre *.ts Neoformat prettier
