@@ -132,9 +132,9 @@ highlight LineNr ctermfg=8
 highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
 highlight Folded ctermbg=NONE ctermfg=8
 highlight Pmenu ctermbg=0 ctermfg=7
-highlight PmenuSbar ctermbg=8
+highlight PmenuSbar ctermbg=0
 highlight PmenuSel ctermbg=8 ctermfg=7
-highlight PmenuThumb ctermbg=0
+highlight PmenuThumb ctermbg=8
 " }}}
 
 " Neoformat {{{
