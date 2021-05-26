@@ -1,8 +1,10 @@
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/autojump/autojump.zsh
 
 bindkey -e
 bindkey -s ^z 'fg\n'
+bindkey -s ^f 'cd $(find . -type d | fzf)\n'
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566178'
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
@@ -23,11 +25,6 @@ alias pip='pip3'
 alias tsm='transmission-remote'
 alias lzg='lazygit'
 alias lzd='lazydocker'
-alias n='cd ~/notes'
-alias d='cd ~/docs'
-alias u='cd ~/university'
-alias c='cd ~/code'
-alias s='cd ~/scripts'
 alias iso='date +%Y-%m-%d'
 alias ydl='youtube-dl'
 
