@@ -43,7 +43,6 @@ let mapleader = ' '
 
 nnoremap Q <nop>
 nnoremap Y y$
-nnoremap * *N
 vnoremap p "_dP
 nnoremap S :bprevious<CR>
 nnoremap s :bnext<CR>
@@ -88,6 +87,7 @@ nmap <silent> gy <plug>(coc-type-definition)
 nmap <silent> gi <plug>(coc-implementation)
 nmap <silent> gr <plug>(coc-references)
 nmap <leader>rn <plug>(coc-rename)
+nmap <leader>cr :CocRestart<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 " }}}
 
