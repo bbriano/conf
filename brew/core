@@ -1,7 +1,9 @@
 ansible
 aria2
 astyle
+autojump
 bat
+bbriano/drunkcase/drunkcase
 cabal-install
 ccls
 cloc
@@ -10,13 +12,14 @@ cmus
 cowsay
 docker
 doxygen
-drunkcase
 ethereum
+exa
 eye-d3
 figlet
 fortune
 fzf
 gdb
+gh
 go
 golang-migrate
 google-java-format
@@ -54,6 +57,7 @@ prettier
 pyenv
 python@3.8
 qt
+qt@5
 r
 redis
 resty
@@ -74,5 +78,6 @@ weechat
 wget
 youtube-dl
 zbar
+zlib
 zsh-autosuggestions
 zsh-syntax-highlighting
