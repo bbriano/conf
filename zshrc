@@ -4,7 +4,6 @@ source /usr/local/share/autojump/autojump.zsh
 
 bindkey -e
 bindkey -s ^z 'fg\n'
-bindkey -s ^f 'cd $(find . -type d | fzf)\n'
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566178'
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
@@ -17,8 +16,9 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 export GOMAIL_USER='bgoestiawan@gmail.com'
 
-alias ls='ls -G'
+alias ls='exa'
 alias l='ls -1'
+alias ll='ls -l'
 alias vi='nvim'
 alias py='python3'
 alias pip='pip3'
