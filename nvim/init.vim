@@ -43,6 +43,7 @@ let mapleader = ' '
 
 nnoremap Q <nop>
 nnoremap Y y$
+nnoremap <expr> * 'mm:%s/\<'.expand('<cword>').'\>//gn<CR>`m'
 vnoremap p "_dP
 nnoremap S :bprevious<CR>
 nnoremap s :bnext<CR>
@@ -63,9 +64,6 @@ vnoremap <C-h> hoho
 vnoremap <C-j> jojo
 vnoremap <C-k> koko
 vnoremap <C-l> lolo
-inoremap <C-z> <esc>zza
-inoremap <C-e> <esc><C-e>`.a
-inoremap <C-y> <esc><C-y>`.a
 
 nnoremap <leader>S        :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>l        :buffer #<CR>
