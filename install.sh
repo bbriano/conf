@@ -14,6 +14,9 @@ ln -s $(pwd)/karabiner.json $HOME/.config/karabiner/karabiner.json
 rm -rf $HOME/.config/nvim
 ln -s $(pwd)/nvim $HOME/.config/nvim
 
+rm -rf $HOME/.config/.gitconfig
+ln -s $(pwd)/.gitconfig $HOME/.config/.gitconfig
+
 rm -rf $HOME/.prettierrc
 ln -s $(pwd)/prettierrc.json $HOME/.prettierrc
 

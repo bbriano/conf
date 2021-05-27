@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Briano Goestiawan
+	email = b@briano.io
+
+[alias]
+    s = status
+    a = add
+    c = commit
+    l = log --oneline
+    last = log -1
+[push]
+    default = simple
