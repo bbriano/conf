@@ -20,3 +20,4 @@ bash install.sh
 - Profiles > Window > Style -> No Title Bar
 - Profiles > Terminal > Scrollback lines -> 0
 - Advanced > Windows > Terminal windows resize smoothly -> Yes
+- Advanced > Terminal > Prevent accidental drags -> Yes
