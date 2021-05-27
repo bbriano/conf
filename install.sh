@@ -14,17 +14,14 @@ ln -s $(pwd)/karabiner.json $HOME/.config/karabiner/karabiner.json
 rm -rf $HOME/.config/nvim
 ln -s $(pwd)/nvim $HOME/.config/nvim
 
-rm -rf $HOME/.vimrc
-ln -s $(pwd)/vimrc $HOME/.vimrc
-
 rm -rf $HOME/.prettierrc
 ln -s $(pwd)/prettierrc.json $HOME/.prettierrc
 
 rm -rf $HOME/.tmux.conf
-ln -s $(pwd)/tmux.conf $HOME/.tmux.conf
+ln -s $(pwd)/.tmux.conf $HOME/.tmux.conf
 
 rm -rf $HOME/.zshrc
-ln -s $(pwd)/zshrc $HOME/.zshrc
+ln -s $(pwd)/.zshrc $HOME/.zshrc
 
 # Change key repeat variable
 defaults write -g InitialKeyRepeat -int 15  # normal minimum is 15 (225 ms)
