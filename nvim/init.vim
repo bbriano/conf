@@ -53,6 +53,12 @@ nnoremap <silent> <up>    :resize -1<CR>
 nnoremap <silent> <right> :vertical resize +1<CR>
 nnoremap <silent> <left>  :vertical resize -1<CR>
 
+" Disable {} tracking in jumplist
+nnoremap } :keepjumps normal! }<CR>
+nnoremap { :keepjumps normal! {<CR>
+vnoremap } :<C-u>keepjumps normal! gv}<CR>
+vnoremap { :<C-u>keepjumps normal! gv{<CR>
+
 vnoremap <C-h> hoho
 vnoremap <C-j> jojo
 vnoremap <C-k> koko
