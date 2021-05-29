@@ -31,14 +31,6 @@ set foldmethod=indent foldlevel=99
 set completeopt=menuone,noinsert,noselect
 set shortmess=I
 
-command! W w
-command! Q q
-
-augroup BRIANO
-    autocmd!
-    autocmd BufWritePre * call TrimWhiteSpace()
-augroup END
-
 let mapleader = ' '
 
 nnoremap Q <nop>
@@ -94,10 +86,12 @@ nmap <silent> [g <Plug>(ale_previous_wrap)
 nmap <silent> ]g <Plug>(ale_next_wrap)
 nmap <silent> gd <plug>(ale_go_to_definition)
 nmap <silent> gr <plug>(ale_find_references)
+nmap <silent> gh <plug>(ale_hover)
 nmap <leader>rn <plug>(ale_rename)
+nmap <leader>cr <plug>(ale_reset)
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\   'md': ['prettier'],
+\   'markdown': ['prettier'],
 \   'go': ['gofmt'],
 \   'rust': ['rustfmt'],
 \}
@@ -117,17 +111,16 @@ highlight Pmenu ctermbg=0 ctermfg=7
 highlight PmenuSbar ctermbg=0
 highlight PmenuSel ctermbg=8 ctermfg=7
 highlight PmenuThumb ctermbg=8
-highlight ALEError cterm=underline
+highlight ALEError ctermfg=1 cterm=underline
 highlight ALEWarning cterm=underline
 
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        :ALEHover
-    endif
-endfunction
+command! W w
+command! Q q
+
+augroup BRIANO
+    autocmd!
+    autocmd BufWritePre * call TrimWhiteSpace()
+augroup END
 
 function! TrimWhiteSpace()
     let l:view = winsaveview()
