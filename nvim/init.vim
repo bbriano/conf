@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'bbriano/neoformat'
 Plug 'dstein64/vim-startuptime'
 Plug 'honza/vim-snippets'
 Plug 'hrsh7th/nvim-compe'
@@ -86,6 +87,11 @@ nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>lr :LspRestart<CR>
 
+" Neoformat
+let g:neoformat_only_msg_on_error = 1
+let g:neoformat_basic_format_trim = 1
+let g:neoformat_basic_format_trim_newline = 1
+
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
@@ -113,18 +119,11 @@ command! Q q
 
 augroup BRIANO
     autocmd!
-    autocmd BufWritePost * call Format()
+    autocmd FileType *.tex set ft=tex
+    autocmd BufWritePre * undojoin | Neoformat
+    autocmd BufWritePre *.go undojoin | Neoformat goimports
+    autocmd BufWritePre *.md undojoin | Neoformat prettier
+    autocmd BufWritePre *.rs undojoin | Neoformat rustfmt
 augroup END
-
-function! Format()
-    let l:view = winsaveview()
-    %s/\s\+$//e    " trailing spaces
-    %s/\n\+\%$//e  " trailing newlines
-    call winrestview(l:view)
-    if &filetype == 'go'
-        lua go_organize_imports_sync(1000)
-    endif
-    lua vim.lsp.buf.formatting()
-endfunction
 
 lua require('lsp')
