@@ -113,14 +113,18 @@ command! Q q
 
 augroup BRIANO
     autocmd!
-    autocmd BufWritePost * call TrimTrailingWhitespace() | lua vim.lsp.buf.formatting()
+    autocmd BufWritePost * call Format()
 augroup END
 
-function! TrimTrailingWhitespace()
+function! Format()
     let l:view = winsaveview()
     %s/\s\+$//e    " trailing spaces
     %s/\n\+\%$//e  " trailing newlines
     call winrestview(l:view)
+    if &filetype == 'go'
+        lua go_organize_imports_sync(1000)
+    endif
+    lua vim.lsp.buf.formatting()
 endfunction
 
 lua require('lsp')
