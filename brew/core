@@ -6,10 +6,12 @@ bat
 bbriano/drunkcase/drunkcase
 cabal-install
 ccls
+cheat
 cloc
 cmake
 cmus
 cowsay
+ctags
 docker
 doxygen
 ethereum
@@ -25,6 +27,7 @@ golang-migrate
 google-java-format
 gopls
 groff
+haskell-language-server
 heroku/brew/heroku
 htop
 http-server
@@ -46,6 +49,7 @@ neofetch
 neomutt
 neovim
 nmap
+ormolu
 pandoc
 pass-otp
 php
@@ -62,6 +66,7 @@ r
 redis
 resty
 ripgrep
+rust-analyzer
 rustup-init
 samtay/tui/tetris
 sha3sum
