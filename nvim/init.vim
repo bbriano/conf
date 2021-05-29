@@ -1,11 +1,12 @@
 call plug#begin('~/.vim/plugged')
-Plug 'dense-analysis/ale'
 Plug 'dstein64/vim-startuptime'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -73,33 +74,29 @@ nnoremap <leader>ff :Files %:h<CR>
 nnoremap <leader>/  :Rg<CR>
 nnoremap <leader>h  :Help<CR>
 
+" LSP
+nnoremap [g :lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap ]g :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap gt :lua vim.lsp.buf.type_definition()<CR>
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap gi :lua vim.lsp.buf.implementation()<CR>
+nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap K :lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>lr :LspRestart<CR>
+
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
-
-" ALE
-let g:ale_completion_enabled = 1
-nmap <silent> [g <Plug>(ale_previous_wrap)
-nmap <silent> ]g <Plug>(ale_next_wrap)
-nmap <silent> gd <plug>(ale_go_to_definition)
-nmap <silent> gr <plug>(ale_find_references)
-nmap <silent> gh <plug>(ale_hover)
-nmap <leader>rn <plug>(ale_rename)
-nmap <leader>cr <plug>(ale_reset)
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   'markdown': ['prettier'],
-\   'go': ['gofmt'],
-\   'rust': ['rustfmt'],
-\}
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'], -- Double write if use this
 
 colorscheme peachpuff
 highlight VertSplit ctermfg=0 cterm=NONE
 highlight StatusLine ctermbg=8 cterm=NONE
 highlight StatusLineNC ctermbg=0 cterm=NONE
 highlight Visual ctermbg=NONE
+highlight Visual ctermbg=8 cterm=NONE
 highlight Search ctermbg=NONE ctermfg=3 cterm=reverse
 highlight IncSearch ctermfg=5
 highlight LineNr ctermfg=8
@@ -109,20 +106,21 @@ highlight Pmenu ctermbg=0 ctermfg=7
 highlight PmenuSbar ctermbg=0
 highlight PmenuSel ctermbg=8 ctermfg=7
 highlight PmenuThumb ctermbg=8
-highlight ALEError ctermfg=1 cterm=underline
-highlight ALEWarning cterm=underline
+highlight SignColumn ctermbg=NONE
 
 command! W w
 command! Q q
 
 augroup BRIANO
     autocmd!
-    autocmd BufWritePre * call TrimWhiteSpace()
+    autocmd BufWritePost * call TrimTrailingWhitespace() | lua vim.lsp.buf.formatting()
 augroup END
 
-function! TrimWhiteSpace()
+function! TrimTrailingWhitespace()
     let l:view = winsaveview()
-    %s/\s\+$//e    " per line
-    %s/\n\+\%$//e  " EOF
+    %s/\s\+$//e    " trailing spaces
+    %s/\n\+\%$//e  " trailing newlines
     call winrestview(l:view)
 endfunction
+
+lua require('lsp')
