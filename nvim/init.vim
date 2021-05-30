@@ -5,6 +5,7 @@ Plug 'honza/vim-snippets'
 Plug 'hrsh7th/nvim-compe'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
@@ -78,7 +79,7 @@ nnoremap <leader>h  :Help<CR>
 
 nnoremap [g :lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap ]g :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap gt :lua vim.lsp.buf.type_definition()<CR>
+nnoremap gy :lua vim.lsp.buf.type_definition()<CR>
 nnoremap gd :lua vim.lsp.buf.definition()<CR>
 nnoremap gi :lua vim.lsp.buf.implementation()<CR>
 nnoremap gr :lua vim.lsp.buf.references()<CR>
@@ -103,6 +104,9 @@ highlight PmenuSbar ctermbg=0
 highlight PmenuSel ctermbg=8 ctermfg=7
 highlight PmenuThumb ctermbg=8
 highlight SignColumn ctermbg=NONE
+highlight Tabline ctermbg=0 ctermfg=7 cterm=NONE
+highlight TablineFill ctermfg=0
+highlight TablineSel ctermbg=8
 
 command! W w
 command! Q q
