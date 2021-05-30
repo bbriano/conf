@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'bbriano/ansi.vim'
 Plug 'bbriano/neoformat'
 Plug 'dstein64/vim-startuptime'
 Plug 'hrsh7th/nvim-compe'
@@ -30,6 +31,7 @@ let g:netrw_dirhistmax = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
 let mapleader = ' '
 
+colorscheme ansi
 set noswapfile
 set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
 set incsearch ignorecase smartcase
@@ -87,26 +89,6 @@ nnoremap K :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>lr :LspRestart<CR>
-
-colorscheme peachpuff
-highlight VertSplit ctermfg=0 cterm=NONE
-highlight StatusLine ctermbg=8 cterm=NONE
-highlight StatusLineNC ctermbg=0 cterm=NONE
-highlight Visual ctermbg=NONE
-highlight Visual ctermbg=8 cterm=NONE
-highlight Search ctermbg=NONE ctermfg=3 cterm=reverse
-highlight IncSearch ctermfg=5
-highlight LineNr ctermfg=8
-highlight Todo ctermbg=NONE ctermfg=NONE cterm=bold
-highlight Folded ctermbg=NONE ctermfg=8
-highlight Pmenu ctermbg=0 ctermfg=7
-highlight PmenuSbar ctermbg=0
-highlight PmenuSel ctermbg=8 ctermfg=7
-highlight PmenuThumb ctermbg=8
-highlight SignColumn ctermbg=NONE
-highlight Tabline ctermbg=0 ctermfg=7 cterm=NONE
-highlight TablineFill ctermfg=0
-highlight TablineSel ctermbg=8
 
 command! W w
 command! Q q
