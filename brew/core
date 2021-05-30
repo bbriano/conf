@@ -18,6 +18,7 @@ ethereum
 exa
 eye-d3
 figlet
+fluid-synth
 fortune
 fzf
 gdb
@@ -75,6 +76,7 @@ solidity
 speedtest-cli
 telegram-cli
 telnet
+texlab
 tldr
 tmux
 transmission-cli
