@@ -120,7 +120,7 @@ command! Q q
 
 augroup BRIANO
     autocmd!
-    autocmd FileType *.tex set ft=tex
+    autocmd BufRead,BufNewFile *.tex setlocal filetype=tex
     autocmd BufWritePre * undojoin | Neoformat
     autocmd BufWritePre *.go undojoin | Neoformat goimports
     autocmd BufWritePre *.md undojoin | Neoformat prettier
