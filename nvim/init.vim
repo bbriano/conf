@@ -1,15 +1,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'bbriano/neoformat'
 Plug 'dstein64/vim-startuptime'
-Plug 'honza/vim-snippets'
 Plug 'hrsh7th/nvim-compe'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
-Plug 'sirver/ultisnips'
+Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
@@ -112,6 +110,7 @@ highlight TablineSel ctermbg=8
 
 command! W w
 command! Q q
+command! PU PlugUpgrade | PlugUpdate
 
 augroup BRIANO
     autocmd!
