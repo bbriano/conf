@@ -60,15 +60,15 @@ vnoremap <C-j> jojo
 vnoremap <C-k> koko
 vnoremap <C-l> lolo
 
-nnoremap <leader>S        :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>l        :buffer #<CR>
-nnoremap <leader>x        :bdelete<CR>
-nnoremap <leader>d        :bnext \| bdelete #<CR>
-nnoremap <leader>s        :%s///g<left><left>
-vnoremap <leader>s        :s///g<left><left>
-nnoremap <leader>qq       :s/\. /\.\r/g<CR>
-nnoremap <leader>fn       :put =expand('%:t')<CR>
-vnoremap <leader>p        yPgv:!python3<CR>
+nnoremap <leader>S  :source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>l  :buffer #<CR>
+nnoremap <leader>x  :bdelete<CR>
+nnoremap <leader>d  :bnext \| bdelete #<CR>
+nnoremap <leader>s  :%s///g<left><left>
+vnoremap <leader>s  :s///g<left><left>
+nnoremap <leader>qq :s/\. /\.\r/g<CR>
+nnoremap <leader>fn :put =expand('%:t')<CR>
+vnoremap <leader>p  yPgv:!python3<CR>
 
 nnoremap <C-p>      :Files<CR>
 nnoremap <C-n>      :Files ~<CR>
