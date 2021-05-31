@@ -11,10 +11,6 @@ export RPROMPT='%F{blue}$cmd_time${vcs_info_msg_0_}'
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files'
 export BAT_THEME=base16
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
-export GOMAIL_USER='bgoestiawan@gmail.com'
 
 alias ls='exa'
 alias l='ls -1'
