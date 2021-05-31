@@ -50,6 +50,7 @@ nnoremap <expr> * 'mm:%s/\<'.expand('<cword>').'\>//gn<CR>`m'
 vnoremap p "_dP
 nnoremap S :bprevious<CR>
 nnoremap s :bnext<CR>
+cnoremap <C-a> <C-b>
 
 nnoremap <silent> <esc>   :nohl<CR><C-L>
 nnoremap <silent> <down>  :resize +1<CR>
@@ -71,6 +72,7 @@ vnoremap <leader>s  :s///g<left><left>
 nnoremap <leader>qq :s/\. /\.\r/g<CR>
 nnoremap <leader>fn :put =expand('%:t')<CR>
 vnoremap <leader>p  yPgv:!python3<CR>
+nnoremap <leader>td :execute 'e' strftime("~/notes/%Y/%Y-%m-%d.md")<CR>
 
 nnoremap <C-p>      :Files<CR>
 nnoremap <C-n>      :Files ~<CR>
@@ -89,6 +91,7 @@ nnoremap K :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>lr :LspRestart<CR>
+
 nmap <leader>ss :call <SID>SynStack()<CR>
 
 command! W w
