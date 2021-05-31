@@ -89,6 +89,7 @@ nnoremap K :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>lr :LspRestart<CR>
+nmap <leader>ss :call <SID>SynStack()<CR>
 
 command! W w
 command! Q q
@@ -101,3 +102,11 @@ augroup BRIANO
 augroup END
 
 lua require('lsp')
+
+" Show syntax highlighting groups for word under cursor
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
