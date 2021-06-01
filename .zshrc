@@ -14,7 +14,7 @@ export BAT_THEME=base16
 
 alias ls='exa'
 alias l='ls -1'
-alias ll='ls -l'
+alias ll='ls -la'
 alias g='git'
 alias vi='nvim'
 alias py='python3'
