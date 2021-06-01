@@ -45,6 +45,7 @@ luarocks
 maven
 mermaid-cli
 mingw-w64
+mutt
 mysql
 nasm
 neofetch
@@ -60,6 +61,7 @@ plantuml
 pngpaste
 postgresql
 prettier
+proselint
 pyenv
 python@3.8
 qt
@@ -71,6 +73,7 @@ ripgrep
 rust-analyzer
 rustup-init
 samtay/tui/tetris
+sdcv
 sha3sum
 sl
 solidity
@@ -84,6 +87,7 @@ transmission-cli
 watch
 weechat
 wget
+write-good
 youtube-dl
 zbar
 zlib
