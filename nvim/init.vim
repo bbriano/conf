@@ -22,16 +22,19 @@ let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
-\   'markdown': ['proselint'],
+\   'markdown': ['write-good', 'proselint'],
 \   'python': ['jedils', 'mypy'],
-\   'text': ['proselint'],
+\   'text': ['write-good', 'proselint'],
+\   'tex': ['write-good', 'proselint'],
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'markdown': ['remark-lint'],
 \   'go': ['goimports'],
 \}
 let g:ip_skipfold = 1
 let g:markdown_folding = 1
+let g:vim_markdown_new_list_item_indent = 1
 let g:netrw_banner = 0
 let g:netrw_dirhistmax = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
@@ -101,7 +104,7 @@ nnoremap <leader>h          :Help<CR>
 
 command! W w
 command! Q q
-command! PU PlugUpgrade | PlugUpdate
+command! PU PlugUpdate | PlugUpgrade
 
 augroup BRIANO
     autocmd!
