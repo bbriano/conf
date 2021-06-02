@@ -57,8 +57,12 @@ nnoremap <silent> <esc>     :nohl<CR><C-L>
 nnoremap Q                  <nop>
 cnoremap <C-a>              <C-b>
 nnoremap Y                  y$
-nnoremap <expr> *           'mm:%s/\<'.expand('<cword>').'\>//gn<CR>`m'
 vnoremap p                  "_dP
+
+nnoremap *                  :let @/='\C\<'.expand('<cword>').'\>'<CR>:set hls<CR>
+nnoremap g*                 :let @/='\C'.expand('<cword>')<CR>:set hls<CR>
+nnoremap #                  :let @/='\C\<'.expand('<cword>').'\>'<CR>:set hls<CR>?<CR>
+nnoremap g#                 :let @/='\C'.expand('<cword>')<CR>:set hls<CR>?<CR>
 
 nnoremap S                  :bprevious<CR>
 nnoremap s                  :bnext<CR>
