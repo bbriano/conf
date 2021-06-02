@@ -58,14 +58,13 @@ nnoremap Q                  <nop>
 cnoremap <C-a>              <C-b>
 nnoremap Y                  y$
 vnoremap p                  "_dP
+nnoremap S                  :bprevious<CR>
+nnoremap s                  :bnext<CR>
 
 nnoremap *                  :let @/='\C\<'.expand('<cword>').'\>'<CR>:set hls<CR>
 nnoremap g*                 :let @/='\C'.expand('<cword>')<CR>:set hls<CR>
 nnoremap #                  :let @/='\C\<'.expand('<cword>').'\>'<CR>:set hls<CR>?<CR>
 nnoremap g#                 :let @/='\C'.expand('<cword>')<CR>:set hls<CR>?<CR>
-
-nnoremap S                  :bprevious<CR>
-nnoremap s                  :bnext<CR>
 
 nnoremap <silent> <down>    :resize +1<CR>
 nnoremap <silent> <up>      :resize -1<CR>
@@ -87,7 +86,9 @@ nnoremap <leader>qq         :s/\. /\.\r/g<CR>
 nnoremap <leader>fn         :put =expand('%:t')<CR>
 vnoremap <leader>p          yPgv:!python3<CR>
 nnoremap <leader>td         :execute 'e' strftime("~/notes/%Y/%Y-%m-%d.md")<CR>
-nnoremap <leader>ss         :call <SID>SynStack()<CR>
+nnoremap <leader>m          :make!<CR>
+nnoremap <leader>M          :Make!<CR>
+nnoremap <leader>ss         :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
 
 nnoremap [g                 :ALEPreviousWrap<CR>
 nnoremap ]g                 :ALENextWrap<CR>
@@ -97,7 +98,7 @@ nnoremap gr                 :ALEFindReference<CR>
 nnoremap K                  :ALEHover<CR>
 nnoremap <leader>rn         :ALERename<CR>
 nnoremap <leader>ca         :ALECodeAction<CR>
-nnoremap <leader>lr         :ALEReset<CR>
+nnoremap <leader>rs         :ALEReset<CR>
 
 nnoremap <C-p>              :Files<CR>
 nnoremap <C-n>              :Files ~<CR>
@@ -115,11 +116,3 @@ augroup BRIANO
     autocmd BufRead,BufNewFile *.tex setlocal filetype=tex
     autocmd BufWritePre * ALEFix
 augroup END
-
-" Show syntax highlighting groups for word under cursor
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
