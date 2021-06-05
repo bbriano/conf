@@ -9,5 +9,6 @@
     c = commit
     l = log --oneline
     last = log -1
+    co = checkout
 [push]
     default = simple
