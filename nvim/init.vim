@@ -29,7 +29,7 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'markdown': ['remark-lint'],
+\   'markdown': ['prettier'],
 \   'go': ['goimports'],
 \}
 let g:ip_skipfold = 1
@@ -88,7 +88,8 @@ vnoremap <leader>p          yPgv:!python3<CR>
 nnoremap <leader>td         :execute 'e' strftime("~/notes/%Y/%Y-%m-%d.md")<CR>
 nnoremap <leader>m          :make!<CR>
 nnoremap <leader>M          :Make!<CR>
-nnoremap <leader>ss         :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
+
+nnoremap <leader><leader>s  :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
 
 nnoremap [g                 :ALEPreviousWrap<CR>
 nnoremap ]g                 :ALENextWrap<CR>
@@ -116,3 +117,7 @@ augroup BRIANO
     autocmd BufRead,BufNewFile *.tex setlocal filetype=tex
     autocmd BufWritePre * ALEFix
 augroup END
+
+hi Title ctermbg=NONE ctermfg=5 cterm=NONE
+hi DiffRemoved ctermbg=NONE ctermfg=1 cterm=NONE
+hi DiffAdded ctermbg=NONE ctermfg=2 cterm=NONE
