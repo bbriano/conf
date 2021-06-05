@@ -28,6 +28,11 @@ alias lzd='lazydocker'
 alias iso='date +%Y-%m-%d'
 alias ydl='youtube-dl'
 
+# Ctrl-x Ctrl-e opens current command in Vim
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 # Git info in prompt
 autoload -Uz vcs_info
 setopt prompt_subst
