@@ -1,10 +1,10 @@
 nnoremap <silent> <esc>     :nohl<CR><C-L>
-nnoremap Q                  <nop>
-cnoremap <C-a>              <C-b>
+nnoremap Q                  @q
 nnoremap Y                  y$
 vnoremap p                  "_dP
 nnoremap S                  :bprevious<CR>
 nnoremap s                  :bnext<CR>
+cnoremap <C-a>              <C-b>
 
 nnoremap *                  :let @/='\C\<'.expand('<cword>').'\>'<CR>:set hls<CR>
 nnoremap g*                 :let @/='\C'.expand('<cword>')<CR>:set hls<CR>
