@@ -24,7 +24,6 @@ vnoremap <C-l>              lolo
 nnoremap <leader>S          :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>l          :buffer #<CR>
 nnoremap <leader>x          :bdelete<CR>
-nnoremap <leader>d          :bnext \| bdelete #<CR>
 nnoremap <leader>s          :%s///g<left><left>
 vnoremap <leader>s          :s///g<left><left>
 nnoremap <leader>qq         :s/\. /\.\r/g<CR>
