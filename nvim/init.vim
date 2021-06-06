@@ -30,6 +30,7 @@ set completeopt=menuone,noinsert,noselect
 set shortmess=I
 set nojoinspaces
 set virtualedit=block
+set updatetime=150
 
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
