@@ -26,6 +26,7 @@ set guicursor=
 set foldmethod=indent foldlevel=99
 set completeopt=menuone,noinsert,noselect
 set shortmess=I
+set nojoinspaces
 
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
