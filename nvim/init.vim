@@ -15,7 +15,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 set noswapfile
