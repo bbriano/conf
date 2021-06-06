@@ -6,6 +6,7 @@ Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-ipmotion'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'shougo/deoplete.nvim'
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -52,6 +53,12 @@ let g:netrw_banner = 0
 let g:netrw_dirhistmax = 0
 let g:netrw_list_hide = '^\.\.\?\/$'
 let mapleader = ' '
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('sources', {
+\   '_': ['ale', 'file', 'buffer']
+\})
 
 command! W w
 command! Q q
