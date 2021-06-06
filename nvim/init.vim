@@ -3,6 +3,7 @@ Plug 'dense-analysis/ale'
 Plug 'dstein64/vim-startuptime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
+Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-ipmotion'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
@@ -54,6 +55,7 @@ let mapleader = ' '
 
 command! W w
 command! Q q
+command! E Dirvish
 command! PU PlugUpdate | PlugUpgrade
 
 augroup BRIANO
