@@ -1,3 +1,5 @@
+let mapleader = ' '
+
 nnoremap <silent> <esc>     :nohl<CR><C-L>
 nnoremap Q                  @q
 nnoremap Y                  y$
@@ -28,7 +30,7 @@ nnoremap <leader>s          :%s///g<left><left>
 vnoremap <leader>s          :s///g<left><left>
 nnoremap <leader>qq         :s/\. /\.\r/g<CR>
 vnoremap <leader>p          yPgv:!python3<CR>
-nnoremap <leader>td         :execute 'e' strftime("~/notes/%Y/%Y-%m-%d.md")<CR>
+nnoremap <leader>td         :execute 'e' strftime("~/notes/%Y-%m-%d.md")<CR>
 nnoremap <leader>m          :make!<CR>
 nnoremap <leader>M          :Make!<CR>
 
