@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'bbriano/neoformat'
 Plug 'dense-analysis/ale'
 Plug 'dstein64/vim-startuptime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
