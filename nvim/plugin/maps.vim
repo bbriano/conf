@@ -26,6 +26,7 @@ vnoremap <C-l>              lolo
 nnoremap <leader>S          :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>l          :buffer #<CR>
 nnoremap <leader>x          :bdelete<CR>
+nnoremap <leader>d          :bnext \| bdelete #<CR>
 nnoremap <leader>s          :%s///g<left><left>
 vnoremap <leader>s          :s///g<left><left>
 nnoremap <leader>qq         :s/\. /\.\r/g<CR>
@@ -46,8 +47,10 @@ nnoremap <leader>rn         :ALERename<CR>
 nnoremap <leader>ca         :ALECodeAction<CR>
 nnoremap <leader>rs         :ALEReset<CR>
 
+" FZF closes slowly without this
+tnoremap <esc>              <esc><esc>
 nnoremap <C-p>              :Files<CR>
-nnoremap <C-n>              :Files ~<CR>
+nnoremap <C-n>              :History<CR>
 nnoremap <C-s>              :Buffers<CR>
 nnoremap <leader>ff         :Files %:h<CR>
 nnoremap <leader>/          :Rg<CR>

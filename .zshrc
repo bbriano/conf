@@ -10,6 +10,7 @@ export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
 export RPROMPT='%F{blue}$cmd_time${vcs_info_msg_0_}'
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_OPTS='--color=gutter:#0e1014'
 export BAT_THEME=base16
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin

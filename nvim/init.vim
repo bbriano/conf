@@ -28,6 +28,7 @@ set guicursor=
 set foldmethod=indent foldlevel=99
 set completeopt=menuone,noinsert,noselect
 set shortmess=I
+set shortmess+=F
 set nojoinspaces
 set virtualedit=block
 set updatetime=150

@@ -36,4 +36,3 @@ hi DiffAdded        ctermbg=NONE    ctermfg=2       cterm=NONE
 hi Directory        ctermbg=NONE    ctermfg=4       cterm=NONE
 hi CursorLine       ctermbg=0       ctermfg=NONE    cterm=NONE
 hi CursorColumn     ctermbg=0       ctermfg=NONE    cterm=NONE
-hi htmlLink         ctermbg=NONE    ctermfg=NONE    cterm=NONE
