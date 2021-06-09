@@ -8,10 +8,10 @@ nnoremap <silent> S         :bprevious<cr>
 nnoremap <silent> s         :bnext<cr>
 cnoremap <c-a>              <c-b>
 
-nnoremap *                  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>
-nnoremap g*                 :let @/='\C'.expand('<cword>')<cr>:set hls<cr>
-nnoremap #                  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>?<cr>
-nnoremap g#                 :let @/='\C'.expand('<cword>')<cr>:set hls<cr>?<cr>
+nnoremap <silent> *         :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>
+nnoremap <silent> g*        :let @/='\C'.expand('<cword>')<cr>:set hls<cr>
+nnoremap <silent> #         :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>?<cr>
+nnoremap <silent> g#        :let @/='\C'.expand('<cword>')<cr>:set hls<cr>?<cr>
 
 nnoremap <silent> <down>    :resize +1<cr>
 nnoremap <silent> <up>      :resize -1<cr>
@@ -29,23 +29,23 @@ nnoremap ]q                 :cnext<cr>
 nnoremap <leader>S          :source ~/.config/nvim/init.vim<cr>
 nnoremap <silent> <leader>l :buffer #<cr>
 nnoremap <silent> <leader>x :bdelete<cr>
-nnoremap <silent> <leader>d :bnext <bar> bdelete #<cr>
+nnoremap <silent> <leader>d :bnext<bar>bdelete #<cr>
 nnoremap <leader>s          :%s///g<left><left>
 vnoremap <leader>s          :s///g<left><left>
 nnoremap <leader>qq         :s/\. /\.\r/g<cr>
-vnoremap <leader>p          yPgv:!python3<cr>
-nnoremap <leader>td         :execute 'e' strftime("~/notes/%Y-%m-%d.md")<cr>
+vnoremap <silent> <leader>p          yPgv:!python3<cr>
+nnoremap <silent> <leader>td         :execute 'e' strftime("~/notes/%Y-%m-%d.md")<cr>
 nnoremap <leader>m          :make!<cr>
 nnoremap <leader>M          :Make!<cr>
 
 nnoremap <leader><leader>s  :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
 
-nnoremap [g                 :ALEPreviousWrap<cr>
-nnoremap ]g                 :ALENextWrap<cr>
-nnoremap gy                 :ALEGoToTypeDefinition<cr>
-nnoremap gd                 :ALEGoToDefinition<cr>
-nnoremap gr                 :ALEFindReference<cr>
-nnoremap K                  :ALEHover<cr>
+nnoremap <silent> [g        :ALEPreviousWrap<cr>
+nnoremap <silent> ]g        :ALENextWrap<cr>
+nnoremap <silent> gy        :ALEGoToTypeDefinition<cr>
+nnoremap <silent> gd        :ALEGoToDefinition<cr>
+nnoremap <silent> gr        :ALEFindReference<cr>
+nnoremap <silent> K         :ALEHover<cr>
 nnoremap <leader>rn         :ALERename<cr>
 nnoremap <leader>ca         :ALECodeAction<cr>
 nnoremap <leader>rs         :ALEReset<cr>
