@@ -1,57 +1,60 @@
 let mapleader = ' '
 
-nnoremap <silent> <esc>     :nohl<CR><C-L>
+nnoremap <silent> <esc>     :nohl<cr><c-L>
 nnoremap Q                  @q
 nnoremap Y                  y$
 vnoremap p                  "_dP
-nnoremap S                  :bprevious<CR>
-nnoremap s                  :bnext<CR>
-cnoremap <C-a>              <C-b>
+nnoremap <silent> S         :bprevious<cr>
+nnoremap <silent> s         :bnext<cr>
+cnoremap <c-a>              <c-b>
 
-nnoremap *                  :let @/='\C\<'.expand('<cword>').'\>'<CR>:set hls<CR>
-nnoremap g*                 :let @/='\C'.expand('<cword>')<CR>:set hls<CR>
-nnoremap #                  :let @/='\C\<'.expand('<cword>').'\>'<CR>:set hls<CR>?<CR>
-nnoremap g#                 :let @/='\C'.expand('<cword>')<CR>:set hls<CR>?<CR>
+nnoremap *                  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>
+nnoremap g*                 :let @/='\C'.expand('<cword>')<cr>:set hls<cr>
+nnoremap #                  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>?<cr>
+nnoremap g#                 :let @/='\C'.expand('<cword>')<cr>:set hls<cr>?<cr>
 
-nnoremap <silent> <down>    :resize +1<CR>
-nnoremap <silent> <up>      :resize -1<CR>
-nnoremap <silent> <right>   :vertical resize +1<CR>
-nnoremap <silent> <left>    :vertical resize -1<CR>
+nnoremap <silent> <down>    :resize +1<cr>
+nnoremap <silent> <up>      :resize -1<cr>
+nnoremap <silent> <right>   :vertical resize +1<cr>
+nnoremap <silent> <left>    :vertical resize -1<cr>
 
-vnoremap <C-h>              hoho
-vnoremap <C-j>              jojo
-vnoremap <C-k>              koko
-vnoremap <C-l>              lolo
+vnoremap <c-h>              hoho
+vnoremap <c-j>              jojo
+vnoremap <c-k>              koko
+vnoremap <c-l>              lolo
 
-nnoremap <leader>S          :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>l          :buffer #<CR>
-nnoremap <leader>x          :bdelete<CR>
-nnoremap <leader>d          :bnext \| bdelete #<CR>
+nnoremap [q                 :cprev<cr>
+nnoremap ]q                 :cnext<cr>
+
+nnoremap <leader>S          :source ~/.config/nvim/init.vim<cr>
+nnoremap <silent> <leader>l :buffer #<cr>
+nnoremap <silent> <leader>x :bdelete<cr>
+nnoremap <silent> <leader>d :bnext <bar> bdelete #<cr>
 nnoremap <leader>s          :%s///g<left><left>
 vnoremap <leader>s          :s///g<left><left>
-nnoremap <leader>qq         :s/\. /\.\r/g<CR>
-vnoremap <leader>p          yPgv:!python3<CR>
-nnoremap <leader>td         :execute 'e' strftime("~/notes/%Y-%m-%d.md")<CR>
-nnoremap <leader>m          :make!<CR>
-nnoremap <leader>M          :Make!<CR>
+nnoremap <leader>qq         :s/\. /\.\r/g<cr>
+vnoremap <leader>p          yPgv:!python3<cr>
+nnoremap <leader>td         :execute 'e' strftime("~/notes/%Y-%m-%d.md")<cr>
+nnoremap <leader>m          :make!<cr>
+nnoremap <leader>M          :Make!<cr>
 
-nnoremap <leader><leader>s  :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
+nnoremap <leader><leader>s  :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
 
-nnoremap [g                 :ALEPreviousWrap<CR>
-nnoremap ]g                 :ALENextWrap<CR>
-nnoremap gy                 :ALEGoToTypeDefinition<CR>
-nnoremap gd                 :ALEGoToDefinition<CR>
-nnoremap gr                 :ALEFindReference<CR>
-nnoremap K                  :ALEHover<CR>
-nnoremap <leader>rn         :ALERename<CR>
-nnoremap <leader>ca         :ALECodeAction<CR>
-nnoremap <leader>rs         :ALEReset<CR>
+nnoremap [g                 :ALEPreviousWrap<cr>
+nnoremap ]g                 :ALENextWrap<cr>
+nnoremap gy                 :ALEGoToTypeDefinition<cr>
+nnoremap gd                 :ALEGoToDefinition<cr>
+nnoremap gr                 :ALEFindReference<cr>
+nnoremap K                  :ALEHover<cr>
+nnoremap <leader>rn         :ALERename<cr>
+nnoremap <leader>ca         :ALECodeAction<cr>
+nnoremap <leader>rs         :ALEReset<cr>
 
 " FZF closes slowly without this
 tnoremap <esc>              <esc><esc>
-nnoremap <C-p>              :Files<CR>
-nnoremap <C-n>              :History<CR>
-nnoremap <C-s>              :Buffers<CR>
-nnoremap <leader>ff         :Files %:h<CR>
-nnoremap <leader>/          :Rg<CR>
-nnoremap <leader>h          :Help<CR>
+nnoremap <c-p>              :Files<cr>
+nnoremap <c-n>              :History<cr>
+nnoremap <c-s>              :Buffers<cr>
+nnoremap <leader>ff         :Files %:h<cr>
+nnoremap <leader>/          :Rg<cr>
+nnoremap <leader>h          :Help<cr>
