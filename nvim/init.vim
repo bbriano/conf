@@ -18,28 +18,26 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 call plug#end()
 
-set noswapfile
+set noswapfile                                          " Never create swap files.
 set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
 set incsearch ignorecase smartcase
-set hidden
+set hidden                                              " Allow not showing unwritten buffers.
 set nowrap
-set signcolumn=no
-set laststatus=1
-set guicursor=
+set signcolumn=no                                       " Never show the sign column (gutter).
+set laststatus=1                                        " No status line when only one window open.
+set guicursor=                                          " Don't use different cursor styles in different modes.
 set foldmethod=indent foldlevel=99
-set completeopt=menuone,noinsert,noselect
-set shortmess=I
-set shortmess+=F
-set nojoinspaces
-set virtualedit=block
+set shortmess=I                                         " Don't show intro screen on startup.
+set shortmess+=F                                        " Don't show file info when opening a file.
+set nojoinspaces                                        " Don't add double space after .?! when using :j.
+set virtualedit=block                                   " Allow the cursor in position where there is no text in visual block mode.
 set updatetime=150
 set grepprg=rg\ --vimgrep
 
-let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
-let g:ip_skipfold = 1
-let g:markdown_folding = 1
+let g:ip_skipfold = 1                                   " Makes { and } skips empty lines in closed folds.
+let g:markdown_folding = 1                              " Use markdown headings for fold levels.
 
 command! W w
 command! Q q
@@ -48,6 +46,7 @@ command! PU PlugUpdate | PlugUpgrade
 
 augroup BRIANO
     autocmd!
+    autocmd VimResized * execute "normal! \<c-w>="      " Resize vim windows when terminal is resized.
     " autocmd VimEnter * StartupTime
     " autocmd VimEnter * only
 augroup END
