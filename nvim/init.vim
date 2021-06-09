@@ -41,12 +41,7 @@ let g:markdown_folding = 1                              " Use markdown headings 
 
 command! W w
 command! Q q
-command! E Dirvish
 command! PU PlugUpdate | PlugUpgrade
-
-augroup BRIANO
-    autocmd!
-    autocmd VimResized * execute "normal! \<c-w>="      " Resize vim windows when terminal is resized.
-    " autocmd VimEnter * StartupTime
-    " autocmd VimEnter * only
-augroup END
+command! -nargs=? -complete=dir Explore Dirvish <args>
+command! -nargs=? -complete=dir Sexplore split | silent Dirvish <args>
+command! -nargs=? -complete=dir Vexplore vsplit | silent Dirvish <args>
