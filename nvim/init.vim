@@ -33,6 +33,7 @@ set shortmess+=F
 set nojoinspaces
 set virtualedit=block
 set updatetime=150
+set grepprg=rg\ --vimgrep
 
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"

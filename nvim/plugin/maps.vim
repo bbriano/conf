@@ -1,6 +1,8 @@
 let mapleader = ' '
 
-nnoremap <silent> <esc>     :nohl<cr><c-L>
+" ESC to clear everything. trigger CursorMoved to close ALE's preview window
+nnoremap <silent> <esc>     :nohl<bar>doautocmd CursorMoved<cr><c-L>
+
 nnoremap Q                  @q
 nnoremap Y                  y$
 vnoremap p                  "_dP
@@ -25,6 +27,8 @@ vnoremap <c-l>              lolo
 
 nnoremap [q                 :cprev<cr>
 nnoremap ]q                 :cnext<cr>
+nnoremap [l                 :lprev<cr>
+nnoremap ]l                 :lnext<cr>
 
 nnoremap <leader>S          :source ~/.config/nvim/init.vim<cr>
 nnoremap <silent> <leader>l :buffer #<cr>
