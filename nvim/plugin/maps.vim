@@ -92,6 +92,10 @@ nnoremap <leader><leader>d      :w !diff % -<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 
+" Ack
+nmap <leader>/ <Plug>(FerretAck)
+nmap <leader>* <Plug>(FerretAckWord)
+
 " ALE
 nnoremap <silent> [g            :ALEPreviousWrap<cr>
 nnoremap <silent> ]g            :ALENextWrap<cr>
@@ -108,7 +112,6 @@ nnoremap <c-p>                  :Files<cr>
 nnoremap <c-n>                  :History<cr>
 nnoremap <c-s>                  :Buffers<cr>
 nnoremap <leader>ff             :Files %:h<cr>
-nnoremap <leader>/              :Rg<cr>
 nnoremap <leader>h              :Help<cr>
 " Without this FZF closes slowly.
 tnoremap <esc>                  <esc><esc>

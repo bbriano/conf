@@ -15,6 +15,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
+Plug 'wincent/ferret'
 call plug#end()
 
 set noswapfile                                          " Never create swap files.
@@ -31,7 +32,6 @@ set shortmess+=O                                        " File info or quickfix 
 set nojoinspaces                                        " Don't add double space after .?! when using :j.
 set virtualedit=block                                   " Allow the cursor in position where there is no text in visual block mode.
 set updatetime=150
-set grepprg=rg\ --vimgrep
 
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
