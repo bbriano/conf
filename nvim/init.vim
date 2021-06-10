@@ -37,6 +37,7 @@ let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:ip_skipfold = 1                                   " Makes { and } skips empty lines in closed folds.
 let g:markdown_folding = 1                              " Use markdown headings for fold levels.
+let g:netrw_dirhistmax = 0                              " Don't create .netrwhist files
 
 command! W w
 command! Q q
