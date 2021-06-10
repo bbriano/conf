@@ -4,7 +4,6 @@ let mapleader = ' '
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basics
 
-
 " ESC to clear everything. Trigger CursorMoved to close ALE's preview window.
 nnoremap <silent> <esc>         :nohl<bar>doautocmd CursorMoved<cr><c-L>
 
@@ -52,7 +51,6 @@ nnoremap ]l                     :lnext<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Single Leaders
 
-
 " Quick source!
 nnoremap <leader>S              :source ~/.config/nvim/init.vim<cr>
 
@@ -81,6 +79,8 @@ nnoremap <silent> <leader>td    :execute 'e' strftime("~/notes/%Y-%m-%d.md")<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Double Leaders
 
+" Force buffer delete (dangerous).
+nnoremap <silent> <leader><leader>x :bdelete!<cr>
 
 " Show syntax highlight group under cursor.
 nnoremap <leader><leader>s      :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
@@ -91,7 +91,6 @@ nnoremap <leader><leader>d      :w !diff % -<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
-
 
 " ALE
 nnoremap <silent> [g            :ALEPreviousWrap<cr>
