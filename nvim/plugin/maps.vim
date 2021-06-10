@@ -114,8 +114,6 @@ nnoremap <c-n>                  :History<cr>
 nnoremap <c-s>                  :Buffers<cr>
 nnoremap <leader>ff             :Files %:h<cr>
 nnoremap <leader>h              :Help<cr>
-" Without this FZF closes slowly.
-tnoremap <esc>                  <esc><esc>
 
 " StartupTime
 nnoremap <leader><leader>t      :StartupTime<cr>

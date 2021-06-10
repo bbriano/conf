@@ -33,14 +33,8 @@ set nojoinspaces                                        " Don't add double space
 set virtualedit=block                                   " Allow the cursor in position where there is no text in visual block mode.
 set updatetime=150
 
-let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
-let g:UltiSnipsJumpForwardTrigger="<TAB>"
-let g:ip_skipfold = 1                                   " Makes { and } skips empty lines in closed folds.
 let g:markdown_folding = 1                              " Use markdown headings for fold levels.
 let g:netrw_dirhistmax = 0                              " Don't create .netrwhist files
 
 command! W w
 command! Q q
-command! -nargs=? -complete=dir Explore Dirvish <args>
-command! -nargs=? -complete=dir Sexplore split | silent Dirvish <args>
-command! -nargs=? -complete=dir Vexplore vsplit | silent Dirvish <args>
