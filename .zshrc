@@ -16,18 +16,40 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 
-alias ls='exa'
 alias l='ls -1'
 alias ll='ls -la'
 alias g='git'
-alias vi='nvim'
 alias py='python3'
 alias pip='pip3'
-alias tsm='transmission-remote'
-alias lzg='lazygit'
-alias lzd='lazydocker'
 alias iso='date +%Y-%m-%d'
-alias ydl='youtube-dl'
+
+if type exa > /dev/null; then
+    alias ls=exa
+fi
+
+if type gocloc > /dev/null; then
+    alias cloc=gocloc
+fi
+
+if type lazygit > /dev/null; then
+    alias lzg=lazygit
+fi
+
+if type lazydocker > /dev/null; then
+    alias lzd=lazydocker
+fi
+
+if type nvim > /dev/null; then
+    alias vi=nvim
+fi
+
+if type transmission-remote > /dev/null; then
+    alias tsm=transmission-remote
+fi
+
+if type youtube-dl > /dev/null; then
+    alias ydl=youtube-dl
+fi
 
 # Ctrl-x Ctrl-e opens current command in Vim
 autoload -U edit-command-line
@@ -59,8 +81,8 @@ function precmd() {
 
         if   ((h > 0)); then cmd_time=${h}h${m}m
         elif ((m > 0)); then cmd_time=${m}m${s}s
-        elif ((s > 9)); then cmd_time=${s}.$(printf %03d $ms | cut -c1-2)s # 12.34s
-        elif ((s > 0)); then cmd_time=${s}.$(printf %03d $ms)s # 1.234s
+        elif ((s > 9)); then cmd_time=${s}.$(printf %03d $ms | cut -c1-2)s      # 12.34s
+        elif ((s > 0)); then cmd_time=${s}.$(printf %03d $ms)s                  # 1.234s
         else cmd_time=${ms}ms
         fi
 
