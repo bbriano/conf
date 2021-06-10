@@ -94,6 +94,7 @@ nnoremap <leader><leader>d      :w !diff % -<cr>
 
 " Ack
 nmap <leader>/ <Plug>(FerretAck)
+nmap <leader>? <Plug>(FerretAcks)
 nmap <leader>* <Plug>(FerretAckWord)
 
 " ALE
