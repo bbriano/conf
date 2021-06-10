@@ -1,0 +1,57 @@
+[submodule "neoformat"]
+	path = nvim/pack/plugs/opt/neoformat
+	url = https://github.com/bbriano/neoformat
+[submodule "ale"]
+	path = nvim/pack/plugs/opt/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "vim-startuptime"]
+	path = nvim/pack/plugs/opt/vim-startuptime
+	url = https://github.com/dstein64/vim-startuptime
+[submodule "fzf"]
+	path = nvim/pack/plugs/opt/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "fzf.vim"]
+	path = nvim/pack/plugs/opt/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "gv.vim"]
+	path = nvim/pack/plugs/opt/gv.vim
+	url = https://github.com/junegunn/gv.vim
+[submodule "vim-dirvish"]
+	path = nvim/pack/plugs/opt/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish
+[submodule "vim-ipmotion"]
+	path = nvim/pack/plugs/opt/vim-ipmotion
+	url = https://github.com/justinmk/vim-ipmotion
+[submodule "deoplete.nvim"]
+	path = nvim/pack/plugs/opt/deoplete.nvim
+	url = https://github.com/shougo/deoplete.nvim
+[submodule "ultisnips"]
+	path = nvim/pack/plugs/opt/ultisnips
+	url = https://github.com/sirver/ultisnips
+[submodule "vim-snippets"]
+	path = nvim/pack/plugs/opt/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "vim-commentary"]
+	path = nvim/pack/plugs/opt/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim-dispatch"]
+	path = nvim/pack/plugs/opt/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule "vim-eunuch"]
+	path = nvim/pack/plugs/opt/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule "vim-fugitive"]
+	path = nvim/pack/plugs/opt/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim-repeat"]
+	path = nvim/pack/plugs/opt/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "vim-speeddating"]
+	path = nvim/pack/plugs/opt/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating
+[submodule "vim-surround"]
+	path = nvim/pack/plugs/opt/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "ferret"]
+	path = nvim/pack/plugs/opt/ferret
+	url = https://github.com/wincent/ferret

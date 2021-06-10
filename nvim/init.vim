@@ -1,22 +1,22 @@
-call plug#begin('~/.vim/plugged')
-Plug 'bbriano/neoformat'
-Plug 'dense-analysis/ale'
-Plug 'dstein64/vim-startuptime'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
-Plug 'junegunn/gv.vim'
-Plug 'justinmk/vim-dirvish'
-Plug 'justinmk/vim-ipmotion'
-Plug 'shougo/deoplete.nvim'
-Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-surround'
-Plug 'wincent/ferret'
-call plug#end()
+packadd! ale
+packadd! deoplete.nvim
+packadd! ferret
+packadd! fzf
+packadd! fzf.vim
+packadd! gv.vim
+packadd! neoformat
+packadd! ultisnips
+packadd! vim-commentary
+packadd! vim-dirvish
+packadd! vim-dispatch
+packadd! vim-eunuch
+packadd! vim-fugitive
+packadd! vim-ipmotion
+packadd! vim-repeat
+packadd! vim-snippets
+packadd! vim-speeddating
+packadd! vim-startuptime
+packadd! vim-surround
 
 set noswapfile                                          " Never create swap files.
 set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
@@ -41,7 +41,6 @@ let g:netrw_dirhistmax = 0                              " Don't create .netrwhis
 
 command! W w
 command! Q q
-command! PU PlugUpdate | PlugUpgrade
 command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore vsplit | silent Dirvish <args>
