@@ -4,6 +4,7 @@ astyle
 autojump
 bat
 bbriano/drunkcase/drunkcase
+blueutil
 cabal-install
 ccls
 cheat
@@ -51,6 +52,7 @@ nasm
 neofetch
 neomutt
 neovim
+nim
 nmap
 ormolu
 pandoc
