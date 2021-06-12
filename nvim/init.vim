@@ -32,6 +32,7 @@ set shortmess+=O                                        " File info or quickfix 
 set nojoinspaces                                        " Don't add double space after .?! when using :j.
 set virtualedit=block                                   " Allow the cursor in position where there is no text in visual block mode.
 set updatetime=150
+set completeopt=menuone,noinsert,noselect               " Always show menu, do not auto insert and do not auto select.
 
 let g:markdown_folding = 1                              " Use markdown headings for fold levels.
 let g:netrw_dirhistmax = 0                              " Don't create .netrwhist files
