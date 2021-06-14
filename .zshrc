@@ -15,17 +15,16 @@ export BAT_THEME=base16
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
+export PLAN9=/Users/briano/src/plan9
+export PATH=$PATH:$PLAN9/bin
 
+alias ls='ls -G'        # Colors
 alias l='ls -1'
 alias ll='ls -la'
 alias g='git'
 alias py='python3'
 alias pip='pip3'
 alias iso='date +%Y-%m-%d'
-
-if type exa > /dev/null; then
-    alias ls=exa
-fi
 
 if type gocloc > /dev/null; then
     alias cloc=gocloc

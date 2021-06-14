@@ -29,6 +29,7 @@ set guicursor=                                          " Don't use different cu
 set foldmethod=indent foldlevel=99
 set shortmess=I                                         " Don't show intro screen on startup.
 set shortmess+=O                                        " File info or quickfix message overwrites previous message.
+set shortmess+=F                                        " Never show file info when opening a file.
 set nojoinspaces                                        " Don't add double space after .?! when using :j.
 set virtualedit=block                                   " Allow the cursor in position where there is no text in visual block mode.
 set updatetime=150
