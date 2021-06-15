@@ -72,8 +72,8 @@ vnoremap <leader>q              :s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 " Run selected text through python and paste the output.
 vnoremap <silent> <leader>p     yPgv:!python3<cr>
 
-" Opens today's note.
-nnoremap <silent> <leader>td    :execute 'edit' strftime('~/notes/%Y-%m-%d.md')<cr>
+" Open today's note.
+nnoremap <silent> <leader>tn    :call briano#TodaysNote()<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
