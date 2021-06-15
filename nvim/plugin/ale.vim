@@ -4,10 +4,13 @@ let g:ale_close_preview_on_insert = 1       " Entering insert mode closes previe
 let g:ale_floating_window_border = [' ', ' ', ' ', ' ', ' ', ' ']
 
 let g:ale_linters = {
-\   'markdown': ['write-good', 'proselint'],
+\   'markdown': ['write-good'],
 \   'python': ['jedils', 'mypy'],
 \   'text': ['write-good', 'proselint'],
 \   'tex': ['write-good', 'proselint'],
 \   'rust': ['analyzer'],
 \   'go': ['gopls'],
 \}
+
+" Temporarily removed proselint because it fails to parse a 'paragraph'. Cmon.
+"\   'markdown': ['write-good', 'proselint'],

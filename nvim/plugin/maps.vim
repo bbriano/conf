@@ -73,7 +73,7 @@ vnoremap <leader>q              :s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 vnoremap <silent> <leader>p     yPgv:!python3<cr>
 
 " Opens today's note.
-nnoremap <silent> <leader>td    :execute 'e' strftime("~/notes/%Y-%m-%d.md")<cr>
+nnoremap <silent> <leader>td    :execute 'edit' strftime('~/notes/%Y-%m-%d.md')<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
