@@ -58,9 +58,7 @@ bindkey '^x^e' edit-command-line
 # Git info in prompt
 autoload -Uz vcs_info
 setopt prompt_subst
-zstyle ':vcs_info:*' formats ' %F{green}%b%u%c'
-zstyle ':vcs_info:*' unstagedstr '%F{yellow}*'
-zstyle ':vcs_info:*' stagedstr '%F{magenta}*'
+zstyle ':vcs_info:*' formats ' %F{green}%b'
 zstyle ':vcs_info:*' check-for-changes true
 
 function preexec() {
