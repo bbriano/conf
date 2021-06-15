@@ -1,18 +1,18 @@
 hi Comment          ctermbg=NONE    ctermfg=4       cterm=italic
-hi Constant         ctermbg=NONE    ctermfg=1       cterm=NONE
-hi Identifier       ctermbg=NONE    ctermfg=6       cterm=NONE
-hi Statement        ctermbg=NONE    ctermfg=3       cterm=NONE
-hi PreProc          ctermbg=NONE    ctermfg=5       cterm=NONE
-hi Type             ctermbg=NONE    ctermfg=2       cterm=NONE
-hi Special          ctermbg=NONE    ctermfg=5       cterm=NONE
-hi Underlined       ctermbg=NONE    ctermfg=7       cterm=underline
-hi Ignore           ctermbg=NONE    ctermfg=7       cterm=NONE
-hi Error            ctermbg=NONE    ctermfg=1       cterm=underline
-hi Todo             ctermbg=NONE    ctermfg=7       cterm=bold
+hi Constant         ctermbg=NONE    ctermfg=NONE    cterm=NONE
+hi Identifier       ctermbg=NONE    ctermfg=NONE    cterm=NONE
+hi Statement        ctermbg=NONE    ctermfg=NONE    cterm=NONE
+hi PreProc          ctermbg=NONE    ctermfg=NONE    cterm=NONE
+hi Type             ctermbg=NONE    ctermfg=NONE    cterm=NONE
+hi Special          ctermbg=NONE    ctermfg=NONE    cterm=NONE
+hi Underlined       ctermbg=NONE    ctermfg=NONE    cterm=underline
+hi Ignore           ctermbg=NONE    ctermfg=NONE    cterm=NONE
+hi Error            ctermbg=NONE    ctermfg=NONE    cterm=underline
+hi Todo             ctermbg=NONE    ctermfg=NONE    cterm=bold
 
 hi Visual           ctermbg=8       ctermfg=NONE    cterm=NONE
-hi Search           ctermbg=NONE    ctermfg=3       cterm=reverse
-hi IncSearch        ctermbg=NONE    ctermfg=5       cterm=reverse
+hi Search           ctermbg=NONE    ctermfg=3       cterm=NONE
+hi IncSearch        ctermbg=NONE    ctermfg=3       cterm=reverse
 hi LineNr           ctermbg=NONE    ctermfg=8       cterm=NONE
 hi Folded           ctermbg=NONE    ctermfg=8       cterm=NONE
 hi SignColumn       ctermbg=NONE    ctermfg=NONE    cterm=NONE
@@ -28,7 +28,7 @@ hi PmenuSbar        ctermbg=0       ctermfg=NONE    cterm=NONE
 hi PmenuSel         ctermbg=8       ctermfg=NONE    cterm=NONE
 hi PmenuThumb       ctermbg=0       ctermfg=NONE    cterm=NONE
 
-hi Title            ctermbg=NONE    ctermfg=5       cterm=NONE
+hi Title            ctermbg=NONE    ctermfg=NONE    cterm=NONE
 hi SpellCap         ctermbg=NONE    ctermfg=NONE    cterm=underline
 hi SpellBad         ctermbg=NONE    ctermfg=NONE    cterm=underline
 hi DiffRemoved      ctermbg=NONE    ctermfg=1       cterm=NONE
