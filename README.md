@@ -16,7 +16,7 @@ bash install.sh
 
 - General > Window > Adjust window when changing font size -> Yes
 - Profiles > Colors > Color Presets -> p-ocean
-- Profiles > Text > Font -> JetBrains Mono
+- Profiles > Text > Font -> Go Mono
 - Profiles > Window > Style -> No Title Bar
 - Profiles > Terminal > Scrollback lines -> 0
 - Advanced > Windows > Terminal windows resize smoothly -> Yes
