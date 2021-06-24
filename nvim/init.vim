@@ -34,6 +34,7 @@ set nojoinspaces                                        " Don't add double space
 set virtualedit=block                                   " Allow the cursor in position where there is no text in visual block mode.
 set updatetime=150
 set completeopt=menuone,noinsert,noselect               " Always show menu, do not auto insert and do not auto select.
+set noruler                                             " Hide line and column number is status line
 
 let g:markdown_folding = 1                              " Use markdown headings for fold levels.
 let g:netrw_dirhistmax = 0                              " Don't create .netrwhist files
