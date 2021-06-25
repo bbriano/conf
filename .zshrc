@@ -8,7 +8,6 @@ export EDITOR=nvim
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
 export RPROMPT='%F{blue}$cmd_time${vcs_info_msg_0_}'
 
-export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_DEFAULT_OPTS='--color=gutter:#0e1014'
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566178'
 
