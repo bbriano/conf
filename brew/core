@@ -1,12 +1,10 @@
 ansible
 aria2
-astyle
 autojump
 bbriano/drunkcase/drunkcase
 blueutil
 cabal-install
 ccls
-cheat
 cloc
 cmake
 cmus
@@ -16,7 +14,6 @@ docker
 doxygen
 emacs
 ethereum
-exa
 eye-d3
 figlet
 fluid-synth
@@ -81,6 +78,7 @@ speedtest-cli
 telegram-cli
 telnet
 texlab
+the_silver_searcher
 tldr
 tmux
 transmission-cli
