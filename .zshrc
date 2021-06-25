@@ -4,18 +4,17 @@ source /usr/local/share/autojump/autojump.zsh
 bindkey -e
 bindkey -s ^z 'fg\n'
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566178'
+export EDITOR=nvim
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
 export RPROMPT='%F{blue}$cmd_time${vcs_info_msg_0_}'
-export EDITOR=nvim
+
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_DEFAULT_OPTS='--color=gutter:#0e1014'
-export BAT_THEME=base16
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566178'
+
 export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
 export PLAN9=/Users/briano/src/plan9
-export PATH=$PATH:$PLAN9/bin
+export PATH=.:$HOME/bin:$PATH:$GOPATH/bin:PLAN9/bin
 
 alias ls='ls -G'        # Colors
 alias l='ls -1'
