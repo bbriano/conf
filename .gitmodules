@@ -1,6 +1,3 @@
-[submodule "neoformat"]
-	path = nvim/pack/plugs/opt/neoformat
-	url = https://github.com/bbriano/neoformat
 [submodule "ale"]
 	path = nvim/pack/plugs/opt/ale
 	url = https://github.com/dense-analysis/ale

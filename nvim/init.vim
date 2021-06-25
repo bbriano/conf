@@ -4,7 +4,6 @@ packadd! ferret
 packadd! fzf
 packadd! fzf.vim
 packadd! gv.vim
-packadd! neoformat
 packadd! ultisnips
 packadd! vim-commentary
 packadd! vim-dirvish
