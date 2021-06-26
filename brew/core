@@ -1,3 +1,4 @@
+alpine
 ansible
 aria2
 autojump
@@ -15,6 +16,7 @@ doxygen
 emacs
 ethereum
 eye-d3
+fetchmail
 figlet
 fluid-synth
 fortune
@@ -31,11 +33,13 @@ heroku/brew/heroku
 htop
 http-server
 hugo
+isync
 jesseduffield/horcrux/horcrux
 jp2a
 kyleconroy/sqlc/sqlc
 lazydocker
 lazygit
+libmagic
 lolcat
 luajit
 luarocks
@@ -61,6 +65,7 @@ postgresql
 prettier
 proselint
 pyenv
+python@3.7
 python@3.8
 qt
 qt@5
@@ -82,6 +87,7 @@ the_silver_searcher
 tldr
 tmux
 transmission-cli
+w3m
 watch
 weechat
 wget
