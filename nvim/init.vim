@@ -43,5 +43,5 @@ command! Q q
 
 augroup BRIANO
     autocmd!
-    autocmd BufWritePre * call briano#TrimWhiteSpace()
+    autocmd BufWritePre * call briano#Format()
 augroup END

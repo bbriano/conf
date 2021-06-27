@@ -9,24 +9,16 @@ function! briano#TodaysNote()
     endif
 endfunction
 
-" TrimWhiteSpace deletes whitespace characters at end of line and end of file.
-function! briano#TrimWhiteSpace()
+" Format current buffer with appropriate formatters based on filetype.
+function! briano#Format()
     let l:view = winsaveview()
-    %s/\s\+$//e         " EOL
-    %s/\n\+\%$//e       " EOF
-    call winrestview(l:view)
-endfunction
-
-" FormatMarkdown overwrites the current markdown buffer with formatted version.
-function! briano#FormatMarkdown()
-    let l:view = winsaveview()
-    %!prettier --stdin-filepath foo.md --loglevel error
-    call winrestview(l:view)
-endfunction
-
-" FormatGo overwrites the current go buffer with formatted version.
-function! briano#FormatGo()
-    let l:view = winsaveview()
-    %!gofmt
+    if &filetype == 'go'
+        %!gofmt
+    elseif &filetype == 'markdown'
+        %!prettier --stdin-filepath foo.md --loglevel error
+    else
+        %s/\s\+$//e         " EOL
+        %s/\n\+\%$//e       " EOF
+    endif
     call winrestview(l:view)
 endfunction
