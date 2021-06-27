@@ -1,5 +1,5 @@
 call deoplete#custom#option('sources', {
-\   '_': ['ale', 'file', 'buffer']
+\   '_': ['file', 'buffer']
 \})
 
 " Enter inserts newline instead of closing the popup window.

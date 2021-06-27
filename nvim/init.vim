@@ -1,4 +1,3 @@
-packadd! ale
 packadd! deoplete.nvim
 packadd! ferret
 packadd! fzf

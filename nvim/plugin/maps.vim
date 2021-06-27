@@ -4,8 +4,8 @@ let mapleader = ' '
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basics
 
-" ESC to clear everything. Trigger CursorMoved to close ALE's preview window.
-nnoremap <silent> <esc>         :nohl<bar>doautocmd CursorMoved<cr><c-L>
+" ESC to clear everything.
+nnoremap <silent> <esc>         :nohl<cr><c-L>
 
 " Stop accidentally switching to Ex-mode. Execute macro on register q.
 nnoremap Q                      @q
@@ -96,17 +96,6 @@ nnoremap <leader><leader>d      :w !diff % -<cr>
 nmap <leader>/                  <Plug>(FerretAck)
 nmap <leader>?                  <Plug>(FerretAcks)
 nmap <leader>*                  <Plug>(FerretAckWord)
-
-" ALE
-nnoremap <silent> [g            :ALEPreviousWrap<cr>
-nnoremap <silent> ]g            :ALENextWrap<cr>
-nnoremap <silent> gy            :ALEGoToTypeDefinition<cr>
-nnoremap <silent> gd            :ALEGoToDefinition<cr>
-nnoremap <silent> gr            :ALEFindReference<cr>
-nnoremap <silent> K             :ALEHover<cr>
-nnoremap <leader>rn             :ALERename<cr>
-nnoremap <leader>ca             :ALECodeAction<cr>
-nnoremap <leader>rs             :ALEReset<cr>
 
 " FZF
 nnoremap <c-p>                  :Files<cr>

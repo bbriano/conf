@@ -1,6 +1,3 @@
-[submodule "ale"]
-	path = nvim/pack/plugs/opt/ale
-	url = https://github.com/dense-analysis/ale
 [submodule "vim-startuptime"]
 	path = nvim/pack/plugs/opt/vim-startuptime
 	url = https://github.com/dstein64/vim-startuptime
