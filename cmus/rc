@@ -16,3 +16,5 @@ set color_win_sel_bg=default
 set color_win_sel_fg=default
 set color_win_title_bg=default
 set color_win_title_fg=green
+
+set pl_sort=date
