@@ -4,8 +4,8 @@ let mapleader = ' '
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basics
 
-" ESC to clear everything.
-nnoremap <silent> <esc>         :nohl<cr><c-L>
+" ESC to clear everything. Trigger CursorMoved to close LSP preview window.
+nnoremap <silent> <esc>         :nohl<bar>doautocmd CursorMoved<cr><c-L>
 
 " Stop accidentally switching to Ex-mode. Execute macro on register q.
 nnoremap Q                      @q
@@ -103,6 +103,16 @@ nnoremap <c-n>                  :History<cr>
 nnoremap <c-s>                  :Buffers<cr>
 nnoremap <leader>ff             :Files %:h<cr>
 nnoremap <leader>h              :Help<cr>
+
+" Nvim-Lspconfig
+nnoremap <silent> [g            :lua vim.lsp.diagnostic.goto_prev()<cr>
+nnoremap <silent> ]g            :lua vim.lsp.diagnostic.goto_next()<cr>
+nnoremap <silent> gy            :lua vim.lsp.buf.type_definition()<cr>
+nnoremap <silent> gd            :lua vim.lsp.buf.definition()<cr>
+nnoremap <silent> gr            :lua vim.lsp.buf.references()<cr>
+nnoremap <silent> K             :lua vim.lsp.buf.hover()<cr>
+nnoremap <leader>rn             :lua vim.lsp.buf.rename()<cr>
+nnoremap <leader>ca             :lua vim.lsp.buf.code_action()<cr>
 
 " StartupTime
 nnoremap <leader><leader>t      :StartupTime<cr>

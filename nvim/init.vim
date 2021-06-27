@@ -3,6 +3,7 @@ packadd! ferret
 packadd! fzf
 packadd! fzf.vim
 packadd! gv.vim
+packadd! nvim-lspconfig
 packadd! ultisnips
 packadd! vim-commentary
 packadd! vim-dirvish

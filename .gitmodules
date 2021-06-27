@@ -49,3 +49,6 @@
 [submodule "ferret"]
 	path = nvim/pack/plugs/opt/ferret
 	url = https://github.com/wincent/ferret
+[submodule "nvim-lspconfig"]
+	path = nvim/pack/plugs/opt/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
