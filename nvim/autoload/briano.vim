@@ -23,3 +23,10 @@ function! briano#FormatMarkdown()
     %!prettier --stdin-filepath foo.md --loglevel error
     call winrestview(l:view)
 endfunction
+
+" FormatGo overwrites the current go buffer with formatted version.
+function! briano#FormatGo()
+    let l:view = winsaveview()
+    %!gofmt
+    call winrestview(l:view)
+endfunction
