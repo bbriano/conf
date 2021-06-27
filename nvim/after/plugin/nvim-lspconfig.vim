@@ -7,6 +7,7 @@ language_servers = {
     'rust_analyzer',
     'svelte',
     'tsserver',
+    'vimls',
 }
 
 for i = 1, #language_servers do
