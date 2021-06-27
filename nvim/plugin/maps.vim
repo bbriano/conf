@@ -2,7 +2,7 @@ let mapleader = ' '
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Basics
+" General
 
 " ESC to clear everything. Trigger CursorMoved to close LSP preview window.
 nnoremap <silent> <esc>         :nohl<bar>doautocmd CursorMoved<cr><c-L>
@@ -49,7 +49,7 @@ nnoremap ]l                     :lnext<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Single Leaders
+" Leaders
 
 " Quick source!
 nnoremap <leader>S              :source ~/.config/nvim/init.vim<cr>
@@ -74,10 +74,6 @@ vnoremap <silent> <leader>p     yPgv:!python3<cr>
 
 " Open today's note.
 nnoremap <silent> <leader>tn    :call briano#TodaysNote()<cr>
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Double Leaders
 
 " Force buffer delete (dangerous).
 nnoremap <silent> <leader><leader>x :bdelete!<cr>
