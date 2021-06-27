@@ -16,9 +16,6 @@
 [submodule "vim-ipmotion"]
 	path = nvim/pack/plugs/opt/vim-ipmotion
 	url = https://github.com/justinmk/vim-ipmotion
-[submodule "deoplete.nvim"]
-	path = nvim/pack/plugs/opt/deoplete.nvim
-	url = https://github.com/shougo/deoplete.nvim
 [submodule "ultisnips"]
 	path = nvim/pack/plugs/opt/ultisnips
 	url = https://github.com/sirver/ultisnips
