@@ -13,7 +13,10 @@ endfunction
 function! briano#Format()
     let l:view = winsaveview()
     if &filetype == 'go'
-        %!gofmt
+        call system('gofmt', getline(1, '$'))
+        if v:shell_error == 0
+            %!goimports
+        endif
     elseif &filetype == 'markdown'
         %!prettier --stdin-filepath foo.md --loglevel error
     else
