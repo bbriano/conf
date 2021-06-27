@@ -49,3 +49,6 @@
 [submodule "nvim-lspconfig"]
 	path = nvim/pack/plugs/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
+[submodule "nvim-compe"]
+	path = nvim/pack/plugs/opt/nvim-compe
+	url = https://github.com/hrsh7th/nvim-compe
