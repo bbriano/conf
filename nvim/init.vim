@@ -7,7 +7,6 @@ packadd! nvim-lspconfig
 packadd! ultisnips
 packadd! vim-commentary
 packadd! vim-dirvish
-packadd! vim-dispatch
 packadd! vim-eunuch
 packadd! vim-fugitive
 packadd! vim-ipmotion

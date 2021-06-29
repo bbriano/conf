@@ -25,9 +25,6 @@
 [submodule "vim-commentary"]
 	path = nvim/pack/plugs/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule "vim-dispatch"]
-	path = nvim/pack/plugs/opt/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch
 [submodule "vim-eunuch"]
 	path = nvim/pack/plugs/opt/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
