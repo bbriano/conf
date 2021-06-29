@@ -18,6 +18,8 @@ vnoremap p                      "_dP
 
 " Emacs-like binding in command mode.
 cnoremap <c-a>                  <c-b>
+cnoremap <c-b>                  <left>
+cnoremap <c-f>                  <right>
 
 " Who uses S and s? cc and cl does the same thing.
 nnoremap <silent> S             :bprevious<cr>
