@@ -1,9 +1,5 @@
 let mapleader = ' '
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General
-
 " ESC to clear everything. Trigger CursorMoved to close LSP preview window.
 nnoremap <silent> <esc>         :nohl<bar>doautocmd CursorMoved<cr><c-L>
 
@@ -20,6 +16,7 @@ vnoremap p                      "_dP
 cnoremap <c-a>                  <c-b>
 cnoremap <c-b>                  <left>
 cnoremap <c-f>                  <right>
+cnoremap <c-d>                  <delete>
 
 " Who uses S and s? cc and cl does the same thing.
 nnoremap <silent> S             :bprevious<cr>
@@ -49,17 +46,12 @@ nnoremap ]q                     :cnext<cr>
 nnoremap [l                     :lprev<cr>
 nnoremap ]l                     :lnext<cr>
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Leaders
-
 " Quick source!
 nnoremap <leader>S              :source ~/.config/nvim/init.vim<cr>
 
 " Tmux-like bindings.
 nnoremap <silent> <leader>l     :buffer #<cr>
 nnoremap <silent> <leader>x     :bdelete<cr>
-" nnoremap <silent> <leader>d     :bnext<bar>bdelete #<cr>
 
 " Substitute texts that matches the last search.
 nnoremap <leader>s              :%s///g<left><left>
@@ -86,10 +78,6 @@ nnoremap <leader><leader>s      :echo map(synstack(line('.'), col('.')), 'synIDa
 " Diff current file with current buffer.
 nnoremap <leader><leader>d      :w !diff % -<cr>
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-
 " Ack
 nmap <leader>/                  <Plug>(FerretAck)
 nmap <leader>?                  <Plug>(FerretAcks)
@@ -98,8 +86,9 @@ nmap <leader>*                  <Plug>(FerretAckWord)
 " FZF
 nnoremap <c-p>                  :Files<cr>
 nnoremap <c-n>                  :History<cr>
-nnoremap <c-s>                  :Buffers<cr>
-nnoremap <leader>ff             :Files %:h<cr>
+nnoremap <c-q>                  :Files %:h<cr>
+nnoremap <c-k>                  :Tags<cr>
+nnoremap <c-s>                  :BTags<cr>
 nnoremap <leader>h              :Help<cr>
 
 " Nvim-Lspconfig
