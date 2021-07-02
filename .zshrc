@@ -26,6 +26,7 @@ alias g='git'
 alias py='python3'
 alias pip='pip3'
 alias iso='date +%Y-%m-%d'
+alias matlab='/Applications/MATLAB_R2021a.app/bin/matlab -nosplash -nodesktop'
 
 if type gocloc > /dev/null; then
     alias cloc=gocloc
