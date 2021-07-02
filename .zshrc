@@ -15,6 +15,10 @@ export GOPATH=$HOME/go
 export PLAN9=/Users/briano/src/plan9
 export PATH=.:$HOME/bin:$PATH:$GOPATH/bin:PLAN9/bin
 
+# For clangd.
+export C_INCLUDE_PATH=/usr/local/include
+export CPLUS_INCLUDE_PATH=/usr/local/include
+
 alias ls='ls -G'        # Colors
 alias l='ls -1'
 alias ll='ls -la'
