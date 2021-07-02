@@ -3,6 +3,7 @@ source /usr/local/share/autojump/autojump.zsh
 
 bindkey -e
 bindkey -s ^z 'fg\n'
+bindkey ^u backward-kill-line
 
 export EDITOR=nvim
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
