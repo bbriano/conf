@@ -14,7 +14,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566178'
 
 export GOPATH=$HOME/go
 export PLAN9=/Users/briano/src/plan9
-export PATH=.:$HOME/bin:$PATH:$GOPATH/bin:PLAN9/bin
+export PATH=.:$HOME/bin:$PATH:$GOPATH/bin:$PLAN9/bin
 
 # For clangd.
 export C_INCLUDE_PATH=/usr/local/include
