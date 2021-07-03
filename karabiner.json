@@ -42,6 +42,34 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Control-U -> Backward kill line",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.microsoft\\.VSCode$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": ["command"]
+                                },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
