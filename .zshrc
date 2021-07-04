@@ -26,6 +26,8 @@ alias ll='ls -la'
 alias g='git'
 alias py='python3'
 alias pip='pip3'
+alias pbc='pbcopy'
+alias pbp='pbpaste'
 alias iso='date +%Y-%m-%d'
 
 if type gocloc > /dev/null; then
