@@ -1,4 +1,3 @@
-chromedriver
 disk-inventory-x
 font-go
 hyperswitch
@@ -7,8 +6,6 @@ iterm2
 ledger-live
 obs
 obs-ndi
-oracle-jdk
-pdfpen
 sensiblesidebuttons
 stremio
 textbar
