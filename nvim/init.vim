@@ -39,8 +39,3 @@ let g:netrw_dirhistmax = 0                              " Don't create .netrwhis
 
 command! W w
 command! Q q
-
-augroup BRIANO
-    autocmd!
-    autocmd BufWritePre * call briano#Format()
-augroup END
