@@ -1,4 +1,3 @@
-setlocal commentstring=<!--\ %s\ -->
 setlocal sw=2
 
 augroup MARKDOWN
