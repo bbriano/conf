@@ -1,10 +1,6 @@
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/autojump/autojump.zsh
 
-bindkey -e
-bindkey -s ^z 'fg\n'
-bindkey ^u backward-kill-line
-
 export EDITOR=nvim
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
 export RPROMPT='%F{blue}$cmd_time${vcs_info_msg_0_}'
@@ -54,12 +50,16 @@ if type youtube-dl > /dev/null; then
     alias ydl=youtube-dl
 fi
 
-# Ctrl-x Ctrl-e opens current command in Vim
+# Emacs binding.
+bindkey -e
+bindkey ^u backward-kill-line
+
+# Ctrl-x Ctrl-e opens current command in Vim.
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
-# Git info in prompt
+# Git info in prompt.
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:*' formats ' %F{green}%b'
@@ -89,7 +89,7 @@ function precmd() {
 
         unset cmd_start
     else
-        # Clear previous result when hitting Return with no command to execute
+        # Clear previous result when hitting Return with no command to execute.
         unset cmd_time
     fi
 }
