@@ -49,3 +49,6 @@
 [submodule "nvim-compe"]
 	path = nvim/pack/plugs/opt/nvim-compe
 	url = https://github.com/hrsh7th/nvim-compe
+[submodule "vim-easydir"]
+	path = nvim/pack/plugs/opt/vim-easydir
+	url = https://github.com/duggiefresh/vim-easydir
