@@ -38,6 +38,7 @@ python@3.8
 sfml
 sl
 speedtest-cli
+stow
 texlab
 the_silver_searcher
 tldr
