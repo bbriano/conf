@@ -6,11 +6,10 @@
 
 ### Install
 
-```bash
-git clone https://github.com/bbriano/dotfiles
-cd dotfiles
-bash install.sh
-```
+    git clone https://github.com/bbriano/dotfiles
+    cd dotfiles
+    chmod +x install.sh
+    ./install.sh
 
 ### iTerm2 options
 

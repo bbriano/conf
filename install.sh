@@ -22,4 +22,4 @@ done
 # Create symlinks.
 stow cmus git karabiner prettier scripts tmux vim zsh
 
-echo Restart for some settings (key repeat) to apply
+echo 'Restart for some settings (key repeat) to apply'
