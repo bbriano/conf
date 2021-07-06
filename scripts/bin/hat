@@ -1,0 +1,6 @@
+# Hat is cat for human.
+
+for f in $*; do
+    echo $f
+    awk '{ printf "%3d %s\n", NR, $0 }' $f
+done

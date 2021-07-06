@@ -1,0 +1,16 @@
+awk '
+
+{
+    if (length($0) > max) {
+        max = length($0);
+        filename = FILENAME;
+        number = NR;
+        line = $0;
+    }
+}
+
+END {
+    printf("%s:%d:%s\n", filename, number, line);
+}
+
+' $*

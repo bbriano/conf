@@ -1,0 +1,3 @@
+cd /Users/briano/dotfiles/
+/usr/local/bin/brew leaves > brew/leaves
+/usr/local/bin/brew list --casks > brew/casks

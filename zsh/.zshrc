@@ -16,40 +16,6 @@ export PATH=.:$HOME/bin:$PATH:$GOPATH/bin:$PLAN9/bin
 export C_INCLUDE_PATH=/usr/local/include
 export CPLUS_INCLUDE_PATH=/usr/local/include
 
-alias ls='ls -G'        # Colors
-alias l='ls -1'
-alias ll='ls -la'
-alias g='git'
-alias py='python3'
-alias pip='pip3'
-alias pbc='pbcopy'
-alias pbp='pbpaste'
-alias iso='date +%Y-%m-%d'
-
-if type gocloc > /dev/null; then
-    alias cloc=gocloc
-fi
-
-if type lazygit > /dev/null; then
-    alias lzg=lazygit
-fi
-
-if type lazydocker > /dev/null; then
-    alias lzd=lazydocker
-fi
-
-if type nvim > /dev/null; then
-    alias vi=nvim
-fi
-
-if type transmission-remote > /dev/null; then
-    alias tsm=transmission-remote
-fi
-
-if type youtube-dl > /dev/null; then
-    alias ydl=youtube-dl
-fi
-
 # Emacs binding.
 bindkey -e
 bindkey ^u backward-kill-line
