@@ -1,6 +1,6 @@
 # Configuration
 
-![](screen_shots/2021-06-16.png)
+![](img/2021-06-16.png)
 
 ## Mac OS
 

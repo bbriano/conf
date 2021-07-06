@@ -1,54 +1,54 @@
 [submodule "vim-startuptime"]
-	path = nvim/pack/plugs/opt/vim-startuptime
+	path = vim/.config/nvim/pack/plugs/opt/vim-startuptime
 	url = https://github.com/dstein64/vim-startuptime
 [submodule "fzf"]
-	path = nvim/pack/plugs/opt/fzf
+	path = vim/.config/nvim/pack/plugs/opt/fzf
 	url = https://github.com/junegunn/fzf
 [submodule "fzf.vim"]
-	path = nvim/pack/plugs/opt/fzf.vim
+	path = vim/.config/nvim/pack/plugs/opt/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
 [submodule "gv.vim"]
-	path = nvim/pack/plugs/opt/gv.vim
+	path = vim/.config/nvim/pack/plugs/opt/gv.vim
 	url = https://github.com/junegunn/gv.vim
 [submodule "vim-dirvish"]
-	path = nvim/pack/plugs/opt/vim-dirvish
+	path = vim/.config/nvim/pack/plugs/opt/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish
 [submodule "vim-ipmotion"]
-	path = nvim/pack/plugs/opt/vim-ipmotion
+	path = vim/.config/nvim/pack/plugs/opt/vim-ipmotion
 	url = https://github.com/justinmk/vim-ipmotion
 [submodule "ultisnips"]
-	path = nvim/pack/plugs/opt/ultisnips
+	path = vim/.config/nvim/pack/plugs/opt/ultisnips
 	url = https://github.com/sirver/ultisnips
 [submodule "vim-snippets"]
-	path = nvim/pack/plugs/opt/vim-snippets
+	path = vim/.config/nvim/pack/plugs/opt/vim-snippets
 	url = https://github.com/honza/vim-snippets
 [submodule "vim-commentary"]
-	path = nvim/pack/plugs/opt/vim-commentary
+	path = vim/.config/nvim/pack/plugs/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary
 [submodule "vim-eunuch"]
-	path = nvim/pack/plugs/opt/vim-eunuch
+	path = vim/.config/nvim/pack/plugs/opt/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
 [submodule "vim-fugitive"]
-	path = nvim/pack/plugs/opt/vim-fugitive
+	path = vim/.config/nvim/pack/plugs/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule "vim-repeat"]
-	path = nvim/pack/plugs/opt/vim-repeat
+	path = vim/.config/nvim/pack/plugs/opt/vim-repeat
 	url = https://github.com/tpope/vim-repeat
 [submodule "vim-speeddating"]
-	path = nvim/pack/plugs/opt/vim-speeddating
+	path = vim/.config/nvim/pack/plugs/opt/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating
 [submodule "vim-surround"]
-	path = nvim/pack/plugs/opt/vim-surround
+	path = vim/.config/nvim/pack/plugs/opt/vim-surround
 	url = https://github.com/tpope/vim-surround
 [submodule "ferret"]
-	path = nvim/pack/plugs/opt/ferret
+	path = vim/.config/nvim/pack/plugs/opt/ferret
 	url = https://github.com/wincent/ferret
 [submodule "nvim-lspconfig"]
-	path = nvim/pack/plugs/opt/nvim-lspconfig
+	path = vim/.config/nvim/pack/plugs/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
 [submodule "nvim-compe"]
-	path = nvim/pack/plugs/opt/nvim-compe
+	path = vim/.config/nvim/pack/plugs/opt/nvim-compe
 	url = https://github.com/hrsh7th/nvim-compe
 [submodule "vim-easydir"]
-	path = nvim/pack/plugs/opt/vim-easydir
+	path = vim/.config/nvim/pack/plugs/opt/vim-easydir
 	url = https://github.com/duggiefresh/vim-easydir
