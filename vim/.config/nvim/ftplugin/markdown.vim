@@ -1,4 +1,8 @@
-setlocal sw=2
+setlocal noexpandtab
+setlocal wrap
+
+nnoremap <buffer> k gk
+nnoremap <buffer> j gj
 
 augroup MARKDOWN
     autocmd!
