@@ -46,9 +46,11 @@
 [submodule "nvim-lspconfig"]
 	path = vim/.config/nvim/pack/plugs/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
+    ignore = dirty
 [submodule "nvim-compe"]
 	path = vim/.config/nvim/pack/plugs/opt/nvim-compe
 	url = https://github.com/hrsh7th/nvim-compe
+    ignore = dirty
 [submodule "vim-easydir"]
 	path = vim/.config/nvim/pack/plugs/opt/vim-easydir
 	url = https://github.com/duggiefresh/vim-easydir
