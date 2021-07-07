@@ -9,7 +9,7 @@ function! s:format()
             %!goimports
         endif
     elseif &filetype == 'markdown'
-        %!prettier --stdin-filepath foo.md --loglevel error
+        %!markdownfmt
     endif
     call winrestview(l:view)
 endfunction
