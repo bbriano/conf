@@ -8,7 +8,7 @@ hi Special          ctermbg=NONE    ctermfg=NONE    cterm=NONE
 hi Underlined       ctermbg=NONE    ctermfg=NONE    cterm=underline
 hi Ignore           ctermbg=NONE    ctermfg=NONE    cterm=NONE
 hi Error            ctermbg=NONE    ctermfg=NONE    cterm=underline
-hi Todo             ctermbg=NONE    ctermfg=6       cterm=NONE
+hi Todo             ctermbg=NONE    ctermfg=4       cterm=italic
 
 hi Visual           ctermbg=8       ctermfg=NONE    cterm=NONE
 hi Search           ctermbg=NONE    ctermfg=3       cterm=NONE
