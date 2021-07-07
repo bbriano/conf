@@ -20,6 +20,6 @@ for cask in $(cat brew/casks); do
 done
 
 # Create symlinks.
-stow cmus git karabiner prettier scripts tmux vim zsh
+stow bin cmus git karabiner prettier tmux vim zsh
 
 echo 'Restart for some settings (key repeat) to apply'
