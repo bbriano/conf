@@ -1,7 +1,7 @@
 Configuration
 =============
 
-![](img/2021-07-07.png)
+![](img/2021-07-11.png)
 
 Install (MacOS)
 ---------------
