@@ -8,8 +8,11 @@ function! s:format()
         if v:shell_error == 0
             %!goimports
         endif
+    elseif &filetype == 'haskell'
+        %!ormolu
     elseif &filetype == 'markdown'
-        %!markdownfmt
+        %!pandoc -f markdown -t markdown-grid_tables-multiline_tables-simple_tables
+            \ --wrap preserve --markdown-headings setext
     endif
     call winrestview(l:view)
 endfunction
