@@ -11,7 +11,7 @@ function! s:format()
     elseif &filetype == 'haskell'
         %!ormolu
     elseif &filetype == 'markdown'
-        %!pandoc -f markdown -t markdown-grid_tables-multiline_tables-simple_tables
+        %!pandoc -f markdown -t commonmark+smart+task_lists+pipe_tables
             \ --wrap preserve --markdown-headings setext
     endif
     call winrestview(l:view)
