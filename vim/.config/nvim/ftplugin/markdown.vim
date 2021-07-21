@@ -1,3 +1,5 @@
+hi link MarkdownBlockquote Normal
+
 augroup MARKDOWN
     autocmd!
     autocmd BufEnter *.md hi htmlItalic cterm=NONE          " Disable _italic_.
