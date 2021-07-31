@@ -7,7 +7,7 @@ tic terminfo
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Set key repeat timing.
-defaults write -g InitialKeyRepeat -int 13      # normal minimum is 15 (225 ms)
+defaults write -g InitialKeyRepeat -int 14      # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1              # normal minimum is 2 (30 ms)
 
 # Disable annoying popup "<app> quit unexpectedly".
