@@ -1,11 +1,11 @@
 [user]
-	name = Briano Goestiawan
-	email = b@briano.io
+name = Briano Goestiawan
+email = b@briano.io
 
 [alias]
-    s = status
-    a = add
-    c = commit
-    l = log --oneline
-    last = log -1
-    co = checkout
+s = status
+a = add
+c = commit
+l = log --oneline
+last = log -1
+co = checkout
