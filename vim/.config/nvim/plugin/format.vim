@@ -1,5 +1,5 @@
 " Format current buffer with appropriate formatters based on filetype.
-function! s:format()
+function! Format()
     let l:view = winsaveview()
     %s/\s\+$//e         " EOL
     %s/\n\+\%$//e       " EOF
@@ -19,5 +19,5 @@ endfunction
 
 augroup FORMAT
     autocmd!
-    autocmd BufWritePre * call s:format()
+    autocmd BufWritePre * call Format()
 augroup END
