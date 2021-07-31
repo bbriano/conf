@@ -1,0 +1,4 @@
+cd $HOME/notes
+git add .
+git commit -m 'Cron auto commit'
+git push
