@@ -20,6 +20,7 @@ defaults write com.apple.CrashReporter DialogType none
 brew bundle install
 
 # Create symbolic links.
+mkdir ~/.config/{cmus,karabiner}
 stow bin cmus git karabiner prettier tmux vim zsh
 
 # Source Moom.
