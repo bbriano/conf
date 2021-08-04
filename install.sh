@@ -16,11 +16,6 @@ if [ ! -d /usr/local/Homebrew ]; then
 fi
 brew bundle install
 
-# Tmux TPM
-if [ ! -d ~/.tmux/plugins/tpm ]; then
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-fi
-
 # Set symbolic links
 for f in $(ls -a | grep '^\.' | grep -v '^\.\.?$' | grep -v '^\.(git|gitignore)$'); do
 	rm -rf ~/$f
