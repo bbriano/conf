@@ -20,6 +20,7 @@ iTerm2 options
 -   Profiles > Text > Font > Go Mono 14
 -   Profiles > Window > Style > No Title Bar
 -   Profiles > Terminal > Scrollback lines > 0
+-   Profiles > Terminal > Notifications > Silence bell > Yes
 -   Profiles > Keys > Left Option key > Esc+
 -   Advanced > Windows > Terminal windows resize smoothly > Yes
 -   Advanced > Terminal > Prevent accidental drags > Yes
