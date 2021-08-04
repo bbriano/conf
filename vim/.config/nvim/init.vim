@@ -18,7 +18,7 @@ packadd! vim-startuptime
 packadd! vim-surround
 
 set noswapfile                                          " Never create swap files.
-set expandtab tabstop=4 softtabstop=-1 shiftwidth=4
+set expandtab tabstop=8 softtabstop=-1 shiftwidth=4
 set incsearch ignorecase smartcase
 set hidden                                              " Allow not showing unwritten buffers.
 set nowrap
