@@ -25,3 +25,10 @@ for f in $(ls -a | grep '^\.' | grep -v '^\.\.?$' | grep -v '^\.(git|gitignore)$
     rm -rf ~/$f
     ln -s ~/dotfiles/$f ~/$f
 done
+
+# Link bin directory
+rm -rf ~/bin; mkdir ~/bin
+cd bin
+for f in *; do
+    ln -s ~/dotfiles/bin/$f ~/bin/$f
+done
