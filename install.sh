@@ -1,29 +1,27 @@
-set -e      # Exit on error.
+#!/bin/sh
 
-# Compile terminfo.
+set -e
+
 tic terminfo
 
-# Install tmux TPM.
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# Set key repeat timing.
-defaults write -g InitialKeyRepeat -int 14      # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 1              # normal minimum is 2 (30 ms)
-
-# Disable annoying popup "<app> quit unexpectedly".
-defaults write com.apple.CrashReporter DialogType none
-
-# Install homebrew.
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Install formulae in Brewfile.
-brew bundle install
-
-# Create symbolic links.
-mkdir ~/.config/{cmus,karabiner}
-stow bin cmus git karabiner prettier tmux vim zsh
-
-# Source Moom.
+defaults write -g InitialKeyRepeat -int 14                  # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1                          # normal minimum is 2 (30 ms)
+defaults write com.apple.CrashReporter DialogType none      # Disable annoying popup "<app> quit unexpectedly"
 defaults import com.manytricks.Moom Moom.plist
 
-echo 'Restart for some settings (key repeat) to apply'
+# Homebrew
+if [ ! -d /usr/local/Homebrew ]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+brew bundle install
+
+# Tmux TPM
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+# Set symbolic links
+for f in $(ls -a | grep '^\.' | grep -v '^\.\.?$' | grep -v '^\.(git|gitignore)$'); do
+    rm -rf ~/$f
+    ln -s ~/dotfiles/$f ~/$f
+done
