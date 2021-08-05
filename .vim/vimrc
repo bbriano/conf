@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'dstein64/vim-startuptime'
+Plug 'duggiefresh/vim-easydir'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
@@ -13,7 +14,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'wincent/ferret'
-Plug 'duggiefresh/vim-easydir'
 call plug#end()
 
 filetype plugin on
