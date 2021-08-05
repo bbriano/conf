@@ -8,7 +8,7 @@ Install (MacOS)
 
     git clone https://github.com/bbriano/dotfiles
     cd dotfiles
-    chmod +x install.sh
+    chmod +x install_macos.sh
     ./install_macos.sh
 
 iTerm2 options
