@@ -17,7 +17,7 @@ Plug 'wincent/ferret'
 call plug#end()
 
 filetype plugin on
-syntax on
+syntax enable
 
 set noswapfile					" Never create swap files.
 set incsearch ignorecase smartcase hlsearch
@@ -32,7 +32,6 @@ set virtualedit=block				" Allow the cursor in position where there is no text i
 set completeopt=menuone,noinsert,noselect	" Always show menu, do not auto insert and do not auto select.
 set undofile undodir=~/.vimundo			" Save undo history to undo file on write.
 set backspace=indent,eol,start
-set ttimeoutlen=50
 set autoindent
 set fillchars=vert:│
 if has('patch2508')
