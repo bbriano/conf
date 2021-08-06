@@ -3,7 +3,7 @@ nnoremap <silent> <esc>		:nohl<cr>:echo bufferline#get_echo_string()<cr>
 nnoremap Q			@q
 nnoremap Y			y$
 vnoremap p			"_dP
-nnoremap K 			:execute 'help' expand('<cword>')<CR>
+nnoremap K 			:execute 'help' expand('<cword>')<cr>
 
 " Emacs-like binding in command mode.
 cnoremap <c-a>			<c-b>
