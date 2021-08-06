@@ -46,6 +46,7 @@ let g:netrw_dirhistmax = 0			" Don't create .netrwhist files.
 
 command! W w
 command! Q q
+command! Diff w !diff % -			" Diff current file with current buffer.
 
 augroup BRIANO
 	autocmd!

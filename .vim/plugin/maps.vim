@@ -77,9 +77,6 @@ nnoremap <silent> <space><space>x :bdelete!<cr>
 " Show syntax highlight group under cursor.
 nnoremap <space><space>s	:echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
 
-" Diff current file with current buffer.
-nnoremap <space><space>d	:w !diff % -<cr>
-
 " Ack
 nmap <space>/			<Plug>(FerretAck)
 nmap <space>?			<Plug>(FerretAcks)
