@@ -1,5 +1,5 @@
-" ESC to clear everything. Trigger CursorMoved to close LSP preview window.
-nnoremap <silent> <esc>		:nohl<bar>doautocmd CursorMoved<bar>echo<cr>
+" 0 is clear. 0 is silent. 0 is home.
+nnoremap <silent> 0		:nohl<cr>:echo<cr>0
 
 " Stop accidentally switching to Ex-mode. Execute macro on register q.
 nnoremap Q			@q
@@ -34,10 +34,6 @@ nnoremap <silent> <up>		:resize -1<cr>
 nnoremap <silent> <down>	:resize +1<cr>
 nnoremap <silent> <right>	:vertical resize +1<cr>
 nnoremap <silent> <left>	:vertical resize -1<cr>
-nnoremap <silent> <esc>OA	:resize -1<cr>
-nnoremap <silent> <esc>OB	:resize +1<cr>
-nnoremap <silent> <esc>OC	:vertical resize +1<cr>
-nnoremap <silent> <esc>OD	:vertical resize -1<cr>
 
 " Useful to move around in visual block mode with virtualedit=block.
 vnoremap <c-h>			hoho
