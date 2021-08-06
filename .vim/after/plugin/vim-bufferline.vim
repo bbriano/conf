@@ -9,3 +9,4 @@ nnoremap <c-d>			<c-d>:echo bufferline#get_echo_string()<cr>
 nnoremap <c-u>			<c-u>:echo bufferline#get_echo_string()<cr>
 nnoremap <c-f>			<c-f>:echo bufferline#get_echo_string()<cr>
 nnoremap <c-b>			<c-b>:echo bufferline#get_echo_string()<cr>
+vnoremap <esc>			<esc>:echo bufferline#get_echo_string()<cr>
