@@ -19,7 +19,7 @@ Plug 'tpope/vim-surround'
 Plug 'wincent/ferret'
 call plug#end()
 
-filetype plugin on
+filetype indent off
 syntax enable
 
 set noswapfile					" Never create swap files.
