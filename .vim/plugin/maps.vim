@@ -43,18 +43,13 @@ vnoremap <space>s		:s///g<left><left>
 nnoremap <space>qq		:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 vnoremap <space>q		:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 
-nnoremap <silent> <space>tn	:call TodaysNote()<cr>
+" Plugins
+nnoremap <space>tn		:call briano#TodaysNote()<cr>
+nnoremap <space><space>s	:echo briano#HighlightGroupCursor()<cr>
 nnoremap <space><space>t	:StartupTime<cr>
-
-" Show syntax highlight group under cursor.
-nnoremap <space><space>s	:echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
-
-" Ack
 nmap <space>/			<Plug>(FerretAck)
 nmap <space>?			<Plug>(FerretAcks)
 nmap <space>*			<Plug>(FerretAckWord)
-
-" FZF
 nnoremap <c-p>			:Files<cr>
 nnoremap <c-n>			:History<cr>
 nnoremap <c-q>			:Files %:h<cr>

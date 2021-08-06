@@ -23,7 +23,7 @@ filetype plugin on
 syntax enable
 
 set noswapfile					" Never create swap files.
-set softtabstop=-1
+set softtabstop=-1				" match to value of shiftwidth.
 set incsearch ignorecase smartcase hlsearch
 set hidden					" Allow not showing unwritten buffers.
 set nowrap
@@ -35,14 +35,11 @@ set nojoinspaces				" Don't add double space after .?! when using :j.
 set virtualedit=block				" Allow the cursor in position where there is no text in visual block mode.
 set completeopt=menuone,noinsert,noselect	" Always show menu, do not auto insert and do not auto select.
 set undofile undodir=~/.vimundo			" Save undo history to undo file on write.
-set backspace=indent,eol,start
+set backspace=indent,eol,start			" Not being an doofus.
 set ttimeoutlen=0				" Exit out of visual mode instantly.
 set autoindent					" Match indent with previous line.
-set fillchars=vert:│
-set paste
-if has('patch2508')
-	set fillchars+=eob:\ ,			" No tilde filler chars at end of buffer.
-endif
+set fillchars=vert:│				" Cleaner than.
+if has('patch2508') | set fillchars+=eob:\ , | endif " No tilde filler chars at end of buffer.
 
 let g:netrw_dirhistmax = 0			" Don't create .netrwhist files.
 
@@ -52,37 +49,5 @@ command! Diff w !diff % -			" Diff current file with current buffer.
 
 augroup BRIANO
 	autocmd!
-	autocmd BufWritePre * call Format()
+	autocmd BufWritePre * call briano#Format()
 augroup END
-
-" Format current buffer with appropriate formatters based on filetype.
-function! Format()
-	let l:view = winsaveview()
-	%s/\s\+$//e		" EOL
-	%s/\n\+\%$//e		" EOF
-	if &filetype == 'go'
-		call system('gofmt', getline(1, '$'))
-		if v:shell_error == 0
-			%!goimports
-		endif
-	elseif &filetype == 'haskell'
-		%!ormolu
-	elseif &filetype == 'markdown'
-		%!pandoc -f markdown --wrap preserve --markdown-headings setext
-			\ -t commonmark+smart+task_lists+pipe_tables+tex_math_dollars
-	endif
-	call winrestview(l:view)
-endfunction
-
-" TodaysNote open todays note and fill the title if the file is new.
-function! TodaysNote()
-	let l:datestr = strftime('%Y-%m-%d')
-	let l:title = strftime('%d %b %Y')
-	let l:filename = '~/notes/' . l:datestr . '.md'
-	execute 'edit' l:filename
-	if !filereadable(expand('%'))
-		execute 'normal! i' . l:title
-		execute 'normal! o==========='
-		execute 'normal! 0'
-	endif
-endfunction
