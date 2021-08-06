@@ -1,5 +1,5 @@
-" 0 is clear. 0 is home.
-nnoremap <silent> 0		:nohl<cr>:echo bufferline#get_echo_string()<cr>0
+" Reset.
+nnoremap <silent> <esc>		:nohl<cr>:echo bufferline#get_echo_string()<cr>
 
 " Stop accidentally switching to Ex-mode. Execute macro on register q.
 nnoremap Q			@q
@@ -30,10 +30,11 @@ nnoremap <silent> #		:let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>?<cr>
 nnoremap <silent> g#		:let @/='\C'.expand('<cword>')<cr>:set hls<cr>?<cr>
 
 " Use arrow keys to resize the current window.
-nnoremap <silent> <up>		:resize -1<cr>
-nnoremap <silent> <down>	:resize +1<cr>
-nnoremap <silent> <right>	:vertical resize +1<cr>
-nnoremap <silent> <left>	:vertical resize -1<cr>
+" FIXME: No work because I have <esc> mapping in normal mode :(
+" nnoremap <silent> <up>		:resize -1<cr>
+" nnoremap <silent> <down>	:resize +1<cr>
+" nnoremap <silent> <right>	:vertical resize +1<cr>
+" nnoremap <silent> <left>	:vertical resize -1<cr>
 
 " Useful to move around in visual block mode with virtualedit=block.
 vnoremap <c-h>			hoho
