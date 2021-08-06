@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'bling/vim-bufferline'
 Plug 'dstein64/vim-startuptime'
 Plug 'duggiefresh/vim-easydir'
 Plug 'junegunn/fzf'

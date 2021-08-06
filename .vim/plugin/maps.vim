@@ -1,5 +1,5 @@
-" 0 is clear. 0 is silent. 0 is home.
-nnoremap <silent> 0		:nohl<cr>:echo<cr>0
+" 0 is clear. 0 is home.
+nnoremap <silent> 0		:nohl<cr>:echo bufferline#get_echo_string()<cr>0
 
 " Stop accidentally switching to Ex-mode. Execute macro on register q.
 nnoremap Q			@q
