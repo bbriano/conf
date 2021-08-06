@@ -37,7 +37,7 @@ set completeopt=menuone,noinsert,noselect	" Always show menu, do not auto insert
 set undofile undodir=~/.vimundo			" Save undo history to undo file on write.
 set backspace=indent,eol,start
 set ttimeoutlen=0				" Exit out of visual mode instantly.
-set autoindent
+set autoindent					" Match indent with previous line.
 set fillchars=vert:│
 if has('patch2508')
 	set fillchars+=eob:\ ,			" No tilde filler chars at end of buffer.
