@@ -2,5 +2,5 @@
 
 for f in $*; do
     echo $f
-    awk '{ printf "%3d %s\n", NR, $0 }' $f
+    awk '{ printf "%d\t%s\n", NR, $0 }' $f
 done
