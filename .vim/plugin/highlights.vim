@@ -18,8 +18,6 @@ hi Folded	ctermbg=NONE	ctermfg=8	cterm=NONE
 hi SignColumn	ctermbg=NONE	ctermfg=NONE	cterm=NONE
 
 hi VertSplit	ctermfg=NONE	ctermfg=0	cterm=NONE
-hi StatusLine	ctermbg=0	ctermfg=NONE	cterm=bold
-hi StatusLineNC	ctermbg=0	ctermfg=NONE	cterm=NONE
 hi Tabline	ctermbg=0	ctermfg=NONE	cterm=NONE
 hi TablineFill	ctermbg=0	ctermfg=NONE	cterm=NONE
 hi TablineSel	ctermbg=8	ctermfg=NONE	cterm=NONE
