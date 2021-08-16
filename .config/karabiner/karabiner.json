@@ -275,7 +275,8 @@
 									"key_code": "1",
 									"modifiers": {
 										"mandatory": [
-											"left_control"
+											"left_control",
+											"left_command"
 										]
 									}
 								},
@@ -289,7 +290,8 @@
 									"key_code": "2",
 									"modifiers": {
 										"mandatory": [
-											"left_control"
+											"left_control",
+											"left_command"
 										]
 									}
 								},
@@ -303,7 +305,8 @@
 									"key_code": "3",
 									"modifiers": {
 										"mandatory": [
-											"left_control"
+											"left_control",
+											"left_command"
 										]
 									}
 								},
@@ -317,7 +320,8 @@
 									"key_code": "4",
 									"modifiers": {
 										"mandatory": [
-											"left_control"
+											"left_control",
+											"left_command"
 										]
 									}
 								},
@@ -331,7 +335,8 @@
 									"key_code": "5",
 									"modifiers": {
 										"mandatory": [
-											"left_control"
+											"left_control",
+											"left_command"
 										]
 									}
 								},
