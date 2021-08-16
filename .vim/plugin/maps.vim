@@ -1,5 +1,5 @@
 " Basics
-nnoremap <silent> <esc>		:nohl<cr>:echo bufferline#get_echo_string()<cr>
+nnoremap <silent> <esc>		:nohl<cr>:echo<cr>
 nnoremap Q			@q
 nnoremap Y			y$
 vnoremap p			"_dP

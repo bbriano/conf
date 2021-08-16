@@ -1,5 +1,4 @@
 call plug#begin()
-Plug 'bling/vim-bufferline'
 Plug 'cespare/vim-sbd'
 Plug 'dstein64/vim-startuptime'
 Plug 'duggiefresh/vim-easydir'
