@@ -3,9 +3,9 @@ source /usr/local/share/autojump/autojump.zsh
 
 export EDITOR=nvim
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
-export PATH=.:~/bin:~/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/plan9/bin
+export PATH=.:~/bin:~/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/plan9port/bin
 export GOPATH=~/go
-export PLAN9=~/plan9
+export PLAN9=~/plan9port
 export TERM=tmux-256color
 export FZF_DEFAULT_COMMAND="find . -type f | sed 's/^\.\///'"
 export FZF_DEFAULT_OPTS='--color=bw,hl:regular,hl+:regular:reverse'
