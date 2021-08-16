@@ -54,3 +54,4 @@ nnoremap <c-p>			:Files<cr>
 nnoremap <c-n>			:History<cr>
 nnoremap <c-q>			:Files %:h<cr>
 nnoremap <space>h		:Help<cr>
+nnoremap <space>rp		:RainbowParenthesesToggle<cr>
