@@ -488,6 +488,16 @@
                 },
                 {
                     "from": {
+                        "key_code": "right_shift"
+                    },
+                    "to": [
+                        {
+                            "pointing_button": "button1"
+                        }
+                    ]
+                },
+                {
+                    "from": {
                         "key_code": "s"
                     },
                     "to": [
