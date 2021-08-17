@@ -2,7 +2,6 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'cespare/vim-sbd'
 Plug 'dstein64/vim-startuptime'
 Plug 'duggiefresh/vim-easydir'
-Plug 'hrsh7th/nvim-compe'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
