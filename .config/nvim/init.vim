@@ -9,7 +9,6 @@ Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-ipmotion'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'neovim/nvim-lspconfig'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
@@ -21,8 +20,10 @@ Plug 'tpope/vim-surround'
 Plug 'wincent/ferret'
 call plug#end()
 
-let g:markdown_folding = 1                              " Use markdown headings for fold levels.
-let g:netrw_dirhistmax = 0                              " Don't create .netrwhist files.
-
-command! W w
-command! Q q
+augroup BRIANO
+	autocmd!
+	autocmd BufWritePre * call briano#Format()
+	autocmd BufRead,BufNewFile *.puml setlocal filetype=plantuml
+	autocmd BufRead,BufNewFile *.tex setlocal filetype=tex
+	autocmd BufRead,BufNewFile go.mod setlocal filetype=go
+augroup END

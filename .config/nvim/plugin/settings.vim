@@ -20,7 +20,7 @@ set signcolumn=no
 set laststatus=1
 
 " Don't use different cursor styles in different modes.
-set guicursor=
+set guicursor=n-v-c:block
 
 " Indent-based folding and start with everything unfolded.
 set foldmethod=indent foldlevel=99
