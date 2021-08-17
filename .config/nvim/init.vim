@@ -1,24 +1,28 @@
-packadd! ferret
-packadd! fzf
-packadd! fzf.vim
-packadd! gv.vim
-packadd! nvim-compe
-packadd! nvim-lspconfig
-packadd! ultisnips
-packadd! vim-commentary
-packadd! vim-dirvish
-packadd! vim-easydir
-packadd! vim-eunuch
-packadd! vim-fugitive
-packadd! vim-ipmotion
-packadd! vim-repeat
-packadd! vim-snippets
-packadd! vim-speeddating
-packadd! vim-startuptime
-packadd! vim-surround
+call plug#begin()
+Plug 'cespare/vim-sbd'
+Plug 'dstein64/vim-startuptime'
+Plug 'duggiefresh/vim-easydir'
+Plug 'hrsh7th/nvim-compe'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/gv.vim'
+Plug 'justinmk/vim-dirvish'
+Plug 'justinmk/vim-ipmotion'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'neovim/nvim-lspconfig'
+Plug 'sirver/ultisnips'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'wincent/ferret'
+call plug#end()
 
 set noswapfile                                          " Never create swap files.
-set expandtab tabstop=8 softtabstop=-1 shiftwidth=4
+set softtabstop=-1                                      " Only in effect when expandtab is set.
 set incsearch ignorecase smartcase
 set hidden                                              " Allow not showing unwritten buffers.
 set nowrap
