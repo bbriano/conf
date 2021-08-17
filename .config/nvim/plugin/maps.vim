@@ -55,6 +55,8 @@ nnoremap <space>tn		:call briano#TodaysNote()<cr>
 
 "		*** Plugin Mappings ***
 
+nnoremap -			:E<cr>
+
 " StartupTime
 nnoremap <space><space>t	:StartupTime<cr>
 
