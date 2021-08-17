@@ -1,1 +1,1 @@
-/usr/local/Cellar/llvm/12.0.0_1/bin/clangd $*
+/usr/local/Cellar/llvm/*/bin/clangd $*
