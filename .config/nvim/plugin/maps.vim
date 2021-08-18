@@ -45,7 +45,7 @@ vnoremap <space>s		:s///g<left><left>
 
 " Like gqq and gq but separate on '.', '?' and '!'.
 nnoremap <space>qq		:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
-vnoremap <space>q		:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
+vnoremap <space>q		J:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 
 " Show syntax highlight group under cursor.
 nnoremap <space><space>s	:echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
