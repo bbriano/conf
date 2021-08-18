@@ -1,6 +1,19 @@
 # Hat is cat for human.
 
 for f in $*; do
-    echo $f
-    awk '{ printf "%d\t%s\n", NR, $0 }' $f
+	# Prints ------------------------------------
+	for i in $(seq $(tput cols | tr -d '\n')); do
+		printf '-'
+	done
+	echo
+
+	echo FILE: $f
+
+	# Prints ------------------------------------
+	for i in $(seq $(tput cols | tr -d '\n')); do
+		printf '-'
+	done
+	echo
+
+	awk '{ printf "%d\t%s\n", NR, $0 }' $f
 done
