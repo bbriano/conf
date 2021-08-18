@@ -2,6 +2,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/autojump/autojump.zsh
 
 export EDITOR=nvim
+export MANWIDTH=65
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
 export PATH=.:~/bin:~/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/plan9port/bin
 export GOPATH=~/go
