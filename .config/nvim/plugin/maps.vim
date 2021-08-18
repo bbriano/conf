@@ -20,6 +20,7 @@ nnoremap <silent> S		:bprevious<cr>
 nnoremap <silent> s		:bnext<cr>
 nnoremap <silent> <space>l	:buffer #<cr>
 nnoremap <silent> <c-s>		:Sbd<cr>
+nnoremap <silent> <space><c-s>	:Sbdm<cr>
 
 " Case sensitive and * not jump to the next match.
 nnoremap <silent> *		:let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>
