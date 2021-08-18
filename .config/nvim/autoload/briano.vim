@@ -11,7 +11,7 @@ function! briano#Format()
 	elseif &filetype == 'haskell'
 		%!ormolu
 	elseif &filetype == 'markdown'
-		%!pandoc -f markdown --wrap preserve --markdown-headings setext
+		%!pandoc -f markdown --columns 65 --markdown-headings setext
 			\ -t commonmark+smart+task_lists+pipe_tables+tex_math_dollars
 	endif
 	call winrestview(l:view)
