@@ -10,6 +10,9 @@ defaults write -g KeyRepeat -int 1				# normal minimum is 2 (30 ms)
 defaults write com.apple.CrashReporter DialogType none		# Disable annoying popup "<app> quit unexpectedly"
 defaults import com.manytricks.Moom Moom.plist
 
+# Dont steal focus on preview update.
+defaults write TeXShop BringPdfFrontOnAutomaticUpdate NO
+
 # Homebrew
 if [ ! -d /usr/local/Homebrew ]; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
