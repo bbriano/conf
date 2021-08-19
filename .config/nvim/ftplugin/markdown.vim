@@ -1,4 +1,4 @@
-setlocal expandtab shiftwidth=4
+setlocal expandtab shiftwidth=4 textwidth=65
 
 let markdown_folding = 1
 
