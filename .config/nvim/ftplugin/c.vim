@@ -1,1 +1,1 @@
-nnoremap <buffer> <cr> :!cc % && a.out<cr>
+nnoremap <buffer> <cr> :!cc -Wall % && a.out<cr>
