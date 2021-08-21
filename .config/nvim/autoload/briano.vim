@@ -17,7 +17,7 @@ function! briano#Format()
 			\+task_lists
 			\+pipe_tables
 			\+tex_math_dollars
-			\ --columns 65
+			\ --wrap preserve
 			\ --markdown-headings setext
 			\ --reference-links
 	endif
