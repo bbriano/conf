@@ -10,6 +10,9 @@ export PLAN9=~/plan9port
 export FZF_DEFAULT_COMMAND="find . -type f | sed 's/^\.\///'"
 export FZF_DEFAULT_OPTS='--color=bw,hl:regular,hl+:regular:reverse'
 
+# Remove space to the right of RPROMPT.
+export ZLE_RPROMPT_INDENT=0
+
 # For clangd
 export C_INCLUDE_PATH=/usr/local/include
 export CPLUS_INCLUDE_PATH=/usr/local/include
