@@ -2,7 +2,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/autojump/autojump.zsh
 
 export EDITOR=nvim
-export MANWIDTH=65
+export MANWIDTH=72
 export TERM=tmux-256color
 export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
 export PATH=.:~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/go/bin:/Library/TeX/texbin:~/plan9port/bin

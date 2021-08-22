@@ -1,4 +1,4 @@
-set textwidth=65
+set textwidth=72
 
 augroup TEX
 	autocmd!
