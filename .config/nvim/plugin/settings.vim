@@ -43,8 +43,8 @@ set virtualedit=block
 " Forgot why I set this.
 " set updatetime=150
 
-" Always show menu, do not auto insert and do not auto select.
-set completeopt=menuone,noinsert,noselect
+" Always show menu, even if there is only one match.
+set completeopt=menuone
 
 " Hide line and column number is status line.
 set noruler
