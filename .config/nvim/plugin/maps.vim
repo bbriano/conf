@@ -72,9 +72,6 @@ nnoremap <c-n>			:History<cr>
 nnoremap <c-q>			:Files %:h<cr>
 nnoremap <space>h		:Help<cr>
 
-" Rainbow
-nnoremap <space>rp		:RainbowParenthesesToggle<cr>
-
 " Nvim-Lspconfig
 nnoremap <silent> [g		:lua vim.lsp.diagnostic.goto_prev()<cr>
 nnoremap <silent> ]g		:lua vim.lsp.diagnostic.goto_next()<cr>
