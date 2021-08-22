@@ -5,7 +5,6 @@ nnoremap <silent> <esc>		:doautocmd CursorMoved<cr>:nohl<cr>:echo<cr>
 nnoremap Q			@q
 nnoremap Y			y$
 vnoremap p			"_dP
-nnoremap -			:E<cr>
 command! W			w
 command! Q			q
 command! Diff			w !diff % -
@@ -48,6 +47,9 @@ vnoremap <space>s		:s///g<left><left>
 " Like gqq and gq but separate on '.', '?' and '!'.
 nnoremap <space>qq		:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 vnoremap <space>q		J:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
+
+" Open netrw and put cursor on current file.
+nnoremap -			:let @/ = expand('%:t')<cr>:E<cr>n:nohl<cr>
 
 " Fix mispelling with first suggestion.
 nnoremap \			z=1<cr><cr>
