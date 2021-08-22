@@ -5,6 +5,7 @@ nnoremap <silent> <esc>		:doautocmd CursorMoved<cr>:nohl<cr>:echo<cr>
 nnoremap Q			@q
 nnoremap Y			y$
 vnoremap p			"_dP
+nnoremap -			:E<cr>
 command! W			w
 command! Q			q
 command! Diff			w !diff % -
@@ -58,8 +59,6 @@ nnoremap <space><space>s	:echo map(synstack(line('.'), col('.')), 'synIDattr(v:v
 nnoremap <space>tn		:call briano#TodaysNote()<cr>
 
 "		*** Plugin Mappings ***
-
-nnoremap -			:E<cr>
 
 " StartupTime
 nnoremap <space><space>t	:StartupTime<cr>
