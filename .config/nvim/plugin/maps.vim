@@ -52,7 +52,7 @@ vnoremap <space>q		J:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 nnoremap -			:let @/='\C\<'.expand('%:t').'\>'<cr>:E<cr>n:nohl<cr>
 
 " Fix mispelling with first suggestion.
-nnoremap \			z=1<cr><cr>
+nnoremap <space>z		z=1<cr><cr>
 
 " Show syntax highlight group under cursor.
 nnoremap <space><space>s	:echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
