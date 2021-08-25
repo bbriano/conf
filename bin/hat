@@ -1,8 +1,15 @@
 # Hat is cat for human.
 
 status=0
+linenr=0
 
 for f in $*; do
+	# Parse flags.
+	if [[ $f == '-n' ]]; then
+        linenr=1
+        continue
+	fi
+
 	# Skip if file don't exists.
 	if [[ ! -f $f ]]; then
 		echo hat: $f: No such file or directory
@@ -24,7 +31,11 @@ for f in $*; do
 	done
 	echo
 
-	awk '{ printf "%6d\t%s\n", NR, $0 }' $f
+	if [[ $linenr == 1 ]]; then
+        cat -n $f
+    else
+        cat $f
+	fi
 done
 
 exit $status
