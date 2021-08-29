@@ -32,9 +32,9 @@ for f in $*; do
 	echo
 
 	if [[ $linenr == 1 ]]; then
-        cat -n $f
-    else
-        cat $f
+		cat -n $f
+	else
+		cat $f
 	fi
 done
 
