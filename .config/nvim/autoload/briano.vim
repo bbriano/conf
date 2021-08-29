@@ -19,7 +19,6 @@ function! briano#Format()
 			\+tex_math_dollars
 			\ --wrap preserve
 			\ --markdown-headings setext
-			\ --reference-links
 	endif
 	call winrestview(l:view)
 endfunction
