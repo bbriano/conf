@@ -4,7 +4,7 @@ function! briano#Format()
 	%s/\s\+$//e		" EOL
 	%s/\n\+\%$//e		" EOF
 	if &filetype == 'go'
-		call system('gofmt', getline(1, '$'))
+		call system('goimports', getline(1, '$'))
 		if v:shell_error == 0
 			%!goimports
 		endif
