@@ -13,7 +13,7 @@ language_servers = {
 for i = 1, #language_servers do
 	require'lspconfig'[language_servers[i]].setup{
 		handlers = {
-		    ["textDocument/publishDiagnostics"] = function() end -- No diagnostics
+			["textDocument/publishDiagnostics"] = function() end -- No diagnostics
 		}
 	}
 end
