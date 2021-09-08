@@ -54,6 +54,9 @@ nnoremap -			:let @/='\C\<'.expand('%:t').'\>'<cr>:E<cr>n:nohl<cr>
 " Fix mispelling with first suggestion.
 nnoremap <space>z		z=1<cr><cr>
 
+" Re-Run last command in last tmux pane.
+nnoremap <silent> <cr>		:silent !tmux select-pane -t '{last}' && tmux send-keys ^l ^p Enter && tmux select-pane -t '{last}'<cr>
+
 " Show syntax highlight group under cursor.
 nnoremap <space><space>s	:echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
 
