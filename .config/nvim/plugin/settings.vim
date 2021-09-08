@@ -50,7 +50,7 @@ set completeopt=menuone
 set noruler
 
 " No tilde filler chars at end of buffer.
-set fillchars=eob:\ ,
+set fillchars=eob:\ ,vert:\ ,
 
 " Save undo history to undo file on write.
 set undofile

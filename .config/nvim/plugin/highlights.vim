@@ -17,7 +17,7 @@ hi LineNr		ctermbg=NONE	ctermfg=8	cterm=NONE
 hi Folded		ctermbg=NONE	ctermfg=8	cterm=NONE
 hi SignColumn		ctermbg=NONE	ctermfg=NONE	cterm=NONE
 
-hi VertSplit		ctermfg=NONE	ctermfg=NONE	cterm=NONE
+hi VertSplit		ctermfg=NONE	ctermfg=NONE	cterm=reverse
 hi StatusLineNC		ctermfg=NONE	ctermfg=NONE	cterm=reverse
 hi StatusLine		ctermfg=NONE	ctermfg=NONE	cterm=reverse,bold
 hi Tabline		ctermbg=NONE	ctermfg=NONE	cterm=reverse
