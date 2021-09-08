@@ -1,1 +1,1 @@
-nnoremap <buffer> <cr> :!python3 %<cr>
+setlocal expandtab shiftwidth=4
