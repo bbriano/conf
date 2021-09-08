@@ -8,8 +8,6 @@ function! briano#Format()
 		if v:shell_error == 0
 			%!goimports
 		endif
-	elseif &filetype == 'haskell'
-		%!ormolu
 	elseif &filetype == 'markdown'
 		%!pandoc -f markdown
 			\ -t commonmark
