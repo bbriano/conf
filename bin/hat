@@ -6,8 +6,8 @@ linenr=0
 for f in $*; do
 	# Parse flags.
 	if [[ $f == '-n' ]]; then
-        linenr=1
-        continue
+		linenr=1
+		continue
 	fi
 
 	# Skip if file don't exists.
