@@ -33,8 +33,3 @@ function! briano#TodaysNote()
 		execute 'normal! 0'
 	endif
 endfunction
-
-" Show syntax highlight group under cursor.
-function! briano#HighlightGroupCursor()
-	return map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunction
