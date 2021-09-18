@@ -1,5 +1,3 @@
-setlocal
-
 augroup TEX
 	autocmd!
 	autocmd BufWritePre *.tex :Dispatch! !pdflatex %
