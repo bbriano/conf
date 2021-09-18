@@ -1,4 +1,4 @@
-setlocal textwidth=72
+setlocal
 
 augroup TEX
 	autocmd!
