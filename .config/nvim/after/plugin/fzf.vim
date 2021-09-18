@@ -5,4 +5,4 @@ let g:fzf_action = {
 \}
 
 " Without this FZF closes slowly.
-tnoremap <esc>		<esc><esc>
+tnoremap <esc> <esc><esc>
