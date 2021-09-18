@@ -61,7 +61,7 @@ nnoremap <silent> <cr>		:silent !tmux select-pane -t '{last}' && tmux send-keys 
 nnoremap <space><space>s	:echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
 
 " Open today's note.
-nnoremap <space>tn		:call briano#TodaysNote()<cr>
+nnoremap <space>tn		:call TodaysNote()<cr>
 
 "		*** Plugin Mappings ***
 
