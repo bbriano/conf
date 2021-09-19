@@ -41,14 +41,9 @@ function! Format()
 			%!goimports
 		endif
 	elseif &filetype == 'markdown'
-		%!pandoc -f markdown
-			\ -t commonmark
-			\+smart
-			\+task_lists
-			\+pipe_tables
-			\+tex_math_dollars
-			\ --wrap preserve
-			\ --markdown-headings setext
+		%!pandoc -f markdown -t commonmark
+			\+smart+task_lists+pipe_tables+tex_math_dollars
+			\ --wrap preserve --markdown-headings setext
 	endif
 	call winrestview(l:view)
 endfunction
