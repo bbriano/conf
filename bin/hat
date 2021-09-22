@@ -1,3 +1,4 @@
+#!/bin/sh
 # Hat is cat for human.
 
 status=0

@@ -1,1 +1,2 @@
+#!/bin/sh
 /Applications/MATLAB_R2021a.app/bin/matlab -nosplash -nodesktop

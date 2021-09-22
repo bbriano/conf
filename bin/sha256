@@ -1,1 +1,2 @@
+#!/bin/sh
 printf $1 | shasum -a 256 | awk '{print $1}'

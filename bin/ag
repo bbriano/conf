@@ -1,1 +1,2 @@
+#!/bin/sh
 /usr/local/bin/ag --color-line-number '' --color-match '33' --color-path '34' $*
