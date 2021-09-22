@@ -273,7 +273,11 @@
 								"conditions": [
 									{
 										"bundle_identifiers": [
-											"^com\\.google\\.Chrome$"
+											"^com\\.google\\.Chrome$",
+											"^TeXShop$"
+										],
+										"file_paths": [
+											"plan9port"
 										],
 										"type": "frontmost_application_unless"
 									}
@@ -293,7 +297,11 @@
 								"conditions": [
 									{
 										"bundle_identifiers": [
-											"^com\\.google\\.Chrome$"
+											"^com\\.google\\.Chrome$",
+											"^TeXShop$"
+										],
+										"file_paths": [
+											"plan9port"
 										],
 										"type": "frontmost_application_unless"
 									}
@@ -306,6 +314,47 @@
 									"modifiers": [
 										"left_control"
 									]
+								},
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Mouse{4,5} -> Scroll in {Acme,TeXShop}",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"file_paths": [
+											"plan9port",
+											"TeXShop"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"pointing_button": "button4"
+								},
+								"to": {
+									"key_code": "down_arrow"
+								},
+								"type": "basic"
+							},
+							{
+								"conditions": [
+									{
+										"file_paths": [
+											"plan9port",
+											"TeXShop"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"pointing_button": "button5"
+								},
+								"to": {
+									"key_code": "up_arrow"
 								},
 								"type": "basic"
 							}
