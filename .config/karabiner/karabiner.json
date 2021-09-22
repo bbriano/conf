@@ -173,7 +173,7 @@
 											"^com\\.microsoft\\.VSCode$"
 										],
 										"file_paths": [
-											"plan9port"
+											"plan9"
 										],
 										"type": "frontmost_application_unless"
 									}
@@ -208,7 +208,7 @@
 											"^com\\.microsoft\\.VSCode$"
 										],
 										"file_paths": [
-											"plan9port"
+											"plan9"
 										],
 										"type": "frontmost_application_unless"
 									}
@@ -277,7 +277,7 @@
 											"^TeXShop$"
 										],
 										"file_paths": [
-											"plan9port"
+											"plan9"
 										],
 										"type": "frontmost_application_unless"
 									}
@@ -301,7 +301,7 @@
 											"^TeXShop$"
 										],
 										"file_paths": [
-											"plan9port"
+											"plan9"
 										],
 										"type": "frontmost_application_unless"
 									}
@@ -326,7 +326,7 @@
 								"conditions": [
 									{
 										"file_paths": [
-											"plan9port",
+											"plan9",
 											"TeXShop"
 										],
 										"type": "frontmost_application_if"
@@ -344,7 +344,7 @@
 								"conditions": [
 									{
 										"file_paths": [
-											"plan9port",
+											"plan9",
 											"TeXShop"
 										],
 										"type": "frontmost_application_if"
