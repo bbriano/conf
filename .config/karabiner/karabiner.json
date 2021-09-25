@@ -274,6 +274,7 @@
 									{
 										"bundle_identifiers": [
 											"^com\\.google\\.Chrome$",
+											"^com\\.apple\\.Safari$",
 											"^TeXShop$"
 										],
 										"file_paths": [
@@ -298,6 +299,7 @@
 									{
 										"bundle_identifiers": [
 											"^com\\.google\\.Chrome$",
+											"^com\\.apple\\.Safari$",
 											"^TeXShop$"
 										],
 										"file_paths": [
@@ -313,6 +315,51 @@
 									"key_code": "0",
 									"modifiers": [
 										"left_control"
+									]
+								},
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Mouse{4,5} -> {Previous,Next} page in Safari",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"^com\\.apple\\.Safari$"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"pointing_button": "button4"
+								},
+								"to": {
+									"key_code": "open_bracket",
+									"modifiers": [
+										"left_command"
+									]
+								},
+								"type": "basic"
+							},
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"^com\\.apple\\.Safari$"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"pointing_button": "button5"
+								},
+								"to": {
+									"key_code": "close_bracket",
+									"modifiers": [
+										"left_command"
 									]
 								},
 								"type": "basic"
