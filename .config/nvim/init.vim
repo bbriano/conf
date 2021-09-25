@@ -19,9 +19,6 @@ Plug 'wincent/ferret'
 Plug 'wsdjeg/vim-fetch'
 call plug#end()
 
-" ``Syntax highlighting is juvenile'' -- Rob Pike
-syntax off
-
 augroup BRIANO
 	autocmd!
 	autocmd BufWritePre * call Format()
