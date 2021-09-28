@@ -1,2 +1,2 @@
 #!/bin/sh
-/bin/date +%Y-%m-%d
+date +%Y-%m-%d

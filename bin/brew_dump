@@ -1,3 +1,3 @@
 #!/bin/sh
-/usr/local/bin/brew bundle dump -f --file /Users/briano/dotfiles/Brewfile
+brew bundle dump -f --file /Users/briano/dotfiles/Brewfile
 sort -o /Users/briano/dotfiles/Brewfile /Users/briano/dotfiles/Brewfile
