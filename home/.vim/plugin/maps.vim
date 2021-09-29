@@ -63,8 +63,6 @@ nnoremap <space><space>s :echo map(synstack(line('.'), col('.')), 'synIDattr(v:v
 " Open today's note.
 nnoremap <space>tn :call TodaysNote()<cr>
 
-"               *** Plugin Mappings ***
-
 " StartupTime
 nnoremap <space><space>t :StartupTime<cr>
 

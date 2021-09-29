@@ -21,7 +21,7 @@ let netrw_banner = 0                    " Hide the big annoying banner.
 let netrw_dirhistmax = 0                " Don't create .netrwhist files.
 let netrw_list_hide = '^\.\.\?/$'       " Go where there?
 let markdown_folding = 1                " Markdown fold on headings.
-let ip_skipfold = 1                     " From justinmk/vim-ipmotion
+let ip_skipfold = 1                     " From justinmk/vim-ipmotion.
 
 filetype plugin indent off
 

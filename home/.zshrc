@@ -9,30 +9,23 @@ export PATH=.:~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/go/bin:/Libra
 export PLAN9=~/plan9
 export FZF_DEFAULT_COMMAND="find . -type f | sed 's/^\.\///'"
 export FZF_DEFAULT_OPTS='--color=bw,hl:regular,hl+:regular:reverse'
+export ZLE_RPROMPT_INDENT=0     # Remove space to the right of RPROMPT.
 
-# Remove space to the right of RPROMPT.
-export ZLE_RPROMPT_INDENT=0
-
-# For clangd
-export C_INCLUDE_PATH=/usr/local/include
-export CPLUS_INCLUDE_PATH=/usr/local/include
-
-# Aliases
 alias ls='ls -G'
 alias l='ls -1'
 alias ll='ls -la'
 alias ag='ag --color-line-number "" --color-match 33 --color-path 34'
 
-# Emacs-like bindings
+# Emacs-like bindings.
 bindkey -e
 bindkey ^u backward-kill-line
 
-# Ctrl-x Ctrl-e opens current command in Vim
+# Ctrl-x Ctrl-e to open current line in Vim.
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
-# Show elapsed time of last command
+# Show elapsed time of last command.
 function preexec() {
 	cmd_start=$(($(print -P %D{%s%3.})))
 }
