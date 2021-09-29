@@ -1,4 +1,4 @@
-call plug#begin(stdpath('data') . '/plugged')
+call plug#begin()
 Plug 'cespare/vim-sbd'
 Plug 'dstein64/vim-startuptime'
 Plug 'duggiefresh/vim-easydir'
