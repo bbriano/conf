@@ -22,6 +22,7 @@ augroup BRIANO
 	autocmd BufWritePre * call Format()
 	autocmd BufRead,BufNewFile *.puml setlocal filetype=plantuml
 	autocmd BufRead,BufNewFile *.tex setlocal filetype=tex
+	autocmd BufRead,BufNewFile *.ts setlocal filetype=javascript    " Use javascript because typescript syntax is slow.
 	autocmd BufRead,BufNewFile go.mod setlocal filetype=go
 augroup END
 
