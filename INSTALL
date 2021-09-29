@@ -1,0 +1,36 @@
+#!/bin/sh
+set -e
+
+# Compile terminfo for italic font support.
+rm -rf ~/.terminfo
+tic tmux-256color.terminfo
+
+# Symbolically link configuration files to home directory.
+for f in $(ls -a home | grep -v '\.$'); do
+	rm -rf ~/$f
+	ln -sf $(pwd)/home/$f ~/$f
+done
+
+# Symbolically link scripts to ~/bin/
+for f in $(ls bin); do
+	rm -rf ~/$f
+	ln -sf $(pwd)/bin/$f ~/$f
+done
+
+# MacOS specific settings.
+if [ $(uname -s) = Darwin ]; then
+	# normal minimum is 15 (225 ms)
+	defaults write -g InitialKeyRepeat -int 14
+
+	# normal minimum is 2 (30 ms)
+	defaults write -g KeyRepeat -int 1
+
+	# Disable annoying popup "<app> quit unexpectedly"
+	defaults write com.apple.CrashReporter DialogType none
+
+	# Source moom configuration.
+	defaults import com.manytricks.Moom Moom.plist
+
+	# Dont steal focus on preview update.
+	defaults write TeXShop BringPdfFrontOnAutomaticUpdate NO
+fi
