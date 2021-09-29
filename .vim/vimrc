@@ -5,48 +5,54 @@ Plug 'duggiefresh/vim-easydir'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
-Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-ipmotion'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'wincent/ferret'
+Plug 'wsdjeg/vim-fetch'
 call plug#end()
-
-syntax enable
-
-set noswapfile					" Never create swap files.
-set softtabstop=-1				" match to value of shiftwidth.
-set incsearch ignorecase smartcase hlsearch
-set hidden					" Allow not showing unwritten buffers.
-set nowrap
-set foldmethod=indent foldlevel=99
-set shortmess=I					" Don't show intro screen on startup.
-set shortmess+=O				" File info or quickfix message overwrites previous message.
-set shortmess+=F				" Never show file info when opening a file.
-set nojoinspaces				" Don't add double space after .?! when using :j.
-set virtualedit=block				" Allow the cursor in position where there is no text in visual block mode.
-set completeopt=menuone,noinsert,noselect	" Always show menu, do not auto insert and do not auto select.
-set undofile undodir=~/.vimundo			" Save undo history to undo file on write.
-set backspace=indent,eol,start			" Not being an doofus.
-set ttimeoutlen=0				" Exit out of visual mode instantly.
-set autoindent					" Match indent with previous line.
-set fillchars=vert:│				" Cleaner than.
-if has('patch2508') | set fillchars+=eob:\ , | endif " No tilde filler chars at end of buffer.
-
-let g:netrw_dirhistmax = 0			" Don't create .netrwhist files.
-
-command! W w
-command! Q q
-command! Diff w !diff % -			" Diff current file with current buffer.
 
 augroup BRIANO
 	autocmd!
-	autocmd BufWritePre * call briano#Format()
+	autocmd BufWritePre * call Format()
+	autocmd BufRead,BufNewFile *.puml setlocal filetype=plantuml
+	autocmd BufRead,BufNewFile *.tex setlocal filetype=tex
+	autocmd BufRead,BufNewFile go.mod setlocal filetype=go
 augroup END
+
+" Format current buffer with appropriate formatters based on filetype.
+function! Format()
+	let l:view = winsaveview()
+	%s/\s\+$//e             " Remove trailing whitespace for each line.
+	%s/\n\+\%$//e           " Remove trailing newlines at end of file.
+	if &filetype == 'go'
+		call system('goimports', getline(1, '$'))
+		if v:shell_error == 0
+			%!goimports
+		endif
+	else
+		call system('tisa', getline(1, '$'))
+		if v:shell_error == 0
+			%!tisa
+		endif
+	endif
+	call winrestview(l:view)
+endfunction
+
+" TodaysNote open todays note and fill the title if the file is new.
+function! TodaysNote()
+	let l:datestr = strftime('%Y-%m-%d')
+	let l:title = strftime('%d %b %Y')
+	let l:filename = '~/notes/' . l:datestr . '.md'
+	execute 'edit' l:filename
+	if !filereadable(expand('%'))
+		execute 'normal! i' . l:title
+		execute 'normal! o==========='
+		execute 'normal! 0'
+	endif
+endfunction
