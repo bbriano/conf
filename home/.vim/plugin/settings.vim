@@ -1,3 +1,6 @@
+" set nojuvenile
+syntax off
+
 " Never create swap files.
 set noswapfile
 
