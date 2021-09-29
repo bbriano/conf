@@ -29,12 +29,17 @@ augroup END
 " Format current buffer with appropriate formatters based on filetype.
 function! Format()
 	let l:view = winsaveview()
-	%s/\s\+$//e   " EOL
-	%s/\n\+\%$//e " EOF
+	%s/\s\+$//e             " Remove trailing whitespace for each line.
+	%s/\n\+\%$//e           " Remove trailing newlines at end of file.
 	if &filetype == 'go'
 		call system('goimports', getline(1, '$'))
 		if v:shell_error == 0
 			%!goimports
+		endif
+	else
+		call system('tisa', getline(1, '$'))
+		if v:shell_error == 0
+			%!tisa
 		endif
 	endif
 	call winrestview(l:view)
