@@ -1,5 +1,5 @@
-" ESC to clear everything. Trigger CursorMoved to close LSP preview window.
-nnoremap <silent> <esc> :doautocmd CursorMoved<cr>:nohl<cr>:echo<cr>
+" ESC to clear everything.
+nnoremap <silent> <esc> :nohl<cr>:echo<cr>
 
 " Basics.
 nnoremap Q    @q
@@ -78,13 +78,3 @@ nnoremap <c-p>    :Files<cr>
 nnoremap <c-n>    :History<cr>
 nnoremap <c-q>    :Files %:h<cr>
 nnoremap <space>h :Help<cr>
-
-" Nvim-Lspconfig
-nnoremap <silent> [g :lua vim.lsp.diagnostic.goto_prev()<cr>
-nnoremap <silent> ]g :lua vim.lsp.diagnostic.goto_next()<cr>
-nnoremap <silent> gy :lua vim.lsp.buf.type_definition()<cr>
-nnoremap <silent> gd :lua vim.lsp.buf.definition()<cr>
-nnoremap <silent> gr :lua vim.lsp.buf.references()<cr>
-nnoremap <silent> K  :lua vim.lsp.buf.hover()<cr>
-nnoremap <space>rn   :lua vim.lsp.buf.rename()<cr>
-nnoremap <space>ca   :lua vim.lsp.buf.code_action()<cr>
