@@ -74,6 +74,7 @@ nmap <space>? <Plug>(FerretAcks)
 nmap <space>* <Plug>(FerretAckWord)
 
 " FZF
+tnoremap <esc>    <esc><esc>
 nnoremap <c-p>    :Files<cr>
 nnoremap <c-n>    :History<cr>
 nnoremap <c-q>    :Files %:h<cr>
