@@ -63,7 +63,3 @@ endif
 " Safe undo's over Vim sessions.
 set undofile
 set undodir=~/.vim/undo
-
-" Use dumb indentation (match previous line).
-filetype indent off
-set autoindent
