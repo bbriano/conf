@@ -1,7 +1,6 @@
 #!/bin/sh
-
 year=$(date | awk '{print $4}')
-printf "Copyright (c) %s %s\n\n" $year "$(name)"
+echo "Copyright (c) $year Briano Goestiawan\n"
 
 cat <<EOF
 Permission to use, copy, modify, and/or distribute this
