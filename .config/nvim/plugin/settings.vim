@@ -49,7 +49,7 @@ set completeopt=menuone
 " Hide line and column number is status line.
 set noruler
 
-" No tilde filler chars at end of buffer.
+" No tilde filler chars at end of buffer and blank vertical split.
 set fillchars=eob:\ ,vert:\ ,
 
 " Save undo history to undo file on write.
