@@ -232,11 +232,11 @@
 						]
 					},
 					{
-						"description": "Control-{9,0} -> Volume control",
+						"description": "Control-Shift-{-,=} -> Volume control",
 						"manipulators": [
 							{
 								"from": {
-									"key_code": "9",
+									"key_code": "hyphen",
 									"modifiers": {
 										"mandatory": [
 											"left_control",
@@ -251,7 +251,7 @@
 							},
 							{
 								"from": {
-									"key_code": "0",
+									"key_code": "equal_sign",
 									"modifiers": {
 										"mandatory": [
 											"left_control",
@@ -287,7 +287,7 @@
 									"pointing_button": "button4"
 								},
 								"to": {
-									"key_code": "9",
+									"key_code": "hyphen",
 									"modifiers": [
 										"left_control"
 									]
@@ -312,7 +312,7 @@
 									"pointing_button": "button5"
 								},
 								"to": {
-									"key_code": "0",
+									"key_code": "equal_sign",
 									"modifiers": [
 										"left_control"
 									]
