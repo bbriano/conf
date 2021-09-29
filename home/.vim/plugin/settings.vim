@@ -43,8 +43,8 @@ set nojoinspaces
 " Allow the cursor in position where there is no text in visual block mode.
 set virtualedit=block
 
-" Forgot why I set this.
-" set updatetime=150
+" Remove delay when exiting visual mode.
+set ttimeoutlen=0
 
 " Always show menu, even if there is only one match.
 set completeopt=menuone
