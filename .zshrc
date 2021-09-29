@@ -39,11 +39,16 @@ function precmd() {
 		local s=$((d_s % 60))
 		local m=$(((d_s / 60) % 60))
 		local h=$((d_s / 3600))
-		if       ((h > 0)); then cmd_time=${h}h${m}m
-		elif ((m > 0)); then cmd_time=${m}m${s}s
-		elif ((s > 9)); then cmd_time=${s}.$(printf %03d $ms | cut -c1-2)s              # 12.34s
-		elif ((s > 0)); then cmd_time=${s}.$(printf %03d $ms)s                          # 1.234s
-		else cmd_time=${ms}ms
+		if ((h > 0)); then
+			cmd_time=${h}h${m}m
+		elif ((m > 0)); then
+			cmd_time=${m}m${s}s
+		elif ((s > 9)); then
+			cmd_time=${s}.$(printf %03d $ms | cut -c1-2)s              # 12.34s
+		elif ((s > 0)); then
+			cmd_time=${s}.$(printf %03d $ms)s                          # 1.234s
+		else
+			cmd_time=${ms}ms
 		fi
 		export RPROMPT='%F{green}'$cmd_time
 		unset cmd_start
