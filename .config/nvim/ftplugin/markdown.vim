@@ -1,3 +1,2 @@
-setlocal expandtab shiftwidth=4
-
+" Set fold on headings.
 let markdown_folding = 1
