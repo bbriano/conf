@@ -1,6 +1,7 @@
 #!/bin/sh
-awk '
+# Wide finds the widest line and prints it.
 
+awk '
 {
     if (length($0) > max) {
         max = length($0);
@@ -13,5 +14,4 @@ awk '
 END {
     printf("%s:%d:%s\n", filename, number, line);
 }
-
 ' $*
