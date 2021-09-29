@@ -17,6 +17,12 @@ export ZLE_RPROMPT_INDENT=0
 export C_INCLUDE_PATH=/usr/local/include
 export CPLUS_INCLUDE_PATH=/usr/local/include
 
+# Aliases
+alias ls='ls -G'
+alias l='ls -1'
+alias ll='ls -la'
+alias ag='ag --color-line-number "" --color-match 33 --color-path 34'
+
 # Emacs-like bindings
 bindkey -e
 bindkey ^u backward-kill-line

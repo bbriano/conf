@@ -1,6 +1,0 @@
-#!/bin/sh
-if [ $TERM = dumb ]; then
-	/usr/local/bin/ag "$*" | cat
-else
-	/usr/local/bin/ag --color-line-number '' --color-match '33' --color-path '34' "$*"
-fi
