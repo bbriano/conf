@@ -17,15 +17,47 @@ Plug 'wincent/ferret'
 Plug 'wsdjeg/vim-fetch'
 call plug#end()
 
+let netrw_banner = 0                    " Hide the big annoying banner.
+let netrw_dirhistmax = 0                " Don't create .netrwhist files.
+let netrw_list_hide = '^\.\.\?/$'       " Go where there?
+let markdown_folding = 1                " Markdown fold on headings.
+let ip_skipfold = 1                     " From justinmk/vim-ipmotion
+
 filetype plugin indent off
 
 augroup BRIANO
 	autocmd!
+
+	" Format before write.
 	autocmd BufWritePre * call Format()
+
+	" Set filetype based on file name.
 	autocmd BufRead,BufNewFile *.puml setlocal filetype=plantuml
 	autocmd BufRead,BufNewFile *.tex setlocal filetype=tex
 	autocmd BufRead,BufNewFile *.ts setlocal filetype=javascript    " Use javascript because typescript syntax is slow.
 	autocmd BufRead,BufNewFile go.mod setlocal filetype=go
+
+	" Special indentation for 'special' languages.
+	autocmd FileType haskell,python setlocal expandtab shiftwidth=4
+
+	" Netrw mappings (consistent with plugin/maps.vim).
+	autocmd FileType netrw nnoremap <buffer> <silent> S :bprevious<cr>
+	autocmd FileType netrw nnoremap <buffer> <silent> s :bnext<cr>
+
+	" Quickfix mappings (preview match).
+	autocmd FileType qf nnoremap <buffer> p <CR><C-w>p
+
+	" Keep markdown looking plain.
+	autocmd BufEnter *.md hi htmlBold cterm=NONE
+	autocmd BufEnter *.md hi htmlItalic cterm=NONE
+	autocmd BufEnter *.md hi MarkdownBlockquote ctermfg=NONE
+
+	" Set comment string for vim-commentary.
+	autocmd FileType c,cpp,go setlocal commentstring=//\ %s
+	autocmd FileType haskell setlocal commentstring=--\ %s
+	autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
+	autocmd FileType matlab,tex setlocal commentstring=%\ %s
+	autocmd FileType plantuml setlocal commentstring='\ %s
 augroup END
 
 " Format current buffer with appropriate formatters based on filetype.
@@ -41,7 +73,7 @@ function! Format()
 	else
 		call system('tisa', getline(1, '$'))
 		if v:shell_error == 0
-			%!tisa
+			execute '%!tisa ' . &ts
 		endif
 	endif
 	call winrestview(l:view)
