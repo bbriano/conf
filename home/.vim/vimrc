@@ -17,7 +17,7 @@ Plug 'wincent/ferret'
 Plug 'wsdjeg/vim-fetch'
 call plug#end()
 
-filetype indent off
+filetype plugin indent off
 
 augroup BRIANO
 	autocmd!
