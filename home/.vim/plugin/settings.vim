@@ -62,7 +62,7 @@ endif
 
 " Safe undo's over Vim sessions.
 set undofile
-set undodir=~/.vim/undo
+set undodir=~/.vim/backup
 
 " Allow backspacing over the start of insert.
 set backspace=eol,start
