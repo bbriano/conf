@@ -6,19 +6,19 @@ rm -rf ~/.terminfo
 tic tmux-256color.terminfo
 
 # Symbolically link configuration files to home directory.
-for f in $(ls -a home | grep -v '\.$'); do
+for f in `ls -a home | grep -v '\.$'`; do
 	rm -rf ~/$f
-	ln -sf $(pwd)/home/$f ~/$f
+	ln -sf `pwd`/home/$f ~/$f
 done
 
 # Symbolically link scripts to ~/bin/
-for f in $(ls bin); do
-	rm -rf ~/$f
-	ln -sf $(pwd)/bin/$f ~/$f
+for f in `ls bin`; do
+	rm -rf ~/bin/$f
+	ln -sf `pwd`/bin/$f ~/bin/$f
 done
 
 # MacOS specific settings.
-if [ $(uname -s) = Darwin ]; then
+if [ `uname` = Darwin ]; then
 	# normal minimum is 15 (225 ms)
 	defaults write -g InitialKeyRepeat -int 14
 
