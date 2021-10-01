@@ -11,11 +11,6 @@ export FZF_DEFAULT_COMMAND="find . -type f | sed 's/^\.\///'"
 export FZF_DEFAULT_OPTS='--color=bw,hl:regular,hl+:regular:reverse'
 export ZLE_RPROMPT_INDENT=0     # Remove space to the right of RPROMPT.
 
-alias ls='ls -G'
-alias l='ls -1'
-alias ll='ls -la'
-alias ag='ag --color-line-number "" --color-match 33 --color-path 34'
-
 # Emacs-like bindings.
 bindkey -e
 bindkey ^u backward-kill-line
