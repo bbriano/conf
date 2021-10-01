@@ -232,7 +232,7 @@
 						]
 					},
 					{
-						"description": "Control-Shift-{-,=} -> Volume control",
+						"description": "Volume control",
 						"manipulators": [
 							{
 								"from": {
@@ -263,28 +263,51 @@
 									"key_code": "volume_increment"
 								},
 								"type": "basic"
+							},
+							{
+								"from": {
+									"pointing_button": "button1",
+									"modifiers": {
+										"mandatory": [
+											"left_control",
+											"left_shift"
+										]
+									}
+								},
+								"to": {
+									"key_code": "volume_decrement"
+								},
+								"type": "basic"
+							},
+							{
+								"from": {
+									"pointing_button": "button2",
+									"modifiers": {
+										"mandatory": [
+											"left_control",
+											"left_shift"
+										]
+									}
+								},
+								"to": {
+									"key_code": "volume_increment"
+								},
+								"type": "basic"
 							}
 						]
 					},
 					{
-						"description": "Mouse{4,5} -> Switch desktop",
+						"description": "Switch desktop",
 						"manipulators": [
 							{
-								"conditions": [
-									{
-										"bundle_identifiers": [
-											"^com\\.google\\.Chrome$",
-											"^com\\.apple\\.Safari$",
-											"^TeXShop$"
-										],
-										"file_paths": [
-											"plan9"
-										],
-										"type": "frontmost_application_unless"
-									}
-								],
 								"from": {
-									"pointing_button": "button4"
+									"pointing_button": "button4",
+									"modifiers": {
+										"mandatory": [
+											"left_control",
+											"left_shift"
+										]
+									}
 								},
 								"to": {
 									"key_code": "hyphen",
@@ -295,21 +318,14 @@
 								"type": "basic"
 							},
 							{
-								"conditions": [
-									{
-										"bundle_identifiers": [
-											"^com\\.google\\.Chrome$",
-											"^com\\.apple\\.Safari$",
-											"^TeXShop$"
-										],
-										"file_paths": [
-											"plan9"
-										],
-										"type": "frontmost_application_unless"
-									}
-								],
 								"from": {
-									"pointing_button": "button5"
+									"pointing_button": "button5",
+									"modifiers": {
+										"mandatory": [
+											"left_control",
+											"left_shift"
+										]
+									}
 								},
 								"to": {
 									"key_code": "equal_sign",
@@ -322,7 +338,7 @@
 						]
 					},
 					{
-						"description": "Mouse{4,5} -> {Previous,Next} page in Safari",
+						"description": "Mouse{4,5} -> {Prev,Next} page in Safari",
 						"manipulators": [
 							{
 								"conditions": [
@@ -403,6 +419,63 @@
 								"to": {
 									"key_code": "up_arrow"
 								},
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Mouse{4,5} -> {Prev,Next} tmux window in Terminal or iTerm",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"^com\\.apple\\.Terminal$",
+											"^com\\.googlecode\\.iterm2$"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"pointing_button": "button4"
+								},
+								"to": [
+									{
+										"key_code": "spacebar",
+										"modifiers": [
+											"control"
+										]
+									},
+									{
+										"key_code": "p"
+									}
+								],
+								"type": "basic"
+							},
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"^com\\.apple\\.Terminal$",
+											"^com\\.googlecode\\.iterm2$"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"pointing_button": "button5"
+								},
+								"to": [
+									{
+										"key_code": "spacebar",
+										"modifiers": [
+											"control"
+										]
+									},
+									{
+										"key_code": "n"
+									}
+								],
 								"type": "basic"
 							}
 						]
