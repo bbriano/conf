@@ -14,4 +14,4 @@ awk '
 END {
     printf("%s:%d:%s\n", filename, number, line);
 }
-' $*
+' "$@"
