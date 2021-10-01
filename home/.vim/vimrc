@@ -18,9 +18,10 @@ call plug#end()
 
 let netrw_banner = 0                    " Hide the big annoying banner.
 let netrw_dirhistmax = 0                " Don't create .netrwhist files.
-let netrw_list_hide = '^\.\.\?/$'       " Go where there?
-let markdown_folding = 1                " Markdown fold on headings.
+let netrw_list_hide = '^\.\.\?/$'       " Hide . and .. in netrw.
+let markdown_folding = 1                " Set folds on markdown headings.
 let ip_skipfold = 1                     " From justinmk/vim-ipmotion.
+let autoformat = 1
 
 filetype plugin indent off
 
@@ -28,7 +29,7 @@ augroup BRIANO
 	autocmd!
 
 	" Format before write.
-	autocmd BufWritePre * call Format()
+	autocmd BufWritePre * if autoformat | call Format() | endif
 
 	" Set filetype based on file name.
 	autocmd BufRead,BufNewFile *.puml setlocal filetype=plantuml
