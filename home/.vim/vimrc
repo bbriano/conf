@@ -16,11 +16,11 @@ Plug 'wincent/ferret'
 Plug 'wsdjeg/vim-fetch'
 call plug#end()
 
-let netrw_banner = 0                    " Hide the big annoying banner.
-let netrw_dirhistmax = 0                " Don't create .netrwhist files.
-let netrw_list_hide = '^\.\.\?/$'       " Hide . and .. in netrw.
-let markdown_folding = 1                " Set folds on markdown headings.
-let ip_skipfold = 1                     " From justinmk/vim-ipmotion.
+let netrw_banner = 0                 " Hide the big annoying banner.
+let netrw_dirhistmax = 0             " Don't create .netrwhist files.
+let netrw_list_hide = '^\.\.\?/$'    " Hide . and .. in netrw.
+let markdown_folding = 1             " Set folds on markdown headings.
+let ip_skipfold = 1                  " From justinmk/vim-ipmotion.
 let autoformat = 1
 
 filetype plugin indent off
@@ -34,7 +34,7 @@ augroup BRIANO
 	" Set filetype based on file name.
 	autocmd BufRead,BufNewFile *.puml setlocal filetype=plantuml
 	autocmd BufRead,BufNewFile *.tex setlocal filetype=tex
-	autocmd BufRead,BufNewFile *.ts setlocal filetype=javascript    " Use javascript because typescript syntax is slow.
+	autocmd BufRead,BufNewFile *.ts setlocal filetype=javascript
 	autocmd BufRead,BufNewFile go.mod setlocal filetype=go
 
 	" Special indentation for 'special' languages.
@@ -63,8 +63,8 @@ augroup END
 " Format current buffer with appropriate formatters based on filetype.
 function! Format()
 	let l:view = winsaveview()
-	%s/\s\+$//e             " Remove trailing whitespace for each line.
-	%s/\n\+\%$//e           " Remove trailing newlines at end of file.
+	%s/\s\+$//e      " Remove trailing whitespace for each line.
+	%s/\n\+\%$//e    " Remove trailing newlines at end of file.
 	if &filetype == 'go'
 		call system('goimports', getline(1, '$'))
 		if v:shell_error == 0

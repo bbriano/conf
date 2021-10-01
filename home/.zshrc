@@ -9,9 +9,9 @@ export PATH=.:~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/go/bin:/Libra
 export PLAN9=~/plan9
 export FZF_DEFAULT_COMMAND="find . -type f | sed 's/^\.\///'"
 export FZF_DEFAULT_OPTS='--color=bw,hl:regular,hl+:regular:reverse'
-export ZLE_RPROMPT_INDENT=0     # Remove space to the right of RPROMPT.
+export ZLE_RPROMPT_INDENT=0    # Remove space to the right of RPROMPT.
 
-# Emacs-like bindings.
+# Set Emacs-like bindings.
 bindkey -e
 bindkey ^u backward-kill-line
 
@@ -38,16 +38,16 @@ function precmd() {
 		elif ((m > 0)); then
 			cmd_time=${m}m${s}s
 		elif ((s > 9)); then
-			cmd_time=${s}.$(printf %03d $ms | cut -c1-2)s              # 12.34s
+			cmd_time=${s}.$(printf %03d $ms | cut -c1-2)s    # 12.34s
 		elif ((s > 0)); then
-			cmd_time=${s}.$(printf %03d $ms)s                          # 1.234s
+			cmd_time=${s}.$(printf %03d $ms)s                # 1.234s
 		else
 			cmd_time=${ms}ms
 		fi
 		export RPROMPT='%F{green}'$cmd_time
 		unset cmd_start
 	else
-		# Clear previous result when hitting Return with no command to execute.
+		# Clear previous result when hitting Return with no command.
 		unset cmd_time
 	fi
 }
