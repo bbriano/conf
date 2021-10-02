@@ -424,7 +424,7 @@
 						]
 					},
 					{
-						"description": "Mouse{4,5} -> {Prev,Next} tmux window in Terminal or iTerm",
+						"description": "Mouse{4,5} -> Scroll in Terminal or iTerm",
 						"manipulators": [
 							{
 								"conditions": [
@@ -439,17 +439,12 @@
 								"from": {
 									"pointing_button": "button4"
 								},
-								"to": [
-									{
-										"key_code": "spacebar",
-										"modifiers": [
-											"control"
-										]
-									},
-									{
-										"key_code": "p"
-									}
-								],
+								"to": {
+									"key_code": "d",
+									"modifiers": [
+										"control"
+									]
+								},
 								"type": "basic"
 							},
 							{
@@ -465,17 +460,12 @@
 								"from": {
 									"pointing_button": "button5"
 								},
-								"to": [
-									{
-										"key_code": "spacebar",
-										"modifiers": [
-											"control"
-										]
-									},
-									{
-										"key_code": "n"
-									}
-								],
+								"to": {
+									"key_code": "u",
+									"modifiers": [
+										"control"
+									]
+								},
 								"type": "basic"
 							}
 						]
