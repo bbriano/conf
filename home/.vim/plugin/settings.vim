@@ -66,3 +66,6 @@ set undodir=~/.vim/backup
 
 " Allow backspacing over the start of insert.
 set backspace=eol,start
+
+" Highlight matched search strings.
+set hlsearch
