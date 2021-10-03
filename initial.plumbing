@@ -1,0 +1,21 @@
+# to update: cat /usr/local/plan9/plumb/initial.plumbing | 9p write plumb/rules
+
+# image files go to Preview.app
+type is text
+data matches '[a-zA-Z¡-￿0-9_\-./@]+'
+data matches '([a-zA-Z¡-￿0-9_\-./@]+)\.(jpe?g|JPE?G|gif|GIF|tiff?|TIFF?|ppm|bit|png|PNG)'
+arg isfile  $0
+plumb to image
+plumb start open -a Preview.app $file
+
+# postscript/pdf/dvi go to TexShop.app but not over the a plumb port
+# the port is here for reference but is unused
+type is text
+data matches '[a-zA-Z¡-￿0-9_\-./@]+'
+data matches '([a-zA-Z¡-￿0-9_\-./@]+)\.(ps|PS|eps|EPS|pdf|PDF|dvi|DVI)'
+arg isfile  $0
+plumb to postscript
+plumb start open -a TexShop.app $file
+
+editor = acme
+include basic
