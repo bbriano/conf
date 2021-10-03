@@ -1,0 +1,8 @@
+#!/bin/sh
+# TN is for Today's Note.
+note=~/notes/`date +%Y-%m-%d`.md
+if [ ! -f $note ]; then
+	echo `date +%d\ %b\ %Y` >$note
+	echo =========== >>$note
+fi
+echo $note
