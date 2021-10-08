@@ -38,7 +38,7 @@ augroup BRIANO
 	autocmd BufRead,BufNewFile go.mod setlocal filetype=go
 
 	" Special indentation for 'special' languages.
-	autocmd FileType haskell,python setlocal expandtab shiftwidth=4
+	autocmd FileType sql,haskell,python setlocal expandtab shiftwidth=4
 
 	" Netrw mappings (consistent with plugin/maps.vim).
 	autocmd FileType netrw nnoremap <buffer> <silent> S :bprevious<cr>
