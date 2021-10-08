@@ -4,9 +4,6 @@ set noswapfile
 " Not too smol not too BIIG.
 set tabstop=4 shiftwidth=4
 
-" Only in effect when expandtab is set.
-set softtabstop=-1
-
 " Reasonable.
 set incsearch ignorecase smartcase
 
