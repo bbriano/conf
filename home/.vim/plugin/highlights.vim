@@ -17,16 +17,16 @@ hi LineNr               ctermbg=NONE    ctermfg=8       cterm=NONE
 hi Folded               ctermbg=NONE    ctermfg=8       cterm=NONE
 hi SignColumn           ctermbg=NONE    ctermfg=NONE    cterm=NONE
 
-hi VertSplit            ctermfg=NONE    ctermfg=NONE    cterm=reverse
-hi StatusLineNC         ctermfg=NONE    ctermfg=NONE    cterm=reverse
-hi StatusLine           ctermfg=NONE    ctermfg=NONE    cterm=reverse,bold
-hi Tabline              ctermbg=NONE    ctermfg=NONE    cterm=reverse
-hi TablineFill          ctermbg=NONE    ctermfg=NONE    cterm=reverse
-hi TablineSel           ctermbg=NONE    ctermfg=NONE    cterm=reverse,bold
-hi Pmenu                ctermbg=NONE    ctermfg=NONE    cterm=reverse
-hi PmenuSbar            ctermbg=NONE    ctermfg=NONE    cterm=reverse
-hi PmenuThumb           ctermbg=NONE    ctermfg=NONE    cterm=reverse
-hi PmenuSel             ctermbg=NONE    ctermfg=NONE    cterm=reverse,bold
+hi VertSplit            ctermbg=0       ctermfg=NONE    cterm=NONE
+hi StatusLineNC         ctermbg=0       ctermfg=NONE    cterm=NONE
+hi StatusLine           ctermbg=0       ctermfg=NONE    cterm=bold
+hi Tabline              ctermbg=0       ctermfg=NONE    cterm=NONE
+hi TablineFill          ctermbg=0       ctermfg=NONE    cterm=NONE
+hi TablineSel           ctermbg=0       ctermfg=NONE    cterm=bold
+hi Pmenu                ctermbg=0       ctermfg=NONE    cterm=NONE
+hi PmenuSbar            ctermbg=0       ctermfg=NONE    cterm=NONE
+hi PmenuThumb           ctermbg=8       ctermfg=NONE    cterm=NONE
+hi PmenuSel             ctermbg=0       ctermfg=NONE    cterm=bold
 
 hi Title                ctermbg=NONE    ctermfg=NONE    cterm=NONE
 hi SpellCap             ctermbg=NONE    ctermfg=NONE    cterm=underline
