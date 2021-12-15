@@ -58,7 +58,8 @@ augroup BRIANO
 	autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 	autocmd FileType matlab,tex setlocal commentstring=%\ %s
 	autocmd FileType plantuml setlocal commentstring='\ %s
-	autocmd FileType python setlocal commentstring='# %s
+	autocmd FileType python setlocal commentstring=#\ %s
+	autocmd FileType vim setlocal commentstring=\"\ %s
 augroup END
 
 " Format current buffer with appropriate formatters based on filetype.
