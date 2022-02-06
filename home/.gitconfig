@@ -5,6 +5,8 @@ email = b@briano.io
 [alias]
 s = status
 co = checkout
+l = log --all --oneline --graph
+ll = log --all --oneline --graph --name-status
 
 [core]
 pager = cat
