@@ -49,8 +49,8 @@ set completeopt=menuone
 " Hide line and column number is status line.
 set noruler
 
-" Blank vertical split.
-set fillchars=vert:\ ,
+" Solid vertical split.
+set fillchars=vert:\│
 
 " Hide tilde filler chars at end of buffer.
 if has('patch2508')
