@@ -49,7 +49,7 @@ nnoremap - :let @/='\C\<'.expand('%:t').'\>'<cr>:E<cr>n:nohl<cr>
 nnoremap z- z=1<cr><cr>
 
 " Re-Run last command in last tmux pane.
-nnoremap <silent> <cr> :silent !tmux select-pane -t '{last}' && tmux send-keys ^l ^p Enter && tmux select-pane -t '{last}'<cr>:redraw!<cr>
+nnoremap <silent> <cr> :Dispatch! tmux select-pane -t '{last}' && tmux send-keys ^l ^p Enter && tmux select-pane -t '{last}'<cr>
 
 " Open today's note.
 nnoremap <space>tn :call TodaysNote()<cr>
