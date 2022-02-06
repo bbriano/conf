@@ -1,5 +1,5 @@
 #!/bin/sh
-cd $HOME/notes
+cd ~/n/notes
 git add .
 git commit -m 'Cron auto commit'
 git push
