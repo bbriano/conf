@@ -66,3 +66,6 @@ set backspace=eol,start
 
 " Highlight matched search strings.
 set hlsearch
+
+" Disable modeline.
+set nomodeline
