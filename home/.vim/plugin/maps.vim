@@ -22,6 +22,9 @@ nnoremap <silent> <space><space> :buffer #<cr>
 nnoremap <silent> <c-s>          :Sbd<cr>
 nnoremap <silent> <space><c-s>   :Sbdm<cr>
 
+" Look up vim manual for word under cursor.
+nnoremap K :execute 'h '.expand('<cword>')<cr>
+
 " Case sensitive and * not jump to the next match.
 nnoremap <silent> *  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>
 nnoremap <silent> g* :let @/='\C'.expand('<cword>')<cr>:set hls<cr>
