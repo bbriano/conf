@@ -1,6 +1,3 @@
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/autojump/autojump.zsh
-
 export EDITOR=vim
 export MANWIDTH=72
 export TERM=tmux-256color
