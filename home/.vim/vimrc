@@ -44,8 +44,9 @@ augroup BRIANO
 	autocmd FileType netrw nnoremap <buffer> <silent> S :bprevious<cr>
 	autocmd FileType netrw nnoremap <buffer> <silent> s :bnext<cr>
 
-	" Quickfix mappings (preview match).
-	autocmd FileType qf nnoremap <buffer> p <CR><C-w>p
+	" Quickfix mappings (preview match & disable tmux re-runs from plugin/maps.vim).
+	autocmd FileType qf nnoremap <buffer> p <cr><C-w>p
+	autocmd FileType qf nnoremap <buffer> <cr> <cr>
 
 	" Keep markdown looking plain.
 	autocmd BufEnter *.md hi htmlBold cterm=NONE
