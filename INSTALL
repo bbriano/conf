@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+cd `dirname $0`
 
 # Compile terminfo for italic font support.
 rm -rf ~/.terminfo
