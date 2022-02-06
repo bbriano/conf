@@ -16,23 +16,17 @@ cnoremap <c-f> <right>
 cnoremap <c-d> <delete>
 
 " Buffer controls.
-nnoremap <silent> S            :bprevious<cr>
-nnoremap <silent> s            :bnext<cr>
-nnoremap <silent> <space>l     :buffer #<cr>
-nnoremap <silent> <c-s>        :Sbd<cr>
-nnoremap <silent> <space><c-s> :Sbdm<cr>
+nnoremap <silent> S              :bprevious<cr>
+nnoremap <silent> s              :bnext<cr>
+nnoremap <silent> <space><space> :buffer #<cr>
+nnoremap <silent> <c-s>          :Sbd<cr>
+nnoremap <silent> <space><c-s>   :Sbdm<cr>
 
 " Case sensitive and * not jump to the next match.
 nnoremap <silent> *  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>
 nnoremap <silent> g* :let @/='\C'.expand('<cword>')<cr>:set hls<cr>
 nnoremap <silent> #  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>?<cr>
 nnoremap <silent> g# :let @/='\C'.expand('<cword>')<cr>:set hls<cr>?<cr>
-
-" Use arrow keys to resize the current window.
-nnoremap <silent> <down>  :resize +1<cr>
-nnoremap <silent> <up>    :resize -1<cr>
-nnoremap <silent> <right> :vertical resize +1<cr>
-nnoremap <silent> <left>  :vertical resize -1<cr>
 
 " Good with virtualedit=block.
 vnoremap <c-h> hoho
@@ -52,19 +46,16 @@ vnoremap <space>q  J:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 nnoremap - :let @/='\C\<'.expand('%:t').'\>'<cr>:E<cr>n:nohl<cr>
 
 " Fix mispelling with first suggestion.
-nnoremap <space>z z=1<cr><cr>
+nnoremap z- z=1<cr><cr>
 
 " Re-Run last command in last tmux pane.
 nnoremap <silent> <cr> :silent !tmux select-pane -t '{last}' && tmux send-keys ^l ^p Enter && tmux select-pane -t '{last}'<cr>:redraw!<cr>
-
-" Show syntax highlight group under cursor.
-nnoremap <space><space>s :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
 
 " Open today's note.
 nnoremap <space>tn :call TodaysNote()<cr>
 
 " StartupTime
-nnoremap <space><space>t :StartupTime<cr>
+nnoremap <space>w :StartupTime<cr>
 
 " Ack
 nmap <space>/ <Plug>(FerretAck)
