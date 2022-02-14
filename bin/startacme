@@ -2,6 +2,6 @@
 plumber
 cat /usr/local/plan9/plumb/initial.plumbing | 9p write plumb/rules
 acmego -f
-SHELL=rc EDITOR=editinacme PAGER='col -b' acme \
+TERM=dumb SHELL=rc EDITOR=editinacme PAGER='col -b' acme \
 	-f /mnt/font/ComicSansMS/15a/font \
 	-F /mnt/font/GoMono/15a/font
