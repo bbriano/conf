@@ -162,6 +162,67 @@
 				},
 				"rules": [
 					{
+						"description": "HHKB Arrow keys",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "o",
+									"modifiers": {
+										"mandatory": [
+											"right_shift"
+										]
+									}
+								},
+								"to": {
+									"key_code": "left_arrow"
+								},
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "quote",
+									"modifiers": {
+										"mandatory": [
+											"right_shift"
+										]
+									}
+								},
+								"to": {
+									"key_code": "right_arrow"
+								},
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "open_bracket",
+									"modifiers": {
+										"mandatory": [
+											"right_shift"
+										]
+									}
+								},
+								"to": {
+									"key_code": "up_arrow"
+								},
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "slash",
+									"modifiers": {
+										"mandatory": [
+											"right_shift"
+										]
+									}
+								},
+								"to": {
+									"key_code": "down_arrow"
+								},
+								"type": "basic"
+							}
+						]
+					},
+					{
 						"description": "Control-W -> Delete word",
 						"manipulators": [
 							{
