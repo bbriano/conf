@@ -1,14 +1,23 @@
 #!/bin/sh
 
-N=$1
-
-for i in $(seq $(expr $N - 1)); do
-	tmux split
-	tmux select-layout tiled
-done
-
+M=$1
+M1=`expr $M - 1`
+N=$2
+N1=`expr $N - 1`
 shift
+shift
+
+for i in `seq $N1`; do
+	tmux split -h
+done
+tmux select-layout -E
 for i in `seq $N`; do
-	tmux send-keys "$*" Enter
-	tmux select-pane -t {previous}
+	for i in `seq $M1`; do
+		tmux split
+	done
+	tmux select-layout -E
+	for i in `seq $M`; do
+		tmux send-keys "$*" Enter
+		tmux select-pane -t {previous}
+	done
 done

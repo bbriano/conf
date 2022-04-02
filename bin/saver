@@ -1,5 +1,5 @@
 #!/bin/sh
-grid 4 '
+grid 2 3 '
 while true; do
 	clear
 	cookie=`fortune`
