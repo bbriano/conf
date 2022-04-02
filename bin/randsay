@@ -1,0 +1,2 @@
+#!/bin/sh
+cowsay -f `cowsay -l | tail +2 | tr ' ' '\n' | sort -R | head -1`
