@@ -1,0 +1,14 @@
+#!/bin/sh
+
+N=$1
+
+for i in $(seq $(expr $N - 1)); do
+	tmux split
+	tmux select-layout tiled
+done
+
+shift
+for i in `seq $N`; do
+	tmux send-keys "$*" Enter
+	tmux select-pane -t {previous}
+done
