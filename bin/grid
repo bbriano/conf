@@ -9,13 +9,13 @@ shift
 
 for i in `seq $N1`; do
 	tmux split -h
+	tmux select-layout -E
 done
-tmux select-layout -E
 for i in `seq $N`; do
 	for i in `seq $M1`; do
 		tmux split
+		tmux select-layout -E
 	done
-	tmux select-layout -E
 	for i in `seq $M`; do
 		tmux send-keys "$*" Enter
 		tmux select-pane -t {previous}
