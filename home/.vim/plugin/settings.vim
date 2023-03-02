@@ -53,9 +53,7 @@ set noruler
 set fillchars=vert:\│
 
 " Hide tilde filler chars at end of buffer.
-if has('patch2508')
-	set fillchars+=eob:\ ,
-endif
+set fillchars+=eob:\ ,
 
 " Safe undo's over Vim sessions.
 set undofile
