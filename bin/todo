@@ -3,7 +3,7 @@
 TODOFILE=/tmp/todo
 
 if [ $# = 0 ]; then
-	vi $TODOFILE
+	edit $TODOFILE
 	exit
 fi
 

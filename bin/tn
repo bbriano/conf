@@ -5,4 +5,4 @@ if [ ! -f $note ]; then
 	echo `date +%d\ %b\ %Y` >$note
 	echo =========== >>$note
 fi
-$EDITOR $note
+edit $note

@@ -1,2 +1,6 @@
 #!/bin/sh
-$EDITOR $1
+if [ $EDITOR == editinacme ]; then
+	$EDITOR $1 &
+else
+	$EDITOR $1
+fi
