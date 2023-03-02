@@ -1,0 +1,10 @@
+#!/bin/sh
+
+TODOFILE=/tmp/todo
+
+if [ $# = 0 ]; then
+	vi $TODOFILE
+	exit
+fi
+
+echo "$@" >>$TODOFILE
