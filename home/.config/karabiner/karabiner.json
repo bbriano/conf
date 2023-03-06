@@ -399,47 +399,6 @@
                         ]
                     },
                     {
-                        "description": "Switch desktop",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ]
-                                    },
-                                    "pointing_button": "button4"
-                                },
-                                "to": {
-                                    "key_code": "hyphen",
-                                    "modifiers": [
-                                        "control"
-                                    ]
-                                },
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ]
-                                    },
-                                    "pointing_button": "button5"
-                                },
-                                "to": {
-                                    "key_code": "equal_sign",
-                                    "modifiers": [
-                                        "control"
-                                    ]
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Mouse{4,5} -> {Prev,Next} page in Safari",
                         "manipulators": [
                             {
