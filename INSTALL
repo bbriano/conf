@@ -7,9 +7,13 @@ rm -rf ~/.terminfo
 tic tmux-256color.terminfo
 
 # Symbolically link configuration files to home directory.
-for f in `ls -a home | grep -v '\.$'`; do
-	rm -rf ~/$f
-	ln -sf `pwd`/home/$f ~/$f
+for f in `ls -a home | grep -v '\.$' | grep -v '^\.config$'`; do
+	echo rm -rf ~/$f
+	echo ln -sf `pwd`/home/$f ~/$f
+done
+for f in `ls -a home/.config | grep -v '\.$'`; do
+	echo rm -rf ~/.config/$f
+	echo ln -sf `pwd`/home/.config/$f ~/.config/$f
 done
 
 # Symbolically link scripts to ~/bin/
