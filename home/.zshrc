@@ -1,7 +1,7 @@
 export EDITOR=vim
 export MANWIDTH=72
 export TERM=tmux-256color
-export PROMPT='%(?:%F{green}λ:%F{red}λ) %F{cyan}%~%f '
+export PROMPT='%(?:%F{green}:%F{red})水%f'
 export PLAN9=/usr/local/plan9
 export PATH=.:~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/go/bin:/Library/TeX/texbin:$PLAN9/bin
 export FZF_DEFAULT_COMMAND="find . -type f | sed 's/^\.\///'"
