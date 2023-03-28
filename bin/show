@@ -1,0 +1,2 @@
+#!/bin/sh
+plumb -i -d edit
