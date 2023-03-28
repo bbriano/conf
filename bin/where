@@ -1,5 +1,5 @@
 #!/bin/sh
-paths=`path | awk '{ print $0 "/" "'$1'" }'`
+paths=`path | sed "s|$|/$1|"`
 for p in $paths
 do
 	if test -f $p
