@@ -1,0 +1,5 @@
+#!/bin/sh
+# woman opens manual in PostScript with preview.
+set -e
+man -t $1 >/tmp/woman.ps
+open /tmp/woman.ps
