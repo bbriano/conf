@@ -1,5 +1,19 @@
-#!/bin/sh
-# woman opens manual in PostScript with preview.
-set -e
-man -t $1 >/tmp/woman.ps
-open /tmp/woman.ps
+#!/usr/local/plan9/bin/rc
+# woman open manuals in Preview.
+
+if(~ $path(1) $PLAN9/bin){
+	if(! mans=`{man -w $*}) exit 1
+	for(src in $mans){
+		dst=/tmp/9.`{9 basename $src | ssam 's/\./(/'}').ps'
+		troff -man $src | tr2post | psfonts >$dst
+		open -a Preview $dst
+	}
+}
+if not{
+	if(! mans=`{man -aW $*}) exit 1
+	for(src in $mans){
+		dst=/tmp/u.`{9 basename $src | ssam 's/\./(/'}').ps'
+		groff -Tps -mandoc -c $src >$dst
+		open -a Preview $dst
+	}
+}
