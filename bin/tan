@@ -1,3 +1,0 @@
-#!/usr/bin/env awk -f
-# Prints tab after non tab characters.
-/[^\t].*\t/ { print FILENAME ":" FNR ":" $0 }
