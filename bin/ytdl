@@ -1,2 +1,2 @@
 #!/bin/sh
-yt-dlp "$@"
+yt-dlp --no-colors "$@"

@@ -1,2 +1,2 @@
 #!/bin/sh
-plumb -i -d edit
+plumb -i -d edit -a filename=-show
