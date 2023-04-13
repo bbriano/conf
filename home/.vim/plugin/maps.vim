@@ -46,7 +46,7 @@ nnoremap <space>qq :s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 vnoremap <space>q  J:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
 
 " Open netrw and put cursor on current file.
-nnoremap - :let @/='\C\<'.expand('%:t').'\>'<cr>:E<cr>n:nohl<cr>
+nnoremap <silent> - :let @/='\C^'.expand('%:t')<cr>:E<cr>n:nohl<cr>
 
 " Fix mispelling with first suggestion.
 nnoremap z- z=1<cr><cr>
