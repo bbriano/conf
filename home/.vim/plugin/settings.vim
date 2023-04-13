@@ -57,7 +57,7 @@ set fillchars+=eob:\ ,
 
 " Safe undo's over Vim sessions.
 set undofile
-set undodir=~/.vim/backup
+set undodir=~/vim.undodir
 
 " Allow backspacing over the start of insert.
 set backspace=eol,start
