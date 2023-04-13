@@ -52,6 +52,9 @@ set noruler
 " Solid vertical split.
 set fillchars=vert:\│
 
+" Hide tilde filler chars at end of buffer.
+set fillchars+=eob:\ ,
+
 " Safe undo's over Vim sessions.
 set undofile
 set undodir=~/vim.undodir
