@@ -69,17 +69,13 @@ nnoremap <c-n>    :History<cr>
 nnoremap <c-q>    :Files %:h<cr>
 nnoremap <space>h :Help<cr>
 
-" Prime real-estate. lower ones are more valuable.
+" Remind unmapped bindings
 nnoremap <c-t>       :echo 'c-t is available'<cr>
 nnoremap <c-c>       :echo 'c-c is available'<cr>
-nnoremap <c-h>       :echo 'c-h is available'<cr>
-nnoremap <c-j>       :echo 'c-j is available'<cr>
-nnoremap <c-k>       :echo 'c-k is available'<cr>
-nnoremap <c-l>       :echo 'c-l is available'<cr>
 nnoremap <backspace> :echo 'backspace available'<cr>
 
 " Arrow keys to resize window
-nnoremap <left> <c-w><
-nnoremap <down> <c-w>+
-nnoremap <up> <c-w>-
-nnoremap <right> <c-w>>
+nnoremap <c-h> <c-w><
+nnoremap <c-j> <c-w>+
+nnoremap <c-k> <c-w>-
+nnoremap <c-l> <c-w>>
