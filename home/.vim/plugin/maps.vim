@@ -52,7 +52,7 @@ nnoremap - :let @/='\C\<'.expand('%:t').'\>'<cr>:E<cr>n:nohl<cr>
 nnoremap z- z=1<cr><cr>
 
 " Re-Run last command in last tmux pane.
-nnoremap <silent> <cr> :Dispatch! tmux select-pane -t '{last}' && tmux send-keys ^c ^l ^p Enter && tmux select-pane -t '{last}'<cr>
+nnoremap <silent> <cr> :call system('tmux send-keys -t {last} ^c ^l ^p Enter &')<cr>
 
 " StartupTime
 nnoremap <space>w :StartupTime<cr>
