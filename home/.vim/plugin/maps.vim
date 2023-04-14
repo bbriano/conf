@@ -74,8 +74,8 @@ nnoremap <c-t>       :echo 'c-t is available'<cr>
 nnoremap <c-c>       :echo 'c-c is available'<cr>
 nnoremap <backspace> :echo 'backspace available'<cr>
 
-" Arrow keys to resize window
-nnoremap <c-h> <c-w><
-nnoremap <c-j> <c-w>+
-nnoremap <c-k> <c-w>-
-nnoremap <c-l> <c-w>>
+" Windows resizing
+nnoremap <left>  <c-w><
+nnoremap <down>  <c-w>+
+nnoremap <up>    <c-w>-
+nnoremap <right> <c-w>>
