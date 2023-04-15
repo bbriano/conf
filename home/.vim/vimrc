@@ -2,8 +2,6 @@ call plug#begin()
 Plug 'cespare/vim-sbd'
 Plug 'dstein64/vim-startuptime'
 Plug 'duggiefresh/vim-easydir'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'tpope/vim-commentary'

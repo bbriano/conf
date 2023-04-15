@@ -62,13 +62,6 @@ nmap <space>/ <Plug>(FerretAck)
 nmap <space>? <Plug>(FerretAcks)
 nmap <space>* <Plug>(FerretAckWord)
 
-" FZF
-tnoremap <esc>    <esc><esc>
-nnoremap <c-p>    :Files<cr>
-nnoremap <c-n>    :History<cr>
-nnoremap <c-q>    :Files %:h<cr>
-nnoremap <space>h :Help<cr>
-
 " Remind unmapped bindings
 nnoremap <c-t>       :echo 'c-t is available'<cr>
 nnoremap <c-c>       :echo 'c-c is available'<cr>
