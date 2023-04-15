@@ -22,14 +22,11 @@ nnoremap <silent> <space><space> :buffer #<cr>
 nnoremap <silent> <c-s>          :Sbd<cr>
 nnoremap <silent> <space><c-s>   :Sbdm<cr>
 
-" Look up vim manual for word under cursor.
-nnoremap K :execute 'h '.expand('<cword>')<cr>
-
-" Case sensitive and * not jump to the next match.
-nnoremap <silent> *  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>
-nnoremap <silent> g* :let @/='\C'.expand('<cword>')<cr>:set hls<cr>
-nnoremap <silent> #  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>?<cr>
-nnoremap <silent> g# :let @/='\C'.expand('<cword>')<cr>:set hls<cr>?<cr>
+" Windows resizing
+nnoremap <left>  <c-w><
+nnoremap <down>  <c-w>+
+nnoremap <up>    <c-w>-
+nnoremap <right> <c-w>>
 
 " Good with virtualedit=block.
 vnoremap <c-h> hoho
@@ -37,19 +34,21 @@ vnoremap <c-j> jojo
 vnoremap <c-k> koko
 vnoremap <c-l> lolo
 
-" Substitute last search.
+" Case sensitive and * not jump to the next match.
+nnoremap <silent> *  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>
+nnoremap <silent> g* :let @/='\C'.expand('<cword>')<cr>:set hls<cr>
+nnoremap <silent> #  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>?<cr>
+nnoremap <silent> g# :let @/='\C'.expand('<cword>')<cr>:set hls<cr>?<cr>
+
+" Look up vim manual for word under cursor.
+nnoremap K :execute 'h '.expand('<cword>')<cr>
+
+" Substitute highlighted.
 nnoremap <space>s :%s///g<left><left>
 vnoremap <space>s :s///g<left><left>
 
-" Like gqq and gq but separate on '.', '?' and '!'.
-nnoremap <space>qq :s/\v(\.\|\?\|\!) +/\1\r/g<cr>
-vnoremap <space>q  J:s/\v(\.\|\?\|\!) +/\1\r/g<cr>
-
 " Open netrw and put cursor on current file.
 nnoremap <silent> - :let @/='\C^'.expand('%:t')<cr>:E<cr>n:nohl<cr>
-
-" Fix mispelling with first suggestion.
-nnoremap z- z=1<cr><cr>
 
 " Re-Run last command in last tmux pane.
 nnoremap <silent> <cr> :call system('tmux send-keys -t {last} ^c ^l ^p Enter &')<cr>
@@ -61,14 +60,3 @@ nnoremap <space>w :StartupTime<cr>
 nmap <space>/ <Plug>(FerretAck)
 nmap <space>? <Plug>(FerretAcks)
 nmap <space>* <Plug>(FerretAckWord)
-
-" Remind unmapped bindings
-nnoremap <c-t>       :echo 'c-t is available'<cr>
-nnoremap <c-c>       :echo 'c-c is available'<cr>
-nnoremap <backspace> :echo 'backspace available'<cr>
-
-" Windows resizing
-nnoremap <left>  <c-w><
-nnoremap <down>  <c-w>+
-nnoremap <up>    <c-w>-
-nnoremap <right> <c-w>>
