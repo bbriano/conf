@@ -2,10 +2,6 @@
 
 cd `dirname $0`
 
-# Compile terminfo for italic font support.
-rm -rf ~/.terminfo
-tic tmux-256color.terminfo
-
 # Symbolically link configuration files to home directory.
 for f in `ls -a home | grep -v '\.$' | grep -v '^\.config$'`; do
 	rm -rf ~/$f
