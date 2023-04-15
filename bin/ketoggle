@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# used in ../home/.config/karabiner/karabiner.json
 profile=`'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --show-current-profile-name`
 if [ $profile == default ]; then
 	'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile briano
