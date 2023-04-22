@@ -336,7 +336,6 @@
                                     ]
                                 },
                                 "type": "basic"
-                            
                             },
                             {
                                 "conditions": [
@@ -399,41 +398,6 @@
                                 },
                                 "to": {
                                     "shell_command": "~/bin/ketoggle"
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Volume control",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "hyphen",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": {
-                                    "key_code": "volume_decrement"
-                                },
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "equal_sign",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": {
-                                    "key_code": "volume_increment"
                                 },
                                 "type": "basic"
                             }
