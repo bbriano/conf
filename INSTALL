@@ -24,12 +24,6 @@ if [ `uname` = Darwin ]; then
 	defaults write -g InitialKeyRepeat -int 14    # normal minimum is 15 (225 ms)
 	defaults write -g KeyRepeat -int 1            # normal minimum is 2 (30 ms)
 
-	# Disable annoying popup "<app> quit unexpectedly"
-	defaults write com.apple.CrashReporter DialogType none
-
-	# Source moom configuration.
-	defaults import com.manytricks.Moom Moom.plist
-
 	# Dont steal focus on preview update.
 	defaults write TeXShop BringPdfFrontOnAutomaticUpdate NO
 fi
