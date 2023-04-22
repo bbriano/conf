@@ -67,6 +67,3 @@ set hlsearch
 
 " Disable modeline.
 set nomodeline
-
-" Enable mouse
-set mouse=a
