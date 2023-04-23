@@ -1,3 +1,4 @@
+export TERM=tmux-256color
 export EDITOR=vim
 export MANWIDTH=72
 export PROMPT='$ '
