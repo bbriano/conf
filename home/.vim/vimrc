@@ -39,24 +39,16 @@ filetype plugin indent off
 augroup BRIANO
 	autocmd!
 
-	" Set filetype based on file name.
-	autocmd BufRead,BufNewFile *.tex setlocal filetype=tex
-	autocmd BufRead,BufNewFile *.ts setlocal filetype=javascript
-	autocmd BufRead,BufNewFile go.mod setlocal filetype=go
-
 	" Special indentation for 'special' languages.
-	autocmd FileType sql,haskell,python setlocal expandtab shiftwidth=4
-
-	" Netrw mappings (consistent with plugin/maps.vim).
-	autocmd FileType netrw nnoremap <buffer> <silent> S :bprevious<cr>
-	autocmd FileType netrw nnoremap <buffer> <silent> s :bnext<cr>
-
-	" Quickfix mappings (preview match & disable tmux re-runs from plugin/maps.vim).
-	autocmd FileType qf nnoremap <buffer> p <cr><C-w>p
-	autocmd FileType qf nnoremap <buffer> <cr> <cr>
+	autocmd FileType haskell,python setlocal expandtab
 
 	" Gofmt go files before write.
 	autocmd BufWritePre *.go call Gofmt()
+
+	" Set mappings consistent with plugin/maps.vim.
+	autocmd FileType netrw nnoremap <buffer> <silent> S :bprevious<cr>
+	autocmd FileType netrw nnoremap <buffer> <silent> s :bnext<cr>
+	autocmd FileType qf nnoremap <buffer> <cr> <cr>
 augroup END
 
 " Gofmt formats the current buffer.
