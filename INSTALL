@@ -2,19 +2,14 @@
 
 cd `dirname $0`
 
-# Symbolically link configuration files to home directory.
-for f in `ls -a home | grep -v '\.$' | grep -v '^\.config$'`; do
-	rm -rf ~/$f
+# Symbolically link configuration files
+for f in `ls -a home | grep -v '\.$'`; do
 	ln -sf `pwd`/home/$f ~/$f
 done
-for f in `ls -a home/.config | grep -v '\.$'`; do
-	rm -rf ~/.config/$f
-	ln -sf `pwd`/home/.config/$f ~/.config/$f
-done
+ln -sf karabiner.json ~/.config/karabiner/karabiner.json
 
-# Symbolically link scripts to ~/bin/
+# Symbolically link scripts
 for f in `ls bin`; do
-	rm -rf ~/bin/$f
 	ln -sf `pwd`/bin/$f ~/bin/$f
 done
 
