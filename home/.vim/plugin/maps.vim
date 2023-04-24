@@ -52,11 +52,3 @@ nnoremap <silent> - :let @/='\C^'.expand('%:t')<cr>:E<cr>n:nohl<cr>
 
 " Re-Run last command in last tmux pane.
 nnoremap <silent> <cr> :call system('tmux send-keys -t {last} ^c ^l ^p Enter &')<cr>
-
-" StartupTime
-nnoremap <space>w :StartupTime<cr>
-
-" Ack
-nmap <space>/ <Plug>(FerretAck)
-nmap <space>? <Plug>(FerretAcks)
-nmap <space>* <Plug>(FerretAckWord)

@@ -1,13 +1,9 @@
 call plug#begin()
 Plug 'cespare/vim-sbd'
-Plug 'dstein64/vim-startuptime'
-Plug 'duggiefresh/vim-easydir'
-Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-ipmotion'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'wincent/ferret'
 call plug#end()
 
 let netrw_banner = 0                 " Hide the big annoying banner.
