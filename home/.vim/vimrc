@@ -16,6 +16,24 @@ let netrw_list_hide = '^\.\.\?/$'    " Hide . and .. in netrw.
 let markdown_folding = 1             " Set folds on markdown headings.
 let ip_skipfold = 1                  " From justinmk/vim-ipmotion.
 
+set tabstop=4 shiftwidth=4
+set incsearch hlsearch ignorecase smartcase
+set hidden
+set noswapfile nomodeline
+set nowrap nojoinspaces
+set backspace=eol,start
+set virtualedit=block
+set foldmethod=indent foldlevel=99
+set undofile undodir=~/vim.undodir
+set ttimeoutlen=0                    " Remove delay when exiting visual mode.
+set shortmess=IF                     " Don't show intro message and file names.
+set laststatus=1                     " Only show status line when there are multiple windows.
+set completeopt=menuone              " Always show menu, even if there is only one match.
+set fillchars=vert:\│
+if v:version >= 900
+	set fillchars+=eob:\             " Remove the ~'s.
+endif
+
 filetype plugin indent off
 
 augroup BRIANO
