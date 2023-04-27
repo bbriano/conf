@@ -1,1 +1,2 @@
+#!/bin/sh
 curl -s https://raw.githubusercontent.com/bbriano/speedtest-cli/master/speedtest.py | python3 - "$@"
