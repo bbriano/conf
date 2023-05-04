@@ -8,6 +8,9 @@ for f in `ls -a home | grep -v '\.$'`; do
 done
 
 # Symbolically link scripts
+if [ ! -d ~/bin ]; then
+	mkdir ~/bin
+fi
 for f in `ls bin`; do
 	ln -sf `pwd`/bin/$f ~/bin/$f
 done

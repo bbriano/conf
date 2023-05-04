@@ -7,6 +7,3 @@ s = status
 co = checkout
 l = log -10 --all --oneline --graph
 ll = log -10 --all --oneline --graph --name-status
-
-[core]
-pager = cat
