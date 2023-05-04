@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ $EDITOR == editinacme ]; then
-	$EDITOR $1 &
+	$EDITOR $1 2>/dev/null
 else
 	$EDITOR $1
 fi
