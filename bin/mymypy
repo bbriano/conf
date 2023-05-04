@@ -1,2 +1,0 @@
-#!/bin/sh
-mypy --disallow-untyped-calls --disallow-incomplete-defs --disallow-untyped-defs "$@"
