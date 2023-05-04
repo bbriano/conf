@@ -23,7 +23,4 @@ if [ `uname` = Darwin ]; then
 
 	# Dont steal focus on preview update.
 	defaults write TeXShop BringPdfFrontOnAutomaticUpdate NO
-
-	# Link karabiner elements configurations.
-	ln -sf karabiner.json ~/.config/karabiner/karabiner.json
 fi
