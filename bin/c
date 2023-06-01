@@ -1,0 +1,2 @@
+#!/bin/sh
+ssam 'i/#include <tcclib.h>\n/' | tcc -run -
