@@ -1,5 +1,5 @@
 #!/bin/sh
-year=$(date | awk '{print $4}')
+year=`date +%Y`
 echo "Copyright (c) $year Briano Goestiawan\n"
 
 cat <<EOF
