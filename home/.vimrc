@@ -8,7 +8,6 @@ set incsearch hlsearch
 set hidden
 set noswapfile
 set nowrap nojoinspaces
-set backspace=eol,start
 set virtualedit=block
 set foldmethod=indent foldlevel=99
 set undofile undodir=~/vim.undodir
@@ -16,30 +15,29 @@ set ttimeoutlen=0                       " Remove delay when exiting visual mode.
 set shortmess=IF                        " Don't show intro message and file names.
 set completeopt=menuone                 " Always show menu, even if there is only one match.
 set fillchars=vert:\│
+
 if v:version >= 900
 	set fillchars+=eob:\ 
+	nnoremap <silent> <esc> :nohl<cr>:echo<cr>
 endif
 
-" Basics.
-nnoremap <silent> <esc> :nohl<cr>:echo<cr>
-nnoremap Q              @q
-nnoremap Y              y$
-vnoremap p              "_dP
-
-" Emacs-like binding in command mode.
+" Basics
+nnoremap Q     @q
+nnoremap Y     y$
+vnoremap p     "_dP
 cnoremap <c-a> <c-b>
 cnoremap <c-b> <left>
 cnoremap <c-f> <right>
 cnoremap <c-d> <delete>
 
-" Buffer controls.
+" Buffers
 nnoremap <silent> S              :bprevious<cr>
 nnoremap <silent> s              :bnext<cr>
 nnoremap <silent> <space><space> :buffer #<cr>
 nnoremap <silent> <c-s>          :bdelete<cr>
 nnoremap <silent> <space><c-s>   :bdelete!<cr>
 
-" Windows resizing
+" Windows
 nnoremap <left>  <c-w><
 nnoremap <down>  <c-w>+
 nnoremap <up>    <c-w>-
@@ -57,9 +55,6 @@ nnoremap <silent> g* :let @/='\C'.expand('<cword>')<cr>:set hls<cr>
 nnoremap <silent> #  :let @/='\C\<'.expand('<cword>').'\>'<cr>:set hls<cr>?<cr>
 nnoremap <silent> g# :let @/='\C'.expand('<cword>')<cr>:set hls<cr>?<cr>
 
-" Look up vim manual for word under cursor.
-nnoremap K :execute 'h '.expand('<cword>')<cr>
-
 " Substitute highlighted.
 nnoremap <space>s :%s///g<left><left>
 vnoremap <space>s :s///g<left><left>
@@ -76,7 +71,7 @@ augroup BRIANO
 	" Special indentation for 'special' languages.
 	autocmd FileType haskell,python setlocal expandtab
 
-	" Set mappings consistent with plugin/maps.vim.
+	" Set consistent mapping in speciall buffers.
 	autocmd FileType netrw nnoremap <buffer> <silent> S :bprevious<cr>
 	autocmd FileType netrw nnoremap <buffer> <silent> s :bnext<cr>
 	autocmd FileType qf nnoremap <buffer> <cr> <cr>
