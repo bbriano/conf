@@ -1,4 +1,4 @@
-# to update: cat plumbing | 9p write plumb/rules
+# to update: cat plumb.rules | 9p write plumb/rules
 
 # these are generally in order from most specific to least,
 # since first rule that fires wins.
@@ -65,7 +65,7 @@ plumb start open $file
 # the port is here for reference but is unused
 type is text
 data matches '[a-zA-Z¡-￿0-9_\-./@]+'
-data matches '([a-zA-Z¡-￿0-9_\-./@]+)\.(eps|EPS|pdf|PDF|dvi|DVI)'
+data matches '([a-zA-Z¡-￿0-9_\-./@]+)\.(ps|PS|eps|EPS|pdf|PDF|dvi|DVI)'
 arg isfile	$0
 plumb start open $file
 
