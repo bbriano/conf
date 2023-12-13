@@ -14,7 +14,7 @@ set undofile undodir=~/vim.undodir
 set ttimeoutlen=0                       " Remove delay when exiting visual mode.
 set shortmess=IF                        " Don't show intro message and file names.
 set completeopt=menuone                 " Always show menu, even if there is only one match.
-set fillchars=vert:\│
+set fillchars=vert:\ 
 
 if v:version >= 900
 	set fillchars+=eob:\ 
