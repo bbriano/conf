@@ -1,4 +1,0 @@
-#!/bin/sh
-TERM=dumb SHELL=rc EDITOR=editinacme PAGER='nobs' \
-	acme -f /mnt/font/ComicSansMS/15a/font \
-		-F /mnt/font/GoMono/14a/font

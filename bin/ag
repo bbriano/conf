@@ -1,6 +1,0 @@
-#!/bin/sh
-if [ $TERM = dumb ]; then
-	/opt/local/bin/ag --hidden --nocolor "$@" | cat
-else
-	/opt/local/bin/ag --hidden --color-line-number '' --color-match 33 --color-path 34 "$@"
-fi
