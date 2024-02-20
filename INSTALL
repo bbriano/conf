@@ -7,14 +7,6 @@ for f in `ls -a home | grep -v '\.$'`; do
 	ln -sf `pwd`/home/$f ~/$f
 done
 
-# Symbolically link scripts
-if [ ! -d ~/bin ]; then
-	mkdir ~/bin
-fi
-for f in `ls bin`; do
-	ln -sf `pwd`/bin/$f ~/bin/$f
-done
-
 # MacOS specific settings.
 if [ `uname` = Darwin ]; then
 	# Set faster key repeat.
