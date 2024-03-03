@@ -1,7 +1,8 @@
+" Silences: No matching autocommands: FileType netrw
+autocmd! Filetype netrw echo
 let netrw_banner = 0                    " Hide the big annoying banner.
 let netrw_dirhistmax = 0                " Don't create .netrwhist files.
 let netrw_list_hide = '^\.\.\?/$'       " Hide . and .. in netrw.
-let markdown_folding = 1                " Set folds on markdown headings.
 
 set tabstop=4 shiftwidth=4
 set incsearch hlsearch
@@ -32,11 +33,10 @@ cnoremap <c-f> <right>
 cnoremap <c-d> <delete>
 
 " Buffers
-nnoremap <silent> S              :bprevious<cr>
-nnoremap <silent> s              :bnext<cr>
-nnoremap <silent> <space><space> :buffer #<cr>
-nnoremap <silent> <c-s>          :bdelete<cr>
-nnoremap <silent> <space><c-s>   :bdelete!<cr>
+nnoremap <silent> S            :bprevious<cr>
+nnoremap <silent> s            :bnext<cr>
+nnoremap <silent> <c-s>        :bdelete<cr>
+nnoremap <silent> <space><c-s> :bdelete!<cr>
 
 " Windows
 nnoremap <left>  <c-w><
@@ -66,27 +66,13 @@ nnoremap <silent> - :let @/='\C^'.expand('%:t')<cr>:E<cr>n:nohl<cr>
 " Run last command in last tmux pane.
 nnoremap <silent> <cr> :call system('tmux send-keys -t {last} ^c ^l ^p Enter &')<cr>
 
-augroup BRIANO
-	autocmd!
-
-	" Special indentation for 'special' languages.
-	autocmd FileType haskell,python setlocal expandtab
-
-	" Set consistent mapping in speciall buffers.
-	autocmd FileType netrw nnoremap <buffer> <silent> S :bprevious<cr>
-	autocmd FileType netrw nnoremap <buffer> <silent> s :bnext<cr>
-	autocmd FileType qf nnoremap <buffer> <cr> <cr>
-
-	" Gofmt go files before write.
-	autocmd BufWritePre *.go call Gofmt()
-augroup END
-
 " Gofmt formats the current buffer.
 function! Gofmt()
 	let l:view = winsaveview()
 	call system('goimports', getline(1, '$'))
 	if v:shell_error == 0
-		%!goimports
+		silent %!goimports
 	endif
 	call winrestview(l:view)
 endfunction
+autocmd! BufWritePre *.go call Gofmt()
