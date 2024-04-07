@@ -1,2 +1,23 @@
 #!/bin/sh
-ssam 'i/#include <tcclib.h>\n/' | tcc -run -
+awk '
+BEGIN {
+	print "#include <assert.h>"
+	print "#include <float.h>"
+	print "#include <math.h>"
+	print "#include <stdarg.h>"
+	print "#include <stdlib.h>"
+	print "#include <ctype.h>"
+	print "#include <limits.h>"
+	print "#include <setjmp.h>"
+	print "#include <stddef.h>"
+	print "#include <string.h>"
+	print "#include <errno.h>"
+	print "#include <locale.h>"
+	print "#include <signal.h>"
+	print "#include <stdio.h>"
+	print "#include <time.h>"
+}
+{
+	print $0
+}
+' | tcc -run -
