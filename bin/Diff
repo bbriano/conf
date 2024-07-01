@@ -1,2 +1,5 @@
 #!/usr/local/plan9/bin/rc
-diff $% <{9p read acme/$winid/body} || true
+filename=`{basename $%}
+diff $% <{9p read acme/$winid/body} \
+	|ssam 'x x/^[0-9]+[acd]/c/'$filename':/' \
+	|| true
