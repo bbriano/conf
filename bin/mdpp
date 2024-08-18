@@ -1,0 +1,41 @@
+#!/bin/sh -e
+. ~/.zprofile
+cd `dirname $MARKED_PATH`
+awk '{
+	if (!/^```\|/) {
+		print
+		next
+	}
+	cmd = substr($0, 5)
+	getline
+	s = ""
+	while (!/^```$/) {
+		s = s $0 "\n"
+		getline
+	}
+	printf("%s", s) >"/tmp/m2pp.in"
+	close("/tmp/m2pp.in")
+	system("cat /tmp/m2pp.in |" cmd)
+}'
+cat <<EOF
+<script type="module">
+import katex from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.mjs";
+addEventListener("load", mathify);
+Marked.hooks.register("update", mathify);
+function mathify() {
+	document.querySelectorAll(":not(pre)>code").forEach(el => {
+		if (el.hasAttribute("mathified")) return;
+		el.innerHTML = katex.renderToString(el.innerText, {
+			throwOnError: false,
+		});
+		el.setAttribute("mathified", "mathified");
+	});
+}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.css">
+<style>
+.katex {
+	font-size: 0.9rem;
+}
+</style>
+EOF

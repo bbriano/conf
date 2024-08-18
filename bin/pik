@@ -1,0 +1,2 @@
+#!/bin/sh
+pikchr --svg-only - |sed -E '1s/viewBox="(.+) (.+) (.+) (.+)"/& width="\3" height="\4"/'

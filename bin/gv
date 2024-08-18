@@ -1,0 +1,2 @@
+#!/bin/sh
+dot -Tsvg "$@" |tail +7 |sed '2s/xmlns.*>/>/'
