@@ -1,0 +1,2 @@
+#!/bin/sh
+Watch go run $samfile
