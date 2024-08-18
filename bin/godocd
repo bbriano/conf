@@ -1,2 +1,0 @@
-#!/usr/local/plan9/bin/rc
-godoc -index $* >[2=]  # ignore error because annoying when searching.
