@@ -2,6 +2,6 @@
 cd ~
 . ~/.zprofile
 tabstop=4 TERM=dumb SHELL=rc EDITOR=editinacme PAGER='nobs' \
-	NODE_DISABLE_COLORS=1 $PLAN9/bin/acme \
+	NODE_DISABLE_COLORS=1 nohup $PLAN9/bin/acme \
 	-f /mnt/font/ComicSansMS/20a/font \
 	-F /mnt/font/Menlo-Regular/18a/font \
