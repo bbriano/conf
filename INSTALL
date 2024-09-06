@@ -1,5 +1,4 @@
 #!/bin/sh -e
-
 cd `dirname $0`
 
 # Symbolically link configuration files
@@ -9,7 +8,6 @@ done
 
 # MacOS specific settings.
 if [ `uname` = Darwin ]; then
-	# Set faster key repeat.
-	defaults write -g InitialKeyRepeat -int 14    # normal minimum is 15 (225 ms)
-	defaults write -g KeyRepeat -int 1            # normal minimum is 2 (30 ms)
+	defaults write -g InitialKeyRepeat -int 14    # default is 15 (225ms)
+	defaults write -g KeyRepeat -int 1            # default is 2 (30ms)
 fi

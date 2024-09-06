@@ -1,6 +1,4 @@
 #!/usr/local/plan9/bin/rc
-# woman open manuals in Preview.
-
 if(~ $path(1) $PLAN9/bin){
 	if(! mans=`{man -w $*}) exit 1
 	for(src in $mans){
