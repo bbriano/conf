@@ -1,0 +1,5 @@
+#!/bin/sh
+cat >/tmp/up
+hash=`shasum -a 256 /tmp/up |awk '{printf $1}'`
+scp -q /tmp/up sha256-1.com:sha256.data/$hash &
+echo https://sha256-1.com/$hash
