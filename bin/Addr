@@ -1,0 +1,6 @@
+#!/usr/local/plan9/bin/rc
+addr=<>{9p rdwr acme/$winid/addr} {
+	9 read $addr(1) >/dev/null
+	echo . >$addr(2)
+	9 read $addr(1)
+}
