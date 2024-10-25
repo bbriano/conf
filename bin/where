@@ -1,9 +1,4 @@
 #!/bin/sh
-paths=`path | sed "s|$|/$1|"`
-for p in $paths
-do
-	if test -f $p
-	then
-		echo $p
-	fi
+for p in `path |sed "s|$|/$1|"`; do
+	test -f $p && echo $p
 done
