@@ -1,8 +1,8 @@
-" Silences "No matching autocommands: FileType netrw" when opening a file from netrw.
-autocmd! Filetype netrw echo
-let netrw_banner = 0                    " Hide the big annoying banner.
 let netrw_dirhistmax = 0                " Don't create .netrwhist files.
-let netrw_list_hide = '^\.\.\?/$'       " Hide . and .. in netrw.
+let netrw_banner = 0                    " Hide big ugly banner.
+let netrw_list_hide = '^\.\.\?/$'       " Hide . and ..
+" Suppress "No matching..." when opening a file from netrw.
+autocmd! Filetype netrw echo
 
 set tabstop=4 shiftwidth=4
 set incsearch hlsearch
@@ -22,7 +22,6 @@ if v:version >= 900
 	nnoremap <silent> <esc> :nohl<cr>:echo<cr>
 endif
 
-" Basics
 nnoremap Q     @q
 nnoremap Y     y$
 nnoremap *     *<c-o>
@@ -31,6 +30,10 @@ cnoremap <c-a> <c-b>
 cnoremap <c-b> <left>
 cnoremap <c-f> <right>
 cnoremap <c-d> <delete>
+vnoremap <c-h> hoho
+vnoremap <c-j> jojo
+vnoremap <c-k> koko
+vnoremap <c-l> lolo
 
 " Buffers
 nnoremap <silent> S            :bprevious<cr>
@@ -44,23 +47,17 @@ nnoremap <down>  <c-w>+
 nnoremap <up>    <c-w>-
 nnoremap <right> <c-w>>
 
-" Good with virtualedit=block.
-vnoremap <c-h> hoho
-vnoremap <c-j> jojo
-vnoremap <c-k> koko
-vnoremap <c-l> lolo
-
 " Substitute highlighted.
 nnoremap <space>s :%s///g<left><left>
 vnoremap <space>s :s///g<left><left>
 
-" Open netrw and put cursor on current file.
+" Open netrw with cursor on current file.
 nnoremap <silent> - :let @/='\C^'.expand('%:t')<cr>:E<cr>n:nohl<cr>
 
-" Run last command in last tmux pane.
+" Rerun command in last tmux pane.
 nnoremap <silent> <cr> :call system('tmux send-keys -t {last} ^c ^l ^p Enter &')<cr>
 
-" Gofmt formats the current buffer.
+autocmd! BufWritePre *.go call Gofmt()
 function! Gofmt()
 	call system('goimports', getline(1, '$'))
 	if v:shell_error != 0
@@ -70,4 +67,3 @@ function! Gofmt()
 	silent %!goimports
 	call winrestview(l:view)
 endfunction
-autocmd! BufWritePre *.go call Gofmt()

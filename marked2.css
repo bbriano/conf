@@ -1,15 +1,12 @@
 body {
 	padding: 0 !important;
 }
-
 img {
 	max-width: 100%;
 }
-
 pre {
 	margin-left: 1rem;
 }
-
 blockquote {
 	margin: 0;
 	padding-left: 0.5rem;
