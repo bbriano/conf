@@ -1,4 +1,6 @@
 #!/bin/sh
 for p in `path |sed "s|$|/$1|"`; do
-	test -f $p && echo $p
+	if [ -f $p ]; then
+		echo $p
+	fi
 done
