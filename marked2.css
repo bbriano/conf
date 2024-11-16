@@ -12,3 +12,10 @@ blockquote {
 	padding-left: 0.5rem;
 	border-left: 2px solid black;
 }
+table {
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid black;
+	padding: 0.3rem;
+}
