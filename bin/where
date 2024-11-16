@@ -1,6 +1,8 @@
 #!/bin/sh
-for p in `path |sed "s|$|/$1|"`; do
-	if [ -f $p ]; then
-		echo $p
-	fi
+for cmd in "$@"; do
+	for p in `path`; do
+		if [ -f $p/$cmd ]; then
+			echo $p/$cmd
+		fi
+	done
 done
