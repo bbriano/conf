@@ -41,7 +41,14 @@ awk '{
 		s = s $0 "\n"
 		getline
 	}
-	printf("%s", s) >"/tmp/mdpp"
-	close("/tmp/mdpp")
-	system("cat /tmp/mdpp |" cmd)
+	printf("%s", s) >"/tmp/0"
+	close("/tmp/0")
+	gsub("'"'"'", "'"'"'\"'"'"'\"'"'"'", cmd)
+	if (system("sh -o pipefail -c '"'"'" cmd "'"'"' </tmp/0 >/tmp/1 2>/tmp/2")) {
+		print "<pre>"
+		system("cat /tmp/2")
+		print "</pre>"
+	} else {
+		system("cat /tmp/1")
+	}
 }'
