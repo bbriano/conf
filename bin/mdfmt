@@ -1,5 +1,15 @@
 #!/bin/sh
-pandoc \
-	-f markdown \
-	-t commonmark+smart+task_lists+pipe_tables+tex_math_dollars \
-	--wrap preserve --markdown-headings setext
+ssam 'y/\n\n+/v/\n.*\n/s/(.+)\n=+/# \1' "$@" \
+|ssam 'y/\n\n+/v/\n.*\n/s/(.+)\n-+/## \1' \
+|awk '{
+	if ($1 ~ /^##?$/ && $2 ~ /./) {
+		h = substr($0, length($1)+2)
+		print h
+		for (i=0; i<length(h); i++) {
+			printf ($1=="#" ? "=" : "-")
+		}
+		print ""
+	} else {
+		print
+	}
+}'

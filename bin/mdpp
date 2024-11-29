@@ -1,6 +1,34 @@
 #!/bin/sh -e
-. ~/.zprofile
-cd `dirname $MARKED_PATH`
+cat <<EOF
+<!doctype html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.css">
+<style>.katex {font-size: 0.9rem}</style>
+<script type="module">
+import katex from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.mjs"
+addEventListener("load", mathify)
+if (globalThis.Marked !== undefined) {
+	Marked.hooks.register("update", mathify)
+}
+function mathify() {
+	document.querySelectorAll(":not(pre)>code").forEach(el => {
+		if (el.hasAttribute("mathified")) return
+		if (el.previousSibling === null) return
+		if (el.previousSibling.nodeType !== Node.TEXT_NODE) return
+		if (el.previousSibling.data[el.previousSibling.data.length-1] !== "$") return
+		el.previousSibling.data = el.previousSibling.data.slice(0, -1);
+		el.outerHTML = katex.renderToString(el.innerText, {
+			throwOnError: false,
+		});
+		el.setAttribute("mathified", "mathified")
+	});
+}
+</script>
+
+EOF
+if [ ! -z $MARKED_PATH ]; then
+	. ~/.zprofile
+	cd `dirname $MARKED_PATH`
+fi
 awk '{
 	if (!/^```\|/) {
 		print
@@ -13,29 +41,7 @@ awk '{
 		s = s $0 "\n"
 		getline
 	}
-	printf("%s", s) >"/tmp/m2pp.in"
-	close("/tmp/m2pp.in")
-	system("cat /tmp/m2pp.in |" cmd)
+	printf("%s", s) >"/tmp/mdpp"
+	close("/tmp/mdpp")
+	system("cat /tmp/mdpp |" cmd)
 }'
-cat <<EOF
-<script type="module">
-import katex from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.mjs";
-addEventListener("load", mathify);
-Marked.hooks.register("update", mathify);
-function mathify() {
-	document.querySelectorAll(":not(pre)>code").forEach(el => {
-		if (el.hasAttribute("mathified")) return;
-		el.innerHTML = katex.renderToString(el.innerText, {
-			throwOnError: false,
-		});
-		el.setAttribute("mathified", "mathified");
-	});
-}
-</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.css">
-<style>
-.katex {
-	font-size: 0.9rem;
-}
-</style>
-EOF
