@@ -1,5 +1,5 @@
 #!/bin/sh
-mdpp \
+mdpp "$@" \
 |cmark --unsafe \
 |ssam 'i#<div style="page-break-after: always"></div>\n#' \
 |prince --style ~/n/conf/doc.css - \
