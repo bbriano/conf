@@ -1,0 +1,6 @@
+#!/bin/sh
+mdpp \
+|cmark --unsafe \
+|ssam 'i#<div style="page-break-after: always"></div>\n#' \
+|prince --style ~/n/conf/doc.css - \
+|pdftk - cat 2-end output -
