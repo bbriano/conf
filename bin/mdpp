@@ -1,35 +1,15 @@
 #!/bin/sh -e
-cat <<EOF
-<!doctype html>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.css">
-<style>.katex {font-size: 0.9rem}</style>
-<script type="module">
-import katex from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.mjs"
-addEventListener("load", mathify)
-if (globalThis.Marked !== undefined) {
-	Marked.hooks.register("update", mathify)
-}
-function mathify() {
-	document.querySelectorAll(":not(pre)>code").forEach(el => {
-		if (el.hasAttribute("mathified")) return
-		if (el.previousSibling === null) return
-		if (el.previousSibling.nodeType !== Node.TEXT_NODE) return
-		if (el.previousSibling.data[el.previousSibling.data.length-1] !== "$") return
-		el.previousSibling.data = el.previousSibling.data.slice(0, -1);
-		el.outerHTML = katex.renderToString(el.innerText, {
-			throwOnError: false,
-		});
-		el.setAttribute("mathified", "mathified")
-	});
-}
-</script>
-
-EOF
 if [ ! -z $MARKED_PATH ]; then
 	. ~/.zprofile
 	cd `dirname $MARKED_PATH`
+	export USER=`id -un`  # https://github.com/9fans/plan9port/issues/483
 fi
-awk '{
+cat <<EOF
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.css">
+<style>.katex {font-size: 0.9rem}</style>
+
+EOF
+ssam 'x/\$`([^`]|\n)*`/|ssam '"'"'s/..((.|\n)*)./\1/'"'"'|katex' |awk '{
 	if (!/^```\|/) {
 		print
 		next
