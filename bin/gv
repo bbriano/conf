@@ -1,2 +1,4 @@
 #!/bin/sh
+echo '<div>'
 dot -Tsvg "$@" |tail +7 |sed '2s/xmlns.*>/>/'
+echo '</div>'
