@@ -1,0 +1,4 @@
+#!/bin/sh
+echo '<table>'
+awk '-F|' '{print "<tr>"; for(i=1;i<=NF;i++) printf("<td>%s</td>", $i); print "</tr>"}'
+echo '</table>'
