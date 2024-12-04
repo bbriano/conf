@@ -9,7 +9,7 @@ cat <<EOF
 <style>.katex {font-size: 0.9rem}</style>
 
 EOF
-ssam 'x/\$`([^`]|\n)*`/|ssam '"'"'s/..((.|\n)*)./\1/'"'"' |katex' "$@" |awk '{
+ssam 'y/\n\n+/v/^	/x/\$`([^`]|\n)*`/|ssam '"'"'s/..((.|\n)*)./\1/'"'"' |katex' "$@" |awk '{
 	if (!/^```\|/) {
 		print
 		next
