@@ -1,7 +1,8 @@
 #!/bin/sh
+cd ~/n/music
 ytdl \
 	--extract-audio --audio-format mp3 \
 	--embed-metadata --embed-thumbnail \
 	--ppa 'ThumbnailsConvertor+ffmpeg_o:-c:v png -vf crop=ih' \
 	-o '%(track)s' --restrict-filename \
-	"$@"
+	"$@" >/dev/null
