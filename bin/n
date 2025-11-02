@@ -1,0 +1,11 @@
+#!/bin/sh
+while [ `pwd` != / ]; do
+	cmd=`pwd`/node_modules/.bin/$1
+	if [ -f $cmd ]; then
+		shift
+		$cmd "$@"
+		exit
+	fi
+	cd ..
+done
+exit 1
