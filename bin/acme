@@ -5,5 +5,5 @@ plumber
 cat n/conf/plumb.rules | 9p write plumb/rules
 tabstop=4 TERM=dumb SHELL=rc EDITOR=editinacme PAGER='nobs' \
 	NO_COLOR=1 nohup $PLAN9/bin/acme \
-	-f /mnt/font/ComicSansMS/20a/font \
-	-F /mnt/font/Menlo-Regular/18a/font \
+	-f /mnt/font/ComicSansMS/18a/font \
+	-F /mnt/font/Menlo-Regular/16a/font
