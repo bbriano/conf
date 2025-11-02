@@ -1,32 +1,31 @@
 # cat plumb.rules | 9p write plumb/rules
 
 type is text
-data matches .+
-data matches (file://)?(.+\.(MP3|mp3))
-arg isfile $2
+data matches [A-Za-z0-9./\-_]+
+data matches [A-Za-z0-9./\-_]+\.(MP3|mp3)
+arg isfile $0
 plumb start ffplay -nodisp -autoexit -loglevel error $file
 
 type is text
-data matches .+
-data matches (file://)?(.+\.(PDF|pdf|GIF|gif|JPE?G|jpe?g|PNG|png|MP4|mp4))
-arg isfile $2
+data matches [A-Za-z0-9./\-_]+
+data matches [A-Za-z0-9./\-_]+\.(PDF|pdf|GIF|gif|JPE?G|jpe?g|PNG|png|MP4|mp4)
+arg isfile $0
 plumb start open $file
 
 type is text
-data matches .+
-data matches https?://.+
+data matches https?://[A-Za-z0-9./:%&\-_=+]+
 plumb start open $0
 
 type is text
 data matches .+
-data matches file://(.+)
+data matches file://([A-Za-z0-9./\-_]+)
 arg isfile $1
 data set $file
 plumb to edit
 plumb client $editor
 
 type is text
-data matches (.+):$twocolonaddr,$twocolonaddr
+data matches ([A-Za-z0-9./\-_]+):$twocolonaddr,$twocolonaddr
 arg isfile $1
 data set $file
 attr add addr=$2-#0+#$3-#1,$4-#0+#$5-#1
@@ -34,7 +33,7 @@ plumb to edit
 plumb client $editor
 
 type is text
-data matches (.+):$twocolonaddr
+data matches ([A-Za-z0-9./\-_]+):$twocolonaddr
 arg isfile $1
 data set $file
 attr add addr=$2-#0+#$3-#1
@@ -42,9 +41,14 @@ plumb to edit
 plumb client $editor
 
 type is text
-data matches (.+)$addr?
+data matches ([A-Za-z0-9./\-_]+)$addr?
 arg isfile $1
 data set $file
 attr add addr=$2
 plumb to edit
 plumb client $editor
+
+type is text
+data matches .+
+data matches ([0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f])[0-9a-f]*
+plumb start rc -c 'cd '$wdir'; git show '$1' | plumb -d edit -a filename=+'$1' -i'
